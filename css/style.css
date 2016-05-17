@@ -1482,6 +1482,23 @@
 
 /* What We Do Section */	
 
+	#experience{
+		background-image:url(../images/i2.jpg);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size:cover;
+	}
+
+	body.parallax #experience{
+		background-attachment: fixed;
+	}
+
+	.experience{
+		z-index: 1;
+	}
+
+/* What We Do Section */	
+
 	#what-we-do{
 		background-image:url(../images/i1.jpg);
 		background-repeat: no-repeat;
