@@ -1,0 +1,150 @@
+\hypertarget{structcurve}{}\section{curve Struct Reference}
+\label{structcurve}\index{curve@{curve}}
+
+
+Data structured used to store the contours of the hand.  
+
+
+
+
+{\ttfamily \#include $<$Hand.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structcurve_ac2eb55cb594a07df07ae1c88b3036414}{}\label{structcurve_ac2eb55cb594a07df07ae1c88b3036414} 
+void \hyperlink{structcurve_ac2eb55cb594a07df07ae1c88b3036414}{calculate} ()
+\begin{DoxyCompactList}\small\item\em Recompute the centroid position. \end{DoxyCompactList}\item 
+\hyperlink{structcurve_aa067033135a192272005a3ae557a4f25}{curve} (cv\+::\+Mat ng)
+\begin{DoxyCompactList}\small\item\em Constructs a new curve object from contour matrix. \end{DoxyCompactList}\item 
+\hypertarget{structcurve_a0bacd81cfa6ed01251210d2e5d6b29a4}{}\label{structcurve_a0bacd81cfa6ed01251210d2e5d6b29a4} 
+\hyperlink{structcurve_a0bacd81cfa6ed01251210d2e5d6b29a4}{$\sim$curve} ()
+\begin{DoxyCompactList}\small\item\em Deconstructs a curve object. \end{DoxyCompactList}\item 
+void \hyperlink{structcurve_aa4847c1d83d062c243ef641f67144cd0}{add} (int x, int y, float angle)
+\begin{DoxyCompactList}\small\item\em Add point to curve. \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{structcurve_a8cd0f602bdbc43b2ee5f4f7dc20e3c3a}{find\+Nearest\+Point} (int x, int y, int \hyperlink{structcurve_a6a90092a2b62540ae3993cdb469f8451}{size}=C\+I\+R\+C\+L\+E\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+D\+I\+S\+T\+A\+N\+CE)
+\begin{DoxyCompactList}\small\item\em Find nearest point on the hand next to the curvature. \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{structcurve_a9c28c74ac0f9ce59290079125ff65a5d}{find\+Circle\+Point} ()
+\begin{DoxyCompactList}\small\item\em Find nearest point on hand next to the centroid of the curvature. \end{DoxyCompactList}\item 
+int \hyperlink{structcurve_af270a465ea41efcb89b930490aaf8d20}{get\+Distance} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Get euclidean distance between two points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structcurve_a434421bfdc9c8961a28590ef99f83e00}{}\label{structcurve_a434421bfdc9c8961a28590ef99f83e00} 
+int \hyperlink{structcurve_a434421bfdc9c8961a28590ef99f83e00}{centroid} \mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em Centroid of the contour. \end{DoxyCompactList}\item 
+\hypertarget{structcurve_afb7fe75fc30f7a832dbb845db62a5244}{}\label{structcurve_afb7fe75fc30f7a832dbb845db62a5244} 
+cv\+::\+Mat \hyperlink{structcurve_afb7fe75fc30f7a832dbb845db62a5244}{g}
+\begin{DoxyCompactList}\small\item\em Storage for the curvature. \end{DoxyCompactList}\item 
+\hypertarget{structcurve_a6a90092a2b62540ae3993cdb469f8451}{}\label{structcurve_a6a90092a2b62540ae3993cdb469f8451} 
+int \hyperlink{structcurve_a6a90092a2b62540ae3993cdb469f8451}{size}
+\begin{DoxyCompactList}\small\item\em Size of the curvator. \end{DoxyCompactList}\item 
+\hypertarget{structcurve_a67806447783717dcb334f0e6c8dd0093}{}\label{structcurve_a67806447783717dcb334f0e6c8dd0093} 
+float \hyperlink{structcurve_a67806447783717dcb334f0e6c8dd0093}{average\+Angle}
+\begin{DoxyCompactList}\small\item\em Average angle along the curvator. \end{DoxyCompactList}\item 
+\hypertarget{structcurve_ae5ccde75e194081b8c4b0c00f7af4879}{}\label{structcurve_ae5ccde75e194081b8c4b0c00f7af4879} 
+float \hyperlink{structcurve_ae5ccde75e194081b8c4b0c00f7af4879}{max\+Angle}
+\begin{DoxyCompactList}\small\item\em Sharpest angle along the curvator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Data structured used to store the contours of the hand. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structcurve_aa067033135a192272005a3ae557a4f25}{}\label{structcurve_aa067033135a192272005a3ae557a4f25} 
+\index{curve@{curve}!curve@{curve}}
+\index{curve@{curve}!curve@{curve}}
+\subsubsection{\texorpdfstring{curve()}{curve()}}
+{\footnotesize\ttfamily curve\+::curve (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{ng }\end{DoxyParamCaption})}
+
+
+
+Constructs a new curve object from contour matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ng} & the input matrix containing the curvature \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structcurve_aa4847c1d83d062c243ef641f67144cd0}{}\label{structcurve_aa4847c1d83d062c243ef641f67144cd0} 
+\index{curve@{curve}!add@{add}}
+\index{add@{add}!curve@{curve}}
+\subsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void curve\+::add (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{float}]{angle }\end{DoxyParamCaption})}
+
+
+
+Add point to curve. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & x-\/coordinate of the point \\
+\hline
+{\em y} & y-\/coordiante of the point \\
+\hline
+\end{DoxyParams}
+\hypertarget{structcurve_a9c28c74ac0f9ce59290079125ff65a5d}{}\label{structcurve_a9c28c74ac0f9ce59290079125ff65a5d} 
+\index{curve@{curve}!find\+Circle\+Point@{find\+Circle\+Point}}
+\index{find\+Circle\+Point@{find\+Circle\+Point}!curve@{curve}}
+\subsubsection{\texorpdfstring{find\+Circle\+Point()}{findCirclePoint()}}
+{\footnotesize\ttfamily int $\ast$ curve\+::find\+Circle\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Find nearest point on hand next to the centroid of the curvature. 
+
+\begin{DoxyReturn}{Returns}
+pointer to the nearest point 
+\end{DoxyReturn}
+\hypertarget{structcurve_a8cd0f602bdbc43b2ee5f4f7dc20e3c3a}{}\label{structcurve_a8cd0f602bdbc43b2ee5f4f7dc20e3c3a} 
+\index{curve@{curve}!find\+Nearest\+Point@{find\+Nearest\+Point}}
+\index{find\+Nearest\+Point@{find\+Nearest\+Point}!curve@{curve}}
+\subsubsection{\texorpdfstring{find\+Nearest\+Point()}{findNearestPoint()}}
+{\footnotesize\ttfamily int $\ast$ curve\+::find\+Nearest\+Point (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{size = {\ttfamily CIRCLE\+\_\+SEARCH\+\_\+DISTANCE} }\end{DoxyParamCaption})}
+
+
+
+Find nearest point on the hand next to the curvature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & x-\/coordinate of the point \\
+\hline
+{\em y} & y-\/coordinate of the point \\
+\hline
+{\em size} & distance which to looks around for the point on the hand. Defaults to C\+I\+R\+C\+L\+E\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+D\+I\+S\+T\+A\+N\+CE \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ppinter to the nearest point 
+\end{DoxyReturn}
+\hypertarget{structcurve_af270a465ea41efcb89b930490aaf8d20}{}\label{structcurve_af270a465ea41efcb89b930490aaf8d20} 
+\index{curve@{curve}!get\+Distance@{get\+Distance}}
+\index{get\+Distance@{get\+Distance}!curve@{curve}}
+\subsubsection{\texorpdfstring{get\+Distance()}{getDistance()}}
+{\footnotesize\ttfamily int curve\+::get\+Distance (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Get euclidean distance between two points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x-\/coordinate} & of the point \\
+\hline
+{\em y-\/coordinate} & of the point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the euclidean distance between the points 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Hand.\+h\item 
+Hand.\+cpp\end{DoxyCompactItemize}

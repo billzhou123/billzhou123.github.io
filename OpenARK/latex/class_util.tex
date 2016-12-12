@@ -1,0 +1,178 @@
+\hypertarget{class_util}{}\section{Util Class Reference}
+\label{class_util}\index{Util@{Util}}
+
+
+Class containing generic helper functions.  
+
+
+
+
+{\ttfamily \#include $<$Util.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static cv\+::\+Vec3b \hyperlink{class_util_a4b35aebe2f6ea734a9221356c0ad38ec}{color\+Generator2} ()
+\begin{DoxyCompactList}\small\item\em Generates a random R\+GB color. \end{DoxyCompactList}\item 
+static int \hyperlink{class_util_a1213364e3ea975aa7f3713f3ad5a96a7}{get\+DistanceT} (int x1, int y1, int x2, int y2)
+\begin{DoxyCompactList}\small\item\em Get euclidean distance between two 2D points. \end{DoxyCompactList}\item 
+static float \hyperlink{class_util_a003878685d2eba96fadc4fdae502688e}{normalize} (float a, float b)
+\begin{DoxyCompactList}\small\item\em Return the hypotenuse length. \end{DoxyCompactList}\item 
+static double \hyperlink{class_util_afcaa0a0b92e0fd117be8dead6a7787f3}{euclidian\+Distance3D} (cv\+::\+Vec3f pt1, cv\+::\+Vec3f pt2)
+\begin{DoxyCompactList}\small\item\em Get euclidean distance between two 3D points. \end{DoxyCompactList}\item 
+static cv\+::\+Mat \hyperlink{class_util_abf2cc717b8e145166f247df2742a0325}{remove\+Points} (cv\+::\+Mat img, std\+::vector$<$ cv\+::\+Point2i $>$ points)
+\begin{DoxyCompactList}\small\item\em Removes points on img with indicies defined in points. \end{DoxyCompactList}\item 
+static cv\+::\+Vec3f \hyperlink{class_util_ab6f41d0184eb52fb8830119b01fde445}{average\+Around\+Point} (cv\+::\+Mat img, cv\+::\+Point2i pt, int radius)
+\begin{DoxyCompactList}\small\item\em Average all non-\/zero values around a point. \end{DoxyCompactList}\item 
+static bool \hyperlink{class_util_acb6daa4dafb8af9adffa1fea2600a40d}{is\+Member} (cv\+::\+Mat xyz\+Map, int x, int y)
+\begin{DoxyCompactList}\small\item\em Determine whether (x,y) is a non-\/zero point in the matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class containing generic helper functions. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_util_ab6f41d0184eb52fb8830119b01fde445}{}\label{class_util_ab6f41d0184eb52fb8830119b01fde445} 
+\index{Util@{Util}!average\+Around\+Point@{average\+Around\+Point}}
+\index{average\+Around\+Point@{average\+Around\+Point}!Util@{Util}}
+\subsubsection{\texorpdfstring{average\+Around\+Point()}{averageAroundPoint()}}
+{\footnotesize\ttfamily cv\+::\+Vec3f Util\+::average\+Around\+Point (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{img,  }\item[{cv\+::\+Point2i}]{pt,  }\item[{int}]{radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Average all non-\/zero values around a point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & base image to use \\
+\hline
+{\em pt} & the point of interest \\
+\hline
+{\em radius} & number of neighboring points to be used for computing the average \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+average (x,y,z) value of the point of interest 
+\end{DoxyReturn}
+\hypertarget{class_util_a4b35aebe2f6ea734a9221356c0ad38ec}{}\label{class_util_a4b35aebe2f6ea734a9221356c0ad38ec} 
+\index{Util@{Util}!color\+Generator2@{color\+Generator2}}
+\index{color\+Generator2@{color\+Generator2}!Util@{Util}}
+\subsubsection{\texorpdfstring{color\+Generator2()}{colorGenerator2()}}
+{\footnotesize\ttfamily cv\+::\+Vec3b Util\+::color\+Generator2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Generates a random R\+GB color. 
+
+\begin{DoxyReturn}{Returns}
+random R\+GB color in Vec3b format 
+\end{DoxyReturn}
+\hypertarget{class_util_afcaa0a0b92e0fd117be8dead6a7787f3}{}\label{class_util_afcaa0a0b92e0fd117be8dead6a7787f3} 
+\index{Util@{Util}!euclidian\+Distance3D@{euclidian\+Distance3D}}
+\index{euclidian\+Distance3D@{euclidian\+Distance3D}!Util@{Util}}
+\subsubsection{\texorpdfstring{euclidian\+Distance3\+D()}{euclidianDistance3D()}}
+{\footnotesize\ttfamily double Util\+::euclidian\+Distance3D (\begin{DoxyParamCaption}\item[{cv\+::\+Vec3f}]{pt1,  }\item[{cv\+::\+Vec3f}]{pt2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get euclidean distance between two 3D points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt1} & point 1 \\
+\hline
+{\em pt2} & point 2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+euclidean distance 
+\end{DoxyReturn}
+\hypertarget{class_util_a1213364e3ea975aa7f3713f3ad5a96a7}{}\label{class_util_a1213364e3ea975aa7f3713f3ad5a96a7} 
+\index{Util@{Util}!get\+DistanceT@{get\+DistanceT}}
+\index{get\+DistanceT@{get\+DistanceT}!Util@{Util}}
+\subsubsection{\texorpdfstring{get\+Distance\+T()}{getDistanceT()}}
+{\footnotesize\ttfamily int Util\+::get\+DistanceT (\begin{DoxyParamCaption}\item[{int}]{x1,  }\item[{int}]{y1,  }\item[{int}]{x2,  }\item[{int}]{y2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get euclidean distance between two 2D points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & x-\/coordinate of point 1 \\
+\hline
+{\em y1} & y-\/coordinate of point 1 \\
+\hline
+{\em x2} & x-\/coordinate of point 2 \\
+\hline
+{\em y2} & y-\/coordinate of point 2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the euclidean distance 
+\end{DoxyReturn}
+\hypertarget{class_util_acb6daa4dafb8af9adffa1fea2600a40d}{}\label{class_util_acb6daa4dafb8af9adffa1fea2600a40d} 
+\index{Util@{Util}!is\+Member@{is\+Member}}
+\index{is\+Member@{is\+Member}!Util@{Util}}
+\subsubsection{\texorpdfstring{is\+Member()}{isMember()}}
+{\footnotesize\ttfamily bool Util\+::is\+Member (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{xyz\+Map,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Determine whether (x,y) is a non-\/zero point in the matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Input image \\
+\hline
+{\em x} & x-\/coordinate of the point \\
+\hline
+{\em y} & y-\/coordinate of the point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if (x.\+y) is non-\/zero 
+\end{DoxyReturn}
+\hypertarget{class_util_a003878685d2eba96fadc4fdae502688e}{}\label{class_util_a003878685d2eba96fadc4fdae502688e} 
+\index{Util@{Util}!normalize@{normalize}}
+\index{normalize@{normalize}!Util@{Util}}
+\subsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily float Util\+::normalize (\begin{DoxyParamCaption}\item[{float}]{a,  }\item[{float}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Return the hypotenuse length. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & leg length \\
+\hline
+{\em b} & leg length return hypotenuse length \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_util_abf2cc717b8e145166f247df2742a0325}{}\label{class_util_abf2cc717b8e145166f247df2742a0325} 
+\index{Util@{Util}!remove\+Points@{remove\+Points}}
+\index{remove\+Points@{remove\+Points}!Util@{Util}}
+\subsubsection{\texorpdfstring{remove\+Points()}{removePoints()}}
+{\footnotesize\ttfamily cv\+::\+Mat Util\+::remove\+Points (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{img,  }\item[{std\+::vector$<$ cv\+::\+Point2i $>$}]{points }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes points on img with indicies defined in points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & the input image \\
+\hline
+{\em points} & list of indicies (i,j) to be set to 0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+processed image 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Util.\+h\item 
+Util.\+cpp\end{DoxyCompactItemize}
