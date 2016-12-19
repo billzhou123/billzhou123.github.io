@@ -1,0 +1,13 @@
+/* 7.8 Started ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.started {
+    transition: all 0.3s;
+
+    &:before {
+        background: url("../img/section/bg/started.jpg") left center / cover no-repeat;
+    }
+
+    .tab-content .tab-pane {
+        overflow: hidden;
+    }
+}

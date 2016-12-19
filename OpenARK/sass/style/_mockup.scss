@@ -1,0 +1,146 @@
+/* 3.3 Mockups */
+.mockup-wrapper {
+    position: relative;
+
+    &.tilt {
+        display: block;
+        position: absolute;
+        transform-style: preserve-3d;
+
+        .mockup {
+            margin: 4% 6%;
+
+            img {
+                width: 100%;
+                vertical-align: middle;
+                border: none;
+            }
+        }
+
+        .mockup-shadow {
+            z-index: -1;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            right: 30px;
+            bottom: 30px;
+            background: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 30px 30px rgba(0, 0, 0, 0.5);
+            transform: translateZ(-50px);
+        }
+
+        &.left {
+            transform: rotateX(60deg) rotateZ(-50deg);
+
+            .mockup {
+                &:before, &:after {
+                    content: '';
+                    position: absolute;
+                    /*100% height and width*/
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: inherit;
+                    background-size: cover;
+                }
+
+                &:before {
+                    transform-origin: left center;
+                    transform: rotateY(90deg);
+                    /*Reducing the width of the left side for a flat feel*/
+                    width: 5px;
+                }
+
+                &:after {
+                    transform-origin: bottom center;
+                    transform: rotateX(90deg);
+                    /*Reducing the height*/
+                    height: 5px;
+                    top: auto;
+                    bottom: 0;
+                    /*Background fix - start the background from the bottom*/
+                    background-position: bottom center;
+                }
+            }
+        }
+
+        &.right {
+            transform: rotateX(58deg) translateY(-50%) rotateZ(31deg);
+
+            .mockup {
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 200%;
+                    height: 200%;
+                    background-color: rgba(0, 0, 0, 0.2);
+                }
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    -webkit-transform: rotateX(90deg);
+                    transform: rotateX(90deg);
+                    -webkit-transform-origin: center bottom;
+                    transform-origin: center bottom;
+                    background-image: inherit;
+                    background-size: cover;
+                    background-position: bottom center;
+                    height: 7px;
+                    top: auto;
+                    outline: 1px solid transparent;
+                }
+            }
+        }
+    }
+}
+
+.mockup {
+    position: relative;
+    margin: 0 auto;
+
+    img {
+        display: block;
+        height: auto;
+        width: 100%;
+    }
+
+    &.full-width {
+        max-width: 100%;
+    }
+
+    &.mockup-absolute {
+        position: absolute;
+    }
+
+    &.mockup-lg {
+        max-width: 800px;
+        width: 800px;
+    }
+}
+
+section, .section {
+    .mockup {
+        max-width: 478px;
+    }
+}
+
+@media (max-width: $screen-sm-max) {
+    .mockup-wrapper {
+        &.mockup-top {
+            margin-bottom: $mockup-margin-default-half;
+        }
+
+        &.mockup-bottom {
+            margin-top: $mockup-margin-default-half;
+        }
+    }
+}

@@ -1,0 +1,505 @@
+﻿/* ==========================================================================
+   5. INTERFACE COMPONENTS
+   ========================================================================== */
+
+/* 5.1 Navbar ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.main-navigation {
+    transition: all 0.4s ease 0s;
+    background-color: $navbar-background-color;
+    min-height: $navbar-min-height;
+    height: $navbar-min-height * 1.3;
+    padding-top: $navbar-min-height / 3;
+
+    .navbar-nav {
+        > li {
+            a {
+                font-family: $button-font-family;
+                font-size: $button-font-size;
+                font-weight: $font-weight-bold;
+                transition: all 0.3s ease 0s;
+                text-decoration: none;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                height: $navbar-min-height;
+                color: $navbar-text-color;
+                padding: (($navbar-min-height/2) - 11) 15px;
+
+                i {
+                    display: none;
+                }
+
+                &:after {
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    height: $navbar-bottom-border-height;
+                    background: $navbar-hover-color;
+                    transition: transform .3s;
+                    transform: scale(0);
+                    transform-origin: center center;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                }
+            }
+
+            &.active, &:hover {
+                a {
+                    background: transparent;
+                    color: $navbar-hover-color;
+                }
+            }
+
+            &.has-button {
+                display: block;
+
+                button {
+                    margin-top: (($navbar-min-height/2) - 20);
+                    padding: 10px 12px;
+                }
+            }
+        }
+    }
+
+    .navbar-header {
+        transition: all 0.3s;
+    }
+
+    .navbar-brand {
+        height: $navbar-min-height;
+        padding: 10px;
+
+        img {
+            height: 60px;
+            transition: display .3s;
+        }
+    }
+
+    .sidebar-brand {
+        display: none;
+
+        .logo {
+            height: 60px;
+            margin: 0 auto;
+            display: block;
+            padding: 5px 0;
+        }
+    }
+
+    .logo-light {
+        display: none;
+    }
+
+    .navbar-nav {
+        li {
+            ul {
+                opacity: 0;
+                transition: opacity .3s;
+                line-height: 1.1em;
+                left: 15px;
+                margin: ((-$navbar-min-height/2)+5) 0 0;
+                position: absolute;
+
+                a {
+                    padding: 3px 0 0;
+                    opacity: 0.8;
+                    font-size: $font-size-small + 1;
+                    font-weight: $font-weight-light;
+
+                    &:after {
+                        content: none;
+                    }
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &:hover {
+                ul {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &.navbar-fixed-bottom {
+        padding-top: 0;
+        background-color: $navbar-bottom-background-color;
+        position: absolute;
+
+        @media (min-width: $grid-float-breakpoint) {
+            li {
+                a {
+                    padding-top: ($navbar-min-height/2);
+                    color: $navbar-bottom-text-color;
+
+                    i {
+                        display: block;
+                        color: $navbar-bottom-icon-color;
+                        font-size: $font-size-base * 1.5;
+                        margin-top: -28px;
+                        @include center-x();
+                    }
+
+                    &:hover {
+                        color: $navbar-bottom-text-hover-color;
+
+                        i {
+                            color: $navbar-bottom-icon-hover-color;
+                        }
+                    }
+                }
+
+                ul {
+                    margin: (-$navbar-min-height/4) 0 0;
+
+                    li a {
+                        i {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            &.navbar-sticky {
+                li {
+                    a {
+                        padding: (($navbar-min-height/2) - 11) 15px;
+
+                        i {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            + .page-wrapper .header-site {
+                padding-bottom: $navbar-min-height;
+            }
+        }
+    }
+
+    &.navbar-sticky {
+        position: fixed;
+        background: $navbar-sticky-background-color;
+        left: 0; top: 0;
+        border-top: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.11);
+        z-index: 2;
+        height: $navbar-min-height;
+        padding-top: 0;
+    }
+
+    &.navbar-sticky,
+    &.navbar-clear {
+        .navbar-header {
+            .logo {
+                display: none;
+            }
+
+            .logo-light {
+                display: block;
+            }
+        }
+
+        .navbar-nav {
+            > li {
+                display: block;
+
+                a {
+                    /**/
+                    color: $navbar-sticky-text-color;
+
+                    &:after {
+                        background: $navbar-sticky-hover-color;
+                    }
+                }
+
+                &.active, &:hover {
+                    a {
+                        color: $navbar-sticky-hover-color;
+                    }
+                }
+            }
+        }
+    }
+
+    &.navbar-clear {
+        border-bottom: 1px solid #ccc;
+        &,
+        .navbar-nav > .active > a,
+        .navbar-nav > .active > a:hover,
+        .navbar-nav > .active > a:focus {
+            //background: $navbar-default-background-color;
+        }
+    }
+
+    @media (max-width: $grid-float-breakpoint-max) {
+        height: $navbar-min-height;
+        padding-top: 0;
+
+        &.navbar-fixed-top,
+        &.navbar-fixed-bottom {
+            .navbar-collapse {
+                height: 100%;
+                max-height: 100%;
+                background-color: $navbar-collapsed-background-color;
+            }
+        }
+
+        &.navbar-fixed-bottom {
+            &.navbar-top-xs {
+                top: 0;
+                border-width: 0 0 1px;
+
+                bottom: auto;
+                margin-bottom: $navbar-margin-bottom;
+
+                + .page-wrapper .header-site {
+                    padding-bottom: 0;
+                }
+            }
+        }
+
+        &.navbar-left {
+            #navbar {
+                left: -$navbar-side-width;
+            }
+
+            .navbar-toggle {
+                float: left;
+            }
+
+            .navbar-brand {
+                float: right;
+            }
+        }
+
+        &.navbar-right {
+            #navbar {
+                right: -$navbar-side-width;
+            }
+        }
+
+        &.navbar-expanded {
+            &.navbar-left {
+                #navbar {
+                    left: 0;
+                }
+
+                .navbar-header,
+                ~ .page-wrapper {
+                    transform: translateX($navbar-side-width);
+                }
+            }
+
+            &.navbar-right {
+                #navbar {
+                    right: 0;
+                }
+
+                .navbar-header,
+                ~ .page-wrapper {
+                    transform: translateX(-$navbar-side-width);
+                }
+            }
+
+            .icon-bar {
+                &:nth-child(1) {
+                    transform: rotate(-225deg);
+                }
+
+                &:nth-child(2) {
+                    transform: translateX(-40px);
+                    opacity: 0;
+                }
+
+                &:nth-child(3) {
+                    transform: translateY(-15px) rotate(225deg);
+                }
+            }
+        }
+
+        .navbar-brand {
+            img {
+                &.logo {
+                    display: none;
+                }
+
+                &.logo-light {
+                    display: block;
+                }
+            }
+        }
+
+        #navbar {
+            background: $navbar-side-background-color;
+            width: $navbar-side-width;
+            position: fixed;
+            margin: 0;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            display: block;
+            transition: all 0.3s;
+            overflow-y: auto;
+        }
+
+        .sidebar-brand {
+            padding: 15px;
+            display: block;
+            height: $navbar-min-height;
+        }
+
+        .navbar-header {
+            background-color: $navbar-collapsed-background-color;
+        }
+
+        .navbar-toggle {
+            min-height: $navbar-min-height;
+            margin: 0;
+            padding: 0 15px;
+
+            .icon-bar {
+                transform: rotate(0deg);
+                background-color: $navbar-collapsed-text-color;
+                transition: all .35s ease-in-out;
+                width: 30px;
+
+                + .icon-bar {
+                    margin-top: 6px;
+                }
+
+                &:hover {
+                    background-color: $navbar-collapsed-hover-color;
+                }
+            }
+        }
+
+        .navbar-nav {
+            li {
+                display: block !important;
+
+                &.active, &:hover {
+                    background-color: lighten($navbar-side-background-color, 8%);
+                }
+
+                a {
+                    height: auto;
+                    color: $navbar-side-text-color !important;
+                    padding: 15px 0;
+                    padding-left: 45px;
+
+                    i {
+                        display: inline-block;
+                        margin-right: 15px;
+                    }
+                }
+
+                &.has-button {
+                    .btn {
+                        @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+                    }
+                }
+            }
+        }
+
+        .navbar-nav {
+            li {
+                ul {
+                    display: none;
+
+                    &.show-xs {
+                        display: block;
+                        opacity: 1;
+                        position: relative;
+                        margin-top: -20px;
+                        left: 60px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: $grid-float-breakpoint) {
+        .navbar-right {
+            margin-right: 0;
+        }
+
+        .navbar-nav {
+            > li {
+                &.active, &:hover {
+                    background: transparent;
+
+                    a {
+                        /**/
+                        &:after {
+                            transform: scale(1);
+                            //width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: $screen-sm-max) {
+        .container {
+            width: 100%;
+        }
+
+        /*li {
+            a {
+                padding-left: 0;
+            }
+        }*/
+    }
+}
+
+.navbar-center {
+    .container {
+        text-align: center;
+    }
+
+    .nav {
+        display: inline-block;
+        float: none;
+    }
+}
+
+.navbar-primary {
+    position: absolute;
+}
+
+.navbar-fixed-bottom {
+    .navbar-header {
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: transform .3s ease-in;
+    }
+
+    &.navbar-sticky {
+        .navbar-header {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+.navbar-fixed-top ~ .navbar {
+    //position: fixed;
+    display: none;
+
+    /*.navbar-nav {
+        display: none;
+    }*/
+}
+
+.navbar-sticky ~ .navbar {
+    display: none;
+}

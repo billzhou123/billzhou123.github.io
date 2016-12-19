@@ -1,0 +1,77 @@
+/* 3.4 Widgets ========================================================================== */
+
+.widget {
+    margin: 30px 0;
+
+    h2 {
+        font-size: $widget-title-font-size;
+    }
+
+    .widget-icon {
+        margin: 0 auto;
+        padding: 1em 0;
+
+        i {
+            font-size: $widget-icon-font-size;
+            color: $widget-icon-color;
+            display: inline;
+            margin: 0;
+            position: relative;
+            line-height: 1;
+        }
+
+        &.widget-icon-collapse {
+            i {
+                display: inline-block;
+                margin-left: -15px;
+            }
+
+            &:after {
+                display: block;
+                clear: both;
+            }
+        }
+    }
+
+    .widget-text {
+        h4 {
+            font-weight: $font-weight-bold;
+        }
+    }
+
+    &.widget-icon-text {
+        position: relative;
+        transition: all 0.3s ease 0s;
+        overflow: hidden;
+    }
+
+    &.widget-icon-left {
+        text-align: left;
+
+        > * {
+            display: table-cell;
+        }
+
+        .widget-icon {
+            padding: 20px 30px 0 0;
+            vertical-align: top;
+        }
+
+        .widget-text {
+            padding-top: 20px;
+
+            h4 {
+                margin-top: 0;
+            }
+        }
+    }
+
+    &.widget-icon-top {
+        text-align: center;
+
+        .widget-icon {
+            text-align: center;
+            width: 100%;
+        }
+    }
+}

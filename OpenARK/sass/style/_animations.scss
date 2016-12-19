@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+
+// Used to zoom-animate header backgrounds
+@include zoom('in', 1, 1.2);
+@include zoom('out', 1.2, 1);
+
+@include progress();
+
+// Pulse
+@keyframes pulse {
+    0% {
+        transform: scale(0.3);
+        opacity: 0.5;
+    }
+    80% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+// spin
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}

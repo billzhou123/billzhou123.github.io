@@ -1,0 +1,132 @@
+/* 7.12 Process styles ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+$process-nav-border-size: $process-nav-height / 2;
+
+.process {
+    background-color: $process-bg-color;
+
+    .process-nav {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        text-align: center;
+        @include clearfix;
+
+        li {
+            float: left;
+            vertical-align: middle;
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+            max-height: $process-nav-height;
+            transition: all .3s;
+            margin: 0;
+            padding: 1.2em 1em;
+            width: $process-nav-step-same-width;
+
+            &.flex-active,
+            &.loaded {
+                .step-number {
+                    opacity: 0.15;
+                }
+            }
+        }
+
+        .step-icon {
+            margin-left: 10px;
+            display: inline;
+            font-size: $font-size-base * 1.5;
+        }
+
+        .step-number {
+            display: inline;
+            opacity: 0.1;
+            font-size: $font-size-extra-large;
+            font-weight: $font-weight-bold;
+
+            @include center-xy();
+        }
+
+        .step-name {
+            display: none;
+        }
+
+        @media (min-width: $grid-float-breakpoint) {
+            .step-icon {
+                font-size: $font-size-base;
+                margin-left: 0;
+                margin-right: 10px;
+            }
+
+            .step-number {
+                display: none;
+            }
+
+            .step-name {
+                display: inline;
+            }
+        }
+    }
+
+    .process-inner {
+        margin-top: 2em;
+
+        h3 {
+            font-weight: $font-weight-regular;
+            color: $process-nav-bg-color;
+        }
+
+        .process-text {
+            position: absolute;
+            background-color: rgba($process-nav-color, 0.7);
+            color: $process-nav-bg-color;
+            border-radius: $process-nav-border-radius;
+            box-shadow: 10px 10px 31px -10px rgba(0, 0, 0, 0.39);
+            padding: 2em;
+            width: 40%;
+            left: 50%;
+            top: 5%;
+            z-index: 1;
+            display: block;
+        }
+
+        .slides {
+            li {
+                position: relative;
+            }
+
+            .mockup {
+                height: 400px;
+                margin-top: $padding-default;
+
+                img {
+                    height: auto;
+                    margin: 0 auto;
+                }
+            }
+        }
+
+        @media (max-width: $grid-float-breakpoint-max) {
+            .process-text {
+                left: 0;
+                top: 0;
+                width: 100%;
+                position: relative;
+                display: block;
+                border-radius: 0;
+                margin-bottom: 30px;
+                background-color: rgba($process-nav-color, 0.4);
+            }
+
+            .slides {
+                .mockup {
+                    img {
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}

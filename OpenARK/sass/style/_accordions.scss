@@ -1,0 +1,54 @@
+/* 5.3 Accordions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.accordion {
+    .panel-heading {
+        border-bottom: 1px solid $accordion-border-color;
+        border-left: $accordion-border-left solid $color-accent;
+        padding-left: 0;
+        border-bottom-left-radius: 4px;
+
+        .panel-title {
+            padding-left: $accordion-border-left;
+            margin-left: -$accordion-border-left;
+
+            i {
+                &.icon {
+                    color: $accordion-icon-color;
+                    margin-left: -25px;
+                    margin-right: $accordion-border-left / 2;
+                }
+            }
+
+            a {
+                display: block;
+                width: 100%;
+                position: relative;
+                color: $accordion-border-color;
+
+                &:after {
+                    font-family: $font-family-icons;
+                    content: '\f106';
+                    position: absolute;
+                    top: 30%;
+                    right: 0;
+                    font-size: 15px;
+                    transition: all 0.3s;
+                }
+
+                &.collapsed {
+                    &:after {
+                        content: '\f107';
+                    }
+                }
+            }
+        }
+
+        + .panel-collapse {
+            border-top: 0;
+
+            > .panel-body {
+                border-top: 0;
+            }
+        }
+    }
+}

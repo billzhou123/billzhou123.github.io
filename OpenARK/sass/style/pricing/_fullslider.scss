@@ -1,0 +1,215 @@
+/* 7.17 Fullslider pricing table ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.pricing-fullslider {
+    overflow: hidden;
+    position: relative;
+
+    .pricing-plan {
+        width: 100%;
+        text-align: center;
+        position: relative;
+        vertical-align: top;
+        overflow: hidden;
+
+        .content {
+            height: 100%;
+            width: 100%;
+            position: relative;
+
+            figure {
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 0; left: 0;
+                    bottom: 0; right: 0;
+                    z-index: 0;
+                    transition: background-color 0.3s;
+                    background-color: rgba($pricing-overlay-bg-color, 0.8);
+                }
+
+                @media (max-width: $screen-sm-max) {
+                    img {
+                        transform: translateX(-40%);
+                    }
+                }
+            }
+        }
+
+        .align-middle {
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 ($padding-default / 2);
+
+            @media (max-width: $screen-sm-max) {
+                transform: translate(-50%, -50%);
+                top: 50%;
+                left: 50%;
+
+                .selected {
+                    padding: $padding-default;
+                    border: 1px solid $pricing-slider-border-color;
+                }
+            }
+        }
+
+        .regular {
+            display: none;
+        }
+    }
+
+    @media (min-width: $screen-md-min) {
+        .plans-wrapper {
+            min-height: 650px;
+            left: -12%;
+            width: 130%;
+        }
+
+        .pricing-plan {
+            cursor: pointer;
+            height: 100%;
+            border-right: solid 1px $pricing-slider-border-color;
+            width: $pricing-slider-plan-width;
+            transition: all .5s ease-in-out;
+            transform: skewX(-16deg);
+            display: inline-block;
+            position: absolute;
+
+            &:nth-child(1) {
+                left: 0;
+
+                .regular {
+                    left: 40%;
+                }
+            }
+
+            &:nth-child(2) {
+                left: $pricing-slider-plan-width;
+
+                .regular {
+                    left: 250px;
+                }
+            }
+
+            &:nth-child(3) {
+                left: $pricing-slider-plan-width-2;
+
+                .regular {
+                    left: 15%;
+                }
+            }
+
+            &:hover {
+                width: 57%;
+
+                .regular {
+                    opacity: 0;
+                    visibility: hidden;
+                }
+
+                .selected {
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+                .content {
+                    figure {
+                        &:after {
+                            background-color: rgba($pricing-overlay-bg-color, 0.6);
+                        }
+                    }
+                }
+            }
+
+            &.basic {
+                &:hover {
+                    ~ .business {
+                        left: 50%;
+                        width: 20%;
+                        border-left: solid 1px $pricing-slider-border-color;
+                    }
+
+                    ~ .enterprise {
+                        left: 70%;
+                        width: 30%;
+                        border-left: solid 1px $pricing-slider-border-color;
+                    }
+                }
+            }
+
+            &.business {
+                &:hover {
+                    left: 25%;
+                    border-left: solid 1px $pricing-slider-border-color;
+
+                    ~ .enterprise {
+                        left: 75%;
+                        border-left: solid 1px $pricing-slider-border-color;
+                    }
+                }
+            }
+
+            &.enterprise {
+                &:hover {
+                    left: 45%;
+                    border-left: solid 1px $pricing-slider-border-color;
+                }
+            }
+
+            .content {
+                transform: skewX(16deg);
+                height: 100%;
+                width: 140%;
+                left: -30%;
+                position: relative;
+
+                figure {
+                    img {
+                        width: 1800px;
+                        height: auto;
+                    }
+                }
+            }
+
+            .align-middle {
+                left: 15%;
+                right: 0;
+                height: auto;
+            }
+
+            .regular,
+            .selected {
+                position: absolute;
+                text-align: left;
+                transition: all .4s linear;
+                transform: translateY(-50%);
+                top: 50%;
+            }
+
+            .regular {
+                display: inline-block;
+                visibility: visible;
+                opacity: 1;
+
+                span + h2 {
+                    margin-top: 0;
+                }
+            }
+
+            .selected {
+                visibility: hidden;
+                margin: 0 auto;
+                width: 50%;
+                opacity: 0;
+                left: 30%;
+
+                h2 {
+                    margin-bottom: 0;
+                }
+
+                p {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}

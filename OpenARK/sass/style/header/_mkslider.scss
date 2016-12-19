@@ -1,0 +1,111 @@
+/* 6.2 Mockup slider ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.header-site {
+    .mockup-wrapper-hand {
+        .intro {
+            width: 100%;
+        }
+
+        .mockup-wrapper {
+            position: relative;
+            top: 100%;
+            transform: translateY(-100%);
+            display: none;
+
+            > div {
+                width: 450px;
+                position: relative;
+            }
+
+            .mockup {
+                &.slides-show {
+                    position: relative;
+                    z-index: 1;
+
+                    img {
+                        height: auto;
+                        width: 100%;
+                    }
+                }
+            }
+
+            .slides {
+                .mockup {
+                    //padding: 12.7% 39% 10% 15.2%;
+                }
+            }
+
+            .flex-viewport {
+
+            }
+
+            .flex-control-nav {
+                z-index: 1;
+                bottom: 22%;
+                width: auto;
+                margin-left: 30%;
+
+                li {
+                    &:before {
+                        content: none;
+                    }
+
+                    a {
+                        width: 10px;
+                        height: 5px;
+                    }
+                }
+            }
+
+            .images-wrapper {
+                position: absolute;
+                height: 100%;
+                top: 0;
+                left: 0;
+                right: 0;
+                padding: 12.7% 39% 25% 15.05%;
+                z-index: -1;
+            }
+
+            @media (min-width: $grid-float-breakpoint) {
+                display: block;
+            }
+
+            @media (min-width: $screen-md-min) {
+                > div {
+                    width: 480px;
+                }
+            }
+
+            @media (min-width: $screen-lg-min) and (max-height: $screen-header-mk-clean - 1) {
+                > div {
+                    width: 480px;
+                }
+            }
+
+            @media (min-width: $screen-lg-min) and (min-height: $screen-header-mk-clean) {
+                > div {
+                    width: 650px;
+                }
+            }
+
+            @media (max-height: $screen-header-clean) {
+                > div {
+                    width: 65%;
+                }
+            }
+
+            @media (max-height: $screen-header-mk-clean) {
+                > div {
+                    width: 440px;
+                }
+            }
+        }
+
+        @media (min-width: $grid-float-breakpoint) {
+            .intro {
+                width: 50%;
+            }
+        }
+    }
+}

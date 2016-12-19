@@ -1,0 +1,106 @@
+/* ==========================================================================
+    [2. PAGE LOADER]
+========================================================================== */
+
+.pace {
+    pointer-events: none;
+    user-select: none;
+
+    position: fixed;
+    margin: auto;
+    top: 0; left: 0; right: 0; bottom: 0;
+    height: 35px;
+    z-index: 2000;
+    max-width: 100%;
+    width: 480px; // 100%
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0; right: 0;
+        top: 50%;
+        height: 1px;
+        background-color: rgba(lighten($color-accent, 15%), .4);
+        width: 100%;
+        margin-top: ceil($page-loader-bar-height / 2);
+    }
+
+    .pace-progress {
+        background: $color-accent;
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        width: 100%;
+        height: $page-loader-bar-height;
+
+        &:after {
+            content: "";
+            background: linear-gradient(to right, $color-accent 25%, lighten($color-accent, 18%));
+            box-shadow: 0 0 5px 3px rgba($color-accent, .5);
+            height: $page-loader-bar-height;
+            width: 16px;
+            position: absolute;
+            right: 0;
+        }
+    }
+}
+
+.pace-inactive {
+    display: none;
+}
+
+body {
+    &:not(.pace-done) {
+        .page-loader ~ * {
+            opacity: 0;
+        }
+    }
+
+    &.pace-done {
+        .page-loader {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}
+
+.page-loader {
+    background: url("../img/section/bg/loader.png") repeat;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    margin: 0;
+
+    .overlay {
+        &:after, &:before {
+            z-index: -1;
+        }
+    }
+
+    .container {
+        text-align: center;
+        color: $page-loader-color;
+        height: 100%;
+
+        .intro {
+            margin-top: -$navbar-min-height * 1.5;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto $padding-default auto;
+            width: $logo-width;
+            height: $logo-height;
+        }
+
+        p {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: 10px 0 90px;
+        }
+    }
+}

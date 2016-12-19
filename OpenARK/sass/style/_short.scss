@@ -1,0 +1,28 @@
+/* 7.21 Short info ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.short {
+    background: url("../img/section/bg/short.png") 100% 100% / cover no-repeat;
+
+    &,
+    h2 {
+        color: $short-color;
+    }
+
+    .mockup {
+        position: absolute;
+        height: 100%;
+        width: auto;
+    }
+
+    @media (max-width: $grid-float-breakpoint-max) {
+        .container {
+            padding-bottom: $section-padding * 2 !important;
+        }
+
+        .mockup {
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 50%;
+        }
+    }
+}

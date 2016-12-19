@@ -1,0 +1,75 @@
+/* 7.6 Features ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.features {
+    background-color: $features-bg-color;
+    color: $features-color;
+
+    &:before {
+        background: $features-bg-color url("../img/section/bg/features.jpg") left center / cover no-repeat;
+    }
+
+    .features-nav {
+        li {
+            font-weight: $font-weight-bold;
+            display: block;
+            cursor: pointer;
+            transition: color .3s;
+            padding: 5px 20px;
+            font-size: $features-font-size-filter;
+
+            &.active {
+                color: $features-a-color-hover;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .mix {
+        display: none;
+    }
+
+    h2, h4 {
+        color: $features-title-color;
+    }
+
+    h4 {
+        font-weight: $font-weight-bold;
+    }
+
+    .features-nav li,
+    a {
+        color: $features-a-color;
+
+        &:hover {
+            color: $features-a-color-hover;
+        }
+    }
+
+    .widget {
+        .widget-icon {
+            transition: all 0.3s ease-in;
+            max-width: 55px;
+
+            i {
+                color: $features-icon-color;
+            }
+        }
+
+        &:hover {
+            .widget-icon {
+                transform: scale(1.5, 1.5) rotate(15deg) translate(10px, 15px);
+                opacity: 0.5;
+            }
+        }
+    }
+
+    @media (max-width: $screen-sm-max) {
+        .features-nav {
+            li {
+                display: inline-block;
+                padding: 10px 20px 10px 0;
+                font-size: $font-size-regular;
+            }
+        }
+    }
+}

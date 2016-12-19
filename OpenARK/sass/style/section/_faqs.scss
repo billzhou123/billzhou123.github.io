@@ -1,0 +1,22 @@
+/* 7.22 FAQs */
+.faqs {
+    .faq {
+        padding-top: $padding-default/2;
+        padding-bottom: $padding-default/2;
+    }
+
+    @media (min-width: $grid-float-breakpoint) {
+        .faq {
+            padding-top: $padding-default;
+            padding-bottom: $padding-default;
+        }
+
+        .row {
+            border-bottom: 1px solid $faqs-border-color;
+
+            &:last-of-type {
+                border-bottom: none;
+            }
+        }
+    }
+}

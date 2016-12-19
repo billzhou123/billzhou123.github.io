@@ -1,0 +1,485 @@
+/* ==========================================================================
+   [3. GENERAL CONTENT STYLES]
+   ========================================================================== */
+
+/* 3.1 Global styles */
+#skrollr-body {
+    min-height: 100%;
+    height: 100%
+}
+
+.page-wrapper,
+.page-loader {
+    transition: all .3s;
+}
+
+.page-wrapper {
+    filter: blur(0px);
+}
+
+.content-wrapper {
+    height: 100%;
+}
+
+.logo {
+    &.logo-sm {
+        width: $logo-width * 22/100;
+        height: $logo-height * 22/100;
+    }
+
+    &.logo-md {
+        width: $logo-width * 33/100;
+        height: $logo-height * 33/100;
+    }
+
+    &.logo-lg {
+        width: $logo-width * 55/100;
+        height: $logo-height * 55/100;
+    }
+
+    &.logo-xl {
+        width: $logo-width;
+        height: $logo-height;
+    }
+}
+
+.intro {
+    top: 50%;
+    position: relative;
+    transform: translateY(-50%);
+}
+
+.subtitle {
+    font-size: $section-subtitle-font-size;
+    font-weight: $section-subtitle-font-weight;
+}
+.text-sm {
+    font-size: 0.8em;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.no-margin-t {
+    margin-top: 0 !important;
+}
+
+.no-margin-b {
+    margin-bottom: 0 !important;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.no-padding-b {
+    padding-bottom: 0 !important;
+}
+
+.no-padding-t {
+    padding-top: 0 !important;
+}
+
+.no-padding-tb {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.no-padding-lr {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.no-border {
+    border: none !important;
+}
+
+.full-width {
+    max-width: 100%;
+    width: 100%;
+}
+
+.full-height {
+    height: calc(100% - #{$navbar-min-height});
+}
+
+.image-cover {
+    position: relative;
+    background-attachment: scroll;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.parallax {
+    position: static !important;
+
+    &,
+    &.blurred:before {
+        background-attachment: fixed !important;
+    }
+
+    &.blurred:before {
+        position: absolute;
+    }
+
+    @media (max-width: $grid-float-breakpoint) {
+
+    }
+}
+
+p {
+    letter-spacing: 0.03rem;
+    margin: $paragraph-margin-default 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $section-title-font-family;
+    color: $h-text-color;
+    letter-spacing: 0.02rem;
+    font-weight: $font-weight-thin;
+
+    &.panel-title {
+        font-weight: $font-weight-regular;
+    }
+}
+
+h1, h2, h3 {
+    margin-top: $padding-default / 3;
+    margin-bottom: $padding-default / 2;
+}
+
+h4, h5, h6 {
+    margin-top: $padding-default / 4;
+    margin-bottom: $padding-default / 4;
+}
+
+.heading {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.bold {
+    font-weight: $font-weight-bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.thin {
+    font-weight: $font-weight-thin;
+}
+
+.light {
+    font-weight: $font-weight-light;
+}
+
+.regular {
+    font-weight: $font-weight-regular;
+}
+
+.extra-bold {
+    font-weight: $font-weight-extra-bold;
+}
+
+.inactive {
+    text-decoration: line-through;
+    color: lighten($html-text-color, 8%);
+    font-weight: $font-weight-light;
+}
+
+.accent {
+    color: $color-accent;
+}
+
+.transform-none {
+    text-transform: none;
+}
+
+.region {
+    margin-top: $region-margin-top;
+}
+
+.region-half {
+    margin-top: $region-margin-top / 2;
+}
+
+small {
+    font-size: 12px;
+}
+
+.text-xl {
+    font-size: $font-size-extra-large;
+}
+
+.list-inline {
+    li {
+        display: inline-block;
+    }
+}
+
+.visible-block {
+    display: block!important;
+    visibility: visible!important;
+}
+
+.visible-cell {
+    display: table-cell!important;
+    visibility: visible!important;
+}
+
+.align-middle {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+.tab-content .tab-pane {
+    position: relative;
+}
+
+.row-responsive {
+    @media (max-width: $grid-float-breakpoint) {
+        .col + .col {
+            margin-top: $padding-default;
+        }
+    }
+}
+
+/* 3.2 Backgrounds and overlay */
+@each $i, $color in $color-scheme {
+    &.bg-#{$i} {
+        background-color: $color;
+
+        @for $a from 1 through 9 {
+            &.alpha-#{$a} {
+                background-color: rgba($color, ($a*10/100));
+            }
+        }
+    }
+}
+
+.overlay {
+    position: relative;
+    height: 100%;
+
+    &:before {
+        display: none;
+    }
+
+    &:after, &:before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0;
+        height: 100%; width: 100%;
+        z-index: 0;
+
+        background-color: rgba($overlay-default, 0.6);
+    }
+
+    .container {
+        z-index: 1;
+    }
+}
+
+.page-loader {
+    .overlay {
+        height: 100%;
+        min-height: 100%;
+    }
+}
+
+.new-line {
+    display: block;
+    margin-top: 10px;
+}
+
+@each $c, $color in $color-scheme {
+    &.overlay-#{$c} {
+        &:after, &:before {
+            background-color: rgba($color, (50/100));
+        }
+
+        @for $a from 1 through 9 {
+            &.alpha-#{$a} {
+                &:after, &:before {
+                    background-color: rgba($color, ($a*10/100));
+                }
+            }
+        }
+    }
+}
+
+.dotted {
+    &:after {
+        background-image: url("../img/overlay/dots.png");
+    }
+}
+
+.squared {
+    &:after {
+        background-image: url("../img/overlay/grid.png");
+    }
+}
+
+.half-bg {
+    .overlay {
+        &:after, &:before {
+            width: 50%;
+        }
+    }
+
+    &:before {
+        content: '';
+        display: block;
+        height: 100%;
+        width: 50%;
+        right: 0;
+        position: absolute;
+        z-index: 0;
+    }
+
+    &.left {
+        &:before {
+            left: 0;
+        }
+    }
+
+    &.right {
+        .overlay {
+            &:after {
+                left: 50%;
+            }
+        }
+
+        &:before {
+            left: auto;
+        }
+    }
+
+    @media (max-width: $screen-sm-max) { /* 991px */
+        &.half-bg-md {
+            &:before {
+                content: none;
+            }
+
+            .overlay {
+                &:after {
+                    content: none;
+                }
+            }
+        }
+    }
+
+    @media (max-width: $screen-xs-max) { /* 767px */
+        &.half-bg-sm {
+            .overlay {
+                &:after {
+                    content: none;
+                }
+            }
+
+            &:before {
+                content: none;
+            }
+
+            /*&.right {
+                .overlay {
+                    &:after {
+                        left: 0;
+                    }
+                }
+            }*/
+        }
+    }
+}
+
+.dark-bg {
+    &, h1, h2, h3, h4, h5, h6 {
+        color: $text-color-light !important;
+    }
+
+    .corners,
+    &.corners {
+        &:before,
+        &:after {
+            border-color: $text-color-light;
+        }
+    }
+
+    .inactive {
+        color: lighten($text-color-light, 3%);
+    }
+}
+
+.light-bg {
+    &, h1, h2, h3, h4, h5, h6, p {
+        color: $text-color-dark !important;
+    }
+}
+
+.corners {
+    position: relative;
+    padding: 30px;
+
+    &:before,
+    &:after {
+        position: absolute;
+        transition: all .3s;
+        content: '';
+        z-index: 1;
+        height: 30px;
+        width: 30px;
+        border: 3px solid $border-color-default;
+    }
+
+    &:before {
+        border-bottom: none;
+        border-right: none;
+        top: 0;
+        left: 0;
+    }
+
+    &:after {
+        border-top: none;
+        border-left: none;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.center-vblock {
+    position: relative;
+    display: inline-block;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+[data-scroll-reveal] {
+    visibility: hidden;
+}
+
+[data-toggle="popover"] {
+    border-bottom: 1px dotted $border-color-default;
+    color: $html-text-color;
+
+    &.wicon {
+        &:after {
+            font-family: $font-family-icons;
+            content: "\f44c";
+        }
+    }
+}
+
+@media (max-width: $screen-xs-max) {
+    .region {
+        margin-top: $region-margin-top / 2;
+    }
+}

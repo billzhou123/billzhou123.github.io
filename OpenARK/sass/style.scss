@@ -1,0 +1,121 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * Title:   Next, App Landing Page - Main CSS file
+ * Author:  http://themeforest.net/user/5studios | www.5studios.net
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[ TABLE OF CONTENTS ]
+
+1. BASE STYLES
+2. PAGE LOADER
+3. GENERAL CONTENT STYLES
+    3.1 - Global styles
+    3.2 - Backgrounds & overlays
+    3.3 - Mockups
+    3.4 - Wiget
+    3.5 - Icons
+4. FORMS
+    4.1 - Form controls
+    4.2 - Buttons
+5. INTERFACE COMPONENTS
+    5.1 - Navbar
+    5.2 - Tabs
+    5.3 - Accordions
+    5.4 - Modals
+6. HEADER VARIATIONS
+    6.1 - Header base styles
+    6.2 - Mockup slider
+    6.3 - Static image
+    6.4 - Tour video preview
+    6.5 - Promo
+    6.6 - CSS Slider
+    6.7 - Splash
+7. PAGE SECTIONS
+    7.1 - Section general styles
+    7.2 - About
+    7.3 - Clients
+    7.4 - Download
+    7.5 - Overview
+    7.6 - Features
+    7.7 - Testimonials
+    7.8 - Started
+    7.9 - Desktop
+    7.10 - Video general styles
+    7.11 - Video full width
+    7.12 - Process styles
+    7.13 - Process arrow
+    7.14 - Process circles
+    7.15 - Screenshots slider
+    7.16 - Pricing table
+    7.17 - Fullslider pricing table
+    7.18 - Pricing table boxed
+    7.19 - Contact form
+    7.20 - Contact form image
+    7.21 - Short info
+    7.22 - FAQs
+8. FOOTER
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+// Import page styles. Do not remove these references.
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "style/variables";
+@import "style/mixins";
+@import "style/animations";
+
+// Import styles
+@import "style/base";
+
+@import "style/loader";
+
+@import "style/content";
+@import "style/mockup";
+@import "style/widget";
+@import "style/icons";
+
+@import "style/forms";
+@import "style/buttons";
+
+@import "style/navbar";
+@import "style/tabs";
+@import "style/accordions";
+@import "style/modals";
+
+@import "style/header/header";
+@import "style/header/mkslider";
+@import "style/header/image";
+@import "style/header/tour";
+@import "style/header/promo";
+@import "style/header/slider";
+@import "style/header/splash";
+
+@import "style/section/section";
+@import "style/section/about";
+@import "style/section/clients";
+@import "style/section/download";
+@import "style/section/overview";
+@import "style/section/features";
+@import "style/section/testimonials";
+@import "style/section/started";
+@import "style/section/desktop";
+
+@import "style/video/video";
+@import "style/video/fullwidth";
+
+@import "style/process/process";
+@import "style/process/arrow";
+@import "style/process/circles";
+
+@import "style/screenshots/slider";
+
+@import "style/pricing/pricing";
+@import "style/pricing/fullslider";
+@import "style/pricing/boxslider";
+
+@import "style/contact/contact";
+@import "style/contact/bgimage";
+@import "style/short";
+@import "style/section/faqs";
+
+@import "style/footer";
+
+@import "style/demo";

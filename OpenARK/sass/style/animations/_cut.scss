@@ -1,0 +1,73 @@
+@include cut(slide-left, 100vw);
+@include cut(slide-left-btn, 150vw);
+
+.header-site {
+    .cut {
+        h1 {
+            position: relative;
+            opacity: 1;
+            color: transparent;
+
+            span {
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 50%;
+                left: 0;
+                overflow: hidden;
+                color: $header-content-color;
+
+                &:first-of-type {
+                    top: 0;
+                    animation-delay: .4s;
+                }
+
+                &:last-of-type {
+                    bottom: 0;
+                }
+
+                &:first-of-type:before,
+                &:last-of-type:after {
+                    content: attr(data-content);
+                    position: absolute;
+                    width: 100%;
+                    left: 0;
+                    color: $header-content-color;
+                }
+
+                &:first-of-type:before {
+                    top: 0;
+                }
+
+                &:last-of-type:after {
+                    bottom: 0;
+                }
+            }
+        }
+
+        .btn {
+            margin-right: 0;
+            border-radius: 0;
+        }
+
+        h1 span,
+        p,
+        .btn {
+            animation-duration: .6s;
+        }
+
+        h1 span,
+        p {
+            animation-name: slide-left;
+        }
+
+        p {
+            animation-delay: .5s;
+        }
+
+        .btn {
+            animation-name: slide-left-btn;
+            animation-delay: .55s;
+        }
+    }
+}

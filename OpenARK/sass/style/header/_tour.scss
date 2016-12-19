@@ -1,0 +1,338 @@
+/* 6.4 Tour video preview ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.header-preview {
+    &:before {
+        background-image: url("../img/header/bg/4.jpg");
+    }
+
+    .overlay {
+        &:after {
+            transition: all .3s;
+        }
+    }
+
+    .btn {
+        display: inline-block;
+    }
+
+    .intro,
+    .video-tour {
+        transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .video-tour {
+        position: absolute;
+        top: 50%;
+        margin: 0 auto 0 $padding-default;
+        width: 100%;
+        transform: translateX(50%) translateY(-50%);
+
+        @media (min-width: $screen-md-min) {
+            margin: 0 auto 0 ($padding-default*3);
+        }
+    }
+
+    .video-slides {
+        list-style: none;
+        height: 100%;
+        width: 100%;
+
+        li {
+            position: absolute;
+            top: 50%;
+            transform: translateX(100%) translateY(-50%);
+            left: 0;
+            text-align: left;
+            border-top: none;
+            padding: 0;
+            opacity: 0;
+            width: 100%;
+            transition: opacity .3s ease-in, transform .5s ease-in;
+
+            &:first-of-type,
+            &.active {
+                opacity: 1;
+                transform: translateX(0) translateY(-50%);
+            }
+        }
+
+        h2 {
+            font-weight: $font-weight-thin;
+        }
+    }
+
+    .slider-nav {
+        transition: opacity .3s;
+        opacity: 0;
+        min-height: $navbar-min-height;
+        height: $navbar-min-height;
+        background-color: $navbar-bottom-background-color;
+        position: absolute;
+        bottom: 0;
+        margin: 0;
+        width: 100%;
+        border-radius: 0;
+
+        li {
+            span {
+                display: block;
+                font-family: $button-font-family;
+                font-size: $button-font-size;
+                font-weight: $font-weight-bold;
+                transition: all 0.3s ease 0s;
+                letter-spacing: 1.5px;
+                text-transform: uppercase;
+                padding: 45px 30px 22px 30px;
+                color: $navbar-bottom-text-color;
+
+                i {
+                    display: block;
+                    color: $navbar-bottom-icon-color;
+                    font-size: $font-size-base * 1.5;
+                    margin-top: -28px;
+                    margin-bottom: 10px;
+                }
+            }
+
+            &.active, &:hover {
+                cursor: pointer;
+                background-color: lighten($navbar-bottom-background-color, 8%);
+
+                span {
+                    color: $navbar-hover-color;
+                }
+            }
+        }
+    }
+
+    .video-content,
+    .video-desc {
+        position: relative;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .video-content {
+        padding-top: 0;
+        width: 41.66%;
+        float: left;
+        margin-top: 60px;
+
+        > div {
+            display: inline-block;
+            max-width: 100%;
+            max-height: 100%;
+            position: relative;
+        }
+    }
+
+    .video-desc {
+        padding-top: 0;
+        opacity: 0;
+        transition: transform 0.3s, opacity 0.3s;
+        width: 58.33%;
+        float: right;
+
+        @media (min-width: $screen-md-min) {
+            padding-top: $padding-default;
+        }
+    }
+
+    .phone-frame {
+        box-sizing: content-box;
+        position: absolute;
+        top: -45px;
+        left: -10px;
+        width: 100%;
+        height: 100%;
+        border-color: $header-tour-phone-bg-color;
+        border-style: solid;
+        border-width: 45px 10px;
+        border-radius: 2em;
+        backface-visibility: hidden;
+        box-shadow: 0 0 3px 1px rgba(255,255,255,0.4);
+
+        &:after, &:before {
+            @include center_x();
+            content: '';
+            position: absolute;
+            backface-visibility: hidden;
+            background-color: darken($header-tour-phone-bg-color, 10%);
+            border-radius: 50%;
+        }
+
+        &:before {
+            height: 11px;
+            width: 11px;
+            top: -28px;
+        }
+
+        &:after {
+            height: 31px;
+            width: 31px;
+            bottom: -38px;
+        }
+    }
+
+    .landscape {
+        .phone-frame,
+        .video-wrapper {
+            transform: rotate(90deg);
+        }
+    }
+
+    .video-wrapper {
+        position: relative;
+        overflow: hidden;
+        z-index: 2;
+
+        img, video {
+            height: $header-tour-content-height;
+            width: $header-tour-content-width;
+        }
+
+        img {
+            opacity: 1;
+            max-width: 100%;
+            transition: transform 0.3s;
+            transform: translateZ(0);
+        }
+
+        video {
+            opacity: 0;
+            display: none;
+        }
+    }
+
+    &.tour-started {
+        .intro {
+            opacity: 0;
+            transform: translateY(-50%) translateX(-50%);
+        }
+
+        .slider-nav {
+            opacity: 1;
+        }
+
+        .video-tour {
+            transform: translateY(-50%) translateX(0);
+            margin: 0 auto;
+        }
+
+        .video-slides {
+            li:not(.active) {
+                &:first-of-type {
+                    opacity: 0;
+                }
+            }
+        }
+
+        .video-desc {
+            opacity: 1;
+        }
+
+        .video-wrapper {
+            img {
+                //display: none;
+                opacity: 0;
+            }
+
+            video {
+                //display: block;
+                opacity: 1;
+            }
+        }
+
+        .overlay {
+            &:after {
+                background-color: rgba(11,11,11,0.95);
+            }
+        }
+    }
+
+    // If you change this, also make sure to change it on JS - find "#start-tour" reference
+    @media (min-width: $grid-float-breakpoint) {
+        .video-wrapper {
+            video {
+                display: block;
+                position: absolute;
+                height: $header-tour-content-height;
+                width: $header-tour-content-width;
+                left: 50%;
+                top: 50%;
+                bottom: auto;
+                right: auto;
+                z-index: 1;
+
+                transition: transform 0.3s;
+                transform: translateZ(0);
+                transform: translateX(-50%) translateY(-50%);
+            }
+        }
+    }
+
+    @media (min-width: $screen-lg-min) and (min-height: $screen-header-mk-clean) {
+        .video-wrapper {
+            img, video {
+                height: $header-tour-content-lg-height;
+                width: $header-tour-content-lg-width;
+            }
+        }
+    }
+
+    @media (max-width: $grid-float-breakpoint-max) {
+        height: auto;
+
+        &.blurred {
+            &:before {
+                position: fixed;
+            }
+        }
+
+        .intro {
+            transform: translateY(0);
+        }
+
+        .overlay {
+            position: relative !important;
+        }
+
+        .col {
+            width: 100%;
+        }
+
+        .video-tour {
+            margin: 30px 0 90px 0;
+            position: relative;
+            transform: translate(0,0);
+        }
+
+        .video-content,
+        .video-desc {
+            width: 100%;
+            float: none;
+        }
+
+        .video-desc {
+            opacity: 1;
+            margin: 90px 0 90px 0;
+        }
+
+        .video-slides {
+            width: 100%;
+            padding: 0;
+
+            li {
+                text-align: center;
+
+                &,
+                &:first-of-type,
+                &.active {
+                    position: relative;
+                    opacity: 1;
+                    transform: translateX(0) translateY(0);
+                }
+            }
+        }
+    }
+}
