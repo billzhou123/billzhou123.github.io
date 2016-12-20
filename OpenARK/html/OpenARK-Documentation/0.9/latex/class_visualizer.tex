@@ -1,0 +1,191 @@
+\hypertarget{class_visualizer}{}\section{Visualizer Class Reference}
+\label{class_visualizer}\index{Visualizer@{Visualizer}}
+
+
+Utility class containing various conversions and visualization techniques.  
+
+
+
+
+{\ttfamily \#include $<$Visualizer.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static cv\+::\+Mat \hyperlink{class_visualizer_a24caf117be9878e2f5ad35cabb7f4f88}{visualize\+X\+Y\+Z\+Map} (cv\+::\+Mat \&xyz\+Map)
+\begin{DoxyCompactList}\small\item\em Visualization for xyz\+Map. \end{DoxyCompactList}\item 
+static cv\+::\+Mat \hyperlink{class_visualizer_aa4436945eb7f9220b55d46914e8c5005}{visualize\+Hand} (cv\+::\+Mat xyz\+Map, cv\+::\+Point2i finger, cv\+::\+Point2i centroid)
+\begin{DoxyCompactList}\small\item\em Visualization for hand object. \end{DoxyCompactList}\item 
+static void \hyperlink{class_visualizer_af65e36aaef7c1f60d0f79819f17707d7}{visualize\+Cloud} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud)
+\begin{DoxyCompactList}\small\item\em Visualization for P\+CL point cloud. \end{DoxyCompactList}\item 
+static void \hyperlink{class_visualizer_a82702715f2ac30e555ccad3339375bf8}{visulize\+Polygon\+Mesh} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud)
+\begin{DoxyCompactList}\small\item\em Visualization for polygon mesh. \end{DoxyCompactList}\item 
+static cv\+::\+Mat \hyperlink{class_visualizer_a448063633391ee4ae2af595fe760aab0}{visualize\+Plane\+Regression} (cv\+::\+Mat \&input\+\_\+mat, std\+::vector$<$ double $>$ \&equation, const double threshold, bool clicked=false)
+\begin{DoxyCompactList}\small\item\em Visualization for plane regression. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static cv\+::\+Mat \hyperlink{class_visualizer_a1ed923a0bdac0f3328af7aceb4d85e0e}{visualize\+Matrix} (cv\+::\+Mat \&input)
+\begin{DoxyCompactList}\small\item\em Visualization for a generic matrix. \end{DoxyCompactList}\item 
+static cv\+::\+Mat \hyperlink{class_visualizer_a5af40bebe3119c1d605351f42d2d8b95}{visualize\+Depth\+Map} (cv\+::\+Mat \&depth\+Map)
+\begin{DoxyCompactList}\small\item\em Visualization for a depth map matrix (i,j,z). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static pcl\+::visualization\+::\+P\+C\+L\+Visualizer \hyperlink{class_visualizer_a82cad28f5c39579414f73bda01d11000}{viewer} = pcl\+::visualization\+::\+P\+C\+L\+Visualizer(\char`\"{}Point Cloud\char`\"{})
+\begin{DoxyCompactList}\small\item\em P\+CL point cloud viewer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Utility class containing various conversions and visualization techniques. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_visualizer_af65e36aaef7c1f60d0f79819f17707d7}{}\label{class_visualizer_af65e36aaef7c1f60d0f79819f17707d7} 
+\index{Visualizer@{Visualizer}!visualize\+Cloud@{visualize\+Cloud}}
+\index{visualize\+Cloud@{visualize\+Cloud}!Visualizer@{Visualizer}}
+\subsubsection{\texorpdfstring{visualize\+Cloud()}{visualizeCloud()}}
+{\footnotesize\ttfamily void Visualizer\+::visualize\+Cloud (\begin{DoxyParamCaption}\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr}]{cloud }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Visualization for P\+CL point cloud. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cloud} & P\+CL point cloud to be visualized \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_visualizer_a5af40bebe3119c1d605351f42d2d8b95}{}\label{class_visualizer_a5af40bebe3119c1d605351f42d2d8b95} 
+\index{Visualizer@{Visualizer}!visualize\+Depth\+Map@{visualize\+Depth\+Map}}
+\index{visualize\+Depth\+Map@{visualize\+Depth\+Map}!Visualizer@{Visualizer}}
+\subsubsection{\texorpdfstring{visualize\+Depth\+Map()}{visualizeDepthMap()}}
+{\footnotesize\ttfamily cv\+::\+Mat Visualizer\+::visualize\+Depth\+Map (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{depth\+Map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Visualization for a depth map matrix (i,j,z). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em depth\+Map} & matrix to be visualized \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a C\+V\+\_\+8\+U\+C3 representation of the input matrix 
+\end{DoxyReturn}
+\hypertarget{class_visualizer_aa4436945eb7f9220b55d46914e8c5005}{}\label{class_visualizer_aa4436945eb7f9220b55d46914e8c5005} 
+\index{Visualizer@{Visualizer}!visualize\+Hand@{visualize\+Hand}}
+\index{visualize\+Hand@{visualize\+Hand}!Visualizer@{Visualizer}}
+\subsubsection{\texorpdfstring{visualize\+Hand()}{visualizeHand()}}
+{\footnotesize\ttfamily cv\+::\+Mat Visualizer\+::visualize\+Hand (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{xyz\+Map,  }\item[{cv\+::\+Point2i}]{finger,  }\item[{cv\+::\+Point2i}]{centroid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Visualization for hand object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em xyz\+Map} & the base image to draw on \\
+\hline
+\mbox{\tt in}  & {\em finger} & (i,j) coordinates of the finger \\
+\hline
+\mbox{\tt in}  & {\em centroid} & (i,j) coordinates of the centroid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a C\+V\+\_\+8\+U\+C3 matrix with the hand points drawn 
+\end{DoxyReturn}
+\hypertarget{class_visualizer_a1ed923a0bdac0f3328af7aceb4d85e0e}{}\label{class_visualizer_a1ed923a0bdac0f3328af7aceb4d85e0e} 
+\index{Visualizer@{Visualizer}!visualize\+Matrix@{visualize\+Matrix}}
+\index{visualize\+Matrix@{visualize\+Matrix}!Visualizer@{Visualizer}}
+\subsubsection{\texorpdfstring{visualize\+Matrix()}{visualizeMatrix()}}
+{\footnotesize\ttfamily cv\+::\+Mat Visualizer\+::visualize\+Matrix (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Visualization for a generic matrix. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input} & matrix to be visualized \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a C\+V\+\_\+8\+U\+C3 representation of the input matrix 
+\end{DoxyReturn}
+\hypertarget{class_visualizer_a448063633391ee4ae2af595fe760aab0}{}\label{class_visualizer_a448063633391ee4ae2af595fe760aab0} 
+\index{Visualizer@{Visualizer}!visualize\+Plane\+Regression@{visualize\+Plane\+Regression}}
+\index{visualize\+Plane\+Regression@{visualize\+Plane\+Regression}!Visualizer@{Visualizer}}
+\subsubsection{\texorpdfstring{visualize\+Plane\+Regression()}{visualizePlaneRegression()}}
+{\footnotesize\ttfamily cv\+::\+Mat Visualizer\+::visualize\+Plane\+Regression (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{input\+\_\+mat,  }\item[{std\+::vector$<$ double $>$ \&}]{equation,  }\item[{const double}]{threshold,  }\item[{bool}]{clicked = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Visualization for plane regression. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input\+\_\+mat} & the base xyz\+Map on which to draw the visualization \\
+\hline
+\mbox{\tt in}  & {\em equation} & equation of the plane \\
+\hline
+ & {\em threshold} & maximum error distance (mm) allowed for points to be considered covered by regression equation \\
+\hline
+ & {\em clicked} & whether the finger is currently current contacting the regression equation. Default is F\+A\+L\+SE \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a C\+V\+\_\+8\+U\+C3 representation of the matrix with the regression plane drawn 
+\end{DoxyReturn}
+\hypertarget{class_visualizer_a24caf117be9878e2f5ad35cabb7f4f88}{}\label{class_visualizer_a24caf117be9878e2f5ad35cabb7f4f88} 
+\index{Visualizer@{Visualizer}!visualize\+X\+Y\+Z\+Map@{visualize\+X\+Y\+Z\+Map}}
+\index{visualize\+X\+Y\+Z\+Map@{visualize\+X\+Y\+Z\+Map}!Visualizer@{Visualizer}}
+\subsubsection{\texorpdfstring{visualize\+X\+Y\+Z\+Map()}{visualizeXYZMap()}}
+{\footnotesize\ttfamily cv\+::\+Mat Visualizer\+::visualize\+X\+Y\+Z\+Map (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{xyz\+Map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Visualization for xyz\+Map. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em xyz\+Map} & input point cloud matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a C\+V\+\_\+8\+U\+C3 representation of the xyz\+Map 
+\end{DoxyReturn}
+\hypertarget{class_visualizer_a82702715f2ac30e555ccad3339375bf8}{}\label{class_visualizer_a82702715f2ac30e555ccad3339375bf8} 
+\index{Visualizer@{Visualizer}!visulize\+Polygon\+Mesh@{visulize\+Polygon\+Mesh}}
+\index{visulize\+Polygon\+Mesh@{visulize\+Polygon\+Mesh}!Visualizer@{Visualizer}}
+\subsubsection{\texorpdfstring{visulize\+Polygon\+Mesh()}{visulizePolygonMesh()}}
+{\footnotesize\ttfamily void Visualizer\+::visulize\+Polygon\+Mesh (\begin{DoxyParamCaption}\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr}]{cloud }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Visualization for polygon mesh. 
+
+Visualize a P\+CL point cloud as a polygon mesh 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cloud} & P\+CL point cloud to be visualized \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_visualizer_a82cad28f5c39579414f73bda01d11000}{}\label{class_visualizer_a82cad28f5c39579414f73bda01d11000} 
+\index{Visualizer@{Visualizer}!viewer@{viewer}}
+\index{viewer@{viewer}!Visualizer@{Visualizer}}
+\subsubsection{\texorpdfstring{viewer}{viewer}}
+{\footnotesize\ttfamily pcl\+::visualization\+::\+P\+C\+L\+Visualizer Visualizer\+::viewer = pcl\+::visualization\+::\+P\+C\+L\+Visualizer(\char`\"{}Point Cloud\char`\"{})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+P\+CL point cloud viewer. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_visualizer_8h}{Visualizer.\+h}\item 
+\hyperlink{_visualizer_8cpp}{Visualizer.\+cpp}\end{DoxyCompactItemize}

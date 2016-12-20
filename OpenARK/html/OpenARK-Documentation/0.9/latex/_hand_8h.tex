@@ -1,0 +1,71 @@
+\hypertarget{_hand_8h}{}\section{Hand.\+h File Reference}
+\label{_hand_8h}\index{Hand.\+h@{Hand.\+h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$complex$>$}\newline
+{\ttfamily \#include $<$opencv/cxcore.\+h$>$}\newline
+{\ttfamily \#include $<$opencv/highgui.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}opencv2/highgui/highgui.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$opencv2/video/tracking.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}opencv2/imgproc/imgproc.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$opencv2/objdetect/objdetect.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/features2d/features2d.\+hpp$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcurve}{curve}
+\begin{DoxyCompactList}\small\item\em Data structured used to store the contours of the hand. \end{DoxyCompactList}\item 
+class \hyperlink{class_hand}{Hand}
+\begin{DoxyCompactList}\small\item\em Class representing a hand object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{_hand_8h_a09aba2c57882d4797e4d8c4acd149c70}{E\+D\+G\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD} = 10
+\item 
+static const int \hyperlink{_hand_8h_ae12b8d82e4eb35d8bd8cca49ba677eac}{A\+R\+C\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD} = 1
+\item 
+static const int \hyperlink{_hand_8h_abb420e0dd9c0e74d045b5199bf1a3f13}{D\+I\+S\+J\+O\+I\+N\+T\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD} = 1
+\item 
+static const double \hyperlink{_hand_8h_a3b5b55a68ef609ec5b22618d436b9f35}{A\+N\+G\+L\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD} = 0.\+1
+\item 
+static const int \hyperlink{_hand_8h_a7893cd55c6951c3b079134d8c56c200b}{C\+I\+R\+C\+L\+E\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+D\+I\+S\+T\+A\+N\+CE} = 10
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\hypertarget{_hand_8h_a3b5b55a68ef609ec5b22618d436b9f35}{}\label{_hand_8h_a3b5b55a68ef609ec5b22618d436b9f35} 
+\index{Hand.\+h@{Hand.\+h}!A\+N\+G\+L\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD@{A\+N\+G\+L\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}}
+\index{A\+N\+G\+L\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD@{A\+N\+G\+L\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}!Hand.\+h@{Hand.\+h}}
+\subsubsection{\texorpdfstring{A\+N\+G\+L\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}{ANGLE\_THRESHOLD}}
+{\footnotesize\ttfamily const double A\+N\+G\+L\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD = 0.\+1\hspace{0.3cm}{\ttfamily [static]}}
+
+\hypertarget{_hand_8h_ae12b8d82e4eb35d8bd8cca49ba677eac}{}\label{_hand_8h_ae12b8d82e4eb35d8bd8cca49ba677eac} 
+\index{Hand.\+h@{Hand.\+h}!A\+R\+C\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD@{A\+R\+C\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}}
+\index{A\+R\+C\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD@{A\+R\+C\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}!Hand.\+h@{Hand.\+h}}
+\subsubsection{\texorpdfstring{A\+R\+C\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}{ARC\_THRESHOLD}}
+{\footnotesize\ttfamily const int A\+R\+C\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+\hypertarget{_hand_8h_a7893cd55c6951c3b079134d8c56c200b}{}\label{_hand_8h_a7893cd55c6951c3b079134d8c56c200b} 
+\index{Hand.\+h@{Hand.\+h}!C\+I\+R\+C\+L\+E\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+D\+I\+S\+T\+A\+N\+CE@{C\+I\+R\+C\+L\+E\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+D\+I\+S\+T\+A\+N\+CE}}
+\index{C\+I\+R\+C\+L\+E\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+D\+I\+S\+T\+A\+N\+CE@{C\+I\+R\+C\+L\+E\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+D\+I\+S\+T\+A\+N\+CE}!Hand.\+h@{Hand.\+h}}
+\subsubsection{\texorpdfstring{C\+I\+R\+C\+L\+E\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+D\+I\+S\+T\+A\+N\+CE}{CIRCLE\_SEARCH\_DISTANCE}}
+{\footnotesize\ttfamily const int C\+I\+R\+C\+L\+E\+\_\+\+S\+E\+A\+R\+C\+H\+\_\+\+D\+I\+S\+T\+A\+N\+CE = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\hypertarget{_hand_8h_abb420e0dd9c0e74d045b5199bf1a3f13}{}\label{_hand_8h_abb420e0dd9c0e74d045b5199bf1a3f13} 
+\index{Hand.\+h@{Hand.\+h}!D\+I\+S\+J\+O\+I\+N\+T\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD@{D\+I\+S\+J\+O\+I\+N\+T\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}}
+\index{D\+I\+S\+J\+O\+I\+N\+T\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD@{D\+I\+S\+J\+O\+I\+N\+T\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}!Hand.\+h@{Hand.\+h}}
+\subsubsection{\texorpdfstring{D\+I\+S\+J\+O\+I\+N\+T\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}{DISJOINT\_THRESHOLD}}
+{\footnotesize\ttfamily const int D\+I\+S\+J\+O\+I\+N\+T\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+\hypertarget{_hand_8h_a09aba2c57882d4797e4d8c4acd149c70}{}\label{_hand_8h_a09aba2c57882d4797e4d8c4acd149c70} 
+\index{Hand.\+h@{Hand.\+h}!E\+D\+G\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD@{E\+D\+G\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}}
+\index{E\+D\+G\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD@{E\+D\+G\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}!Hand.\+h@{Hand.\+h}}
+\subsubsection{\texorpdfstring{E\+D\+G\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}{EDGE\_THRESHOLD}}
+{\footnotesize\ttfamily const int E\+D\+G\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD = 10\hspace{0.3cm}{\ttfamily [static]}}
+

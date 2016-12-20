@@ -1,0 +1,126 @@
+\hypertarget{class_u_d_p_sender}{}\section{U\+D\+P\+Sender Class Reference}
+\label{class_u_d_p_sender}\index{U\+D\+P\+Sender@{U\+D\+P\+Sender}}
+
+
+U\+DP client.  
+
+
+
+
+{\ttfamily \#include $<$U\+D\+P\+Sender.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_d_p_sender_a77c0f2eb66dbc9a912b4fede20de3f03}{U\+D\+P\+Sender} ()
+\begin{DoxyCompactList}\small\item\em Constructs a new U\+PD sender. \end{DoxyCompactList}\item 
+int \hyperlink{class_u_d_p_sender_a33d402a42a2d512bd12189e1f698cca4}{send} (std\+::string \hyperlink{class_u_d_p_sender_a738a29b72c2c7fe5655e74cd4ee0e077}{message})
+\begin{DoxyCompactList}\small\item\em Sends a message. \end{DoxyCompactList}\item 
+int \hyperlink{class_u_d_p_sender_a9633801c0b923a53d42061f2233d06ef}{close} ()
+\begin{DoxyCompactList}\small\item\em Close the current connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct sockaddr\+\_\+in \hyperlink{class_u_d_p_sender_abeda008425d14ea8092d23d23bbd1117}{si\+\_\+other}
+\item 
+int \hyperlink{class_u_d_p_sender_aeb3773ffb3bc9549dbe73c0e7fee0f23}{s}
+\item 
+int \hyperlink{class_u_d_p_sender_a44e4545b002409e774edb7e30653d53e}{slen} = sizeof(\hyperlink{class_u_d_p_sender_abeda008425d14ea8092d23d23bbd1117}{si\+\_\+other})
+\item 
+char \hyperlink{class_u_d_p_sender_a21073b873007a83ac5bec30bcce8fd43}{buf} \mbox{[}\hyperlink{_u_d_p_sender_8h_ad974fe981249f5e84fbf1683b012c9f8}{B\+U\+F\+L\+EN}\mbox{]}
+\item 
+char \hyperlink{class_u_d_p_sender_a738a29b72c2c7fe5655e74cd4ee0e077}{message} \mbox{[}\hyperlink{_u_d_p_sender_8h_ad974fe981249f5e84fbf1683b012c9f8}{B\+U\+F\+L\+EN}\mbox{]}
+\item 
+W\+S\+A\+D\+A\+TA \hyperlink{class_u_d_p_sender_afc9fc0d12ba056af8f66ee738c5bbe98}{wsa}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+U\+DP client. 
+
+Used to communicate information with game engines such as Unity 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_u_d_p_sender_a77c0f2eb66dbc9a912b4fede20de3f03}{}\label{class_u_d_p_sender_a77c0f2eb66dbc9a912b4fede20de3f03} 
+\index{U\+D\+P\+Sender@{U\+D\+P\+Sender}!U\+D\+P\+Sender@{U\+D\+P\+Sender}}
+\index{U\+D\+P\+Sender@{U\+D\+P\+Sender}!U\+D\+P\+Sender@{U\+D\+P\+Sender}}
+\subsubsection{\texorpdfstring{U\+D\+P\+Sender()}{UDPSender()}}
+{\footnotesize\ttfamily U\+D\+P\+Sender\+::\+U\+D\+P\+Sender (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a new U\+PD sender. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_u_d_p_sender_a9633801c0b923a53d42061f2233d06ef}{}\label{class_u_d_p_sender_a9633801c0b923a53d42061f2233d06ef} 
+\index{U\+D\+P\+Sender@{U\+D\+P\+Sender}!close@{close}}
+\index{close@{close}!U\+D\+P\+Sender@{U\+D\+P\+Sender}}
+\subsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily int U\+D\+P\+Sender\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Close the current connection. 
+
+\hypertarget{class_u_d_p_sender_a33d402a42a2d512bd12189e1f698cca4}{}\label{class_u_d_p_sender_a33d402a42a2d512bd12189e1f698cca4} 
+\index{U\+D\+P\+Sender@{U\+D\+P\+Sender}!send@{send}}
+\index{send@{send}!U\+D\+P\+Sender@{U\+D\+P\+Sender}}
+\subsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily int U\+D\+P\+Sender\+::send (\begin{DoxyParamCaption}\item[{std\+::string}]{message }\end{DoxyParamCaption})}
+
+
+
+Sends a message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & the data to be sent \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_u_d_p_sender_a21073b873007a83ac5bec30bcce8fd43}{}\label{class_u_d_p_sender_a21073b873007a83ac5bec30bcce8fd43} 
+\index{U\+D\+P\+Sender@{U\+D\+P\+Sender}!buf@{buf}}
+\index{buf@{buf}!U\+D\+P\+Sender@{U\+D\+P\+Sender}}
+\subsubsection{\texorpdfstring{buf}{buf}}
+{\footnotesize\ttfamily char U\+D\+P\+Sender\+::buf\mbox{[}\hyperlink{_u_d_p_sender_8h_ad974fe981249f5e84fbf1683b012c9f8}{B\+U\+F\+L\+EN}\mbox{]}}
+
+\hypertarget{class_u_d_p_sender_a738a29b72c2c7fe5655e74cd4ee0e077}{}\label{class_u_d_p_sender_a738a29b72c2c7fe5655e74cd4ee0e077} 
+\index{U\+D\+P\+Sender@{U\+D\+P\+Sender}!message@{message}}
+\index{message@{message}!U\+D\+P\+Sender@{U\+D\+P\+Sender}}
+\subsubsection{\texorpdfstring{message}{message}}
+{\footnotesize\ttfamily char U\+D\+P\+Sender\+::message\mbox{[}\hyperlink{_u_d_p_sender_8h_ad974fe981249f5e84fbf1683b012c9f8}{B\+U\+F\+L\+EN}\mbox{]}}
+
+\hypertarget{class_u_d_p_sender_aeb3773ffb3bc9549dbe73c0e7fee0f23}{}\label{class_u_d_p_sender_aeb3773ffb3bc9549dbe73c0e7fee0f23} 
+\index{U\+D\+P\+Sender@{U\+D\+P\+Sender}!s@{s}}
+\index{s@{s}!U\+D\+P\+Sender@{U\+D\+P\+Sender}}
+\subsubsection{\texorpdfstring{s}{s}}
+{\footnotesize\ttfamily int U\+D\+P\+Sender\+::s}
+
+\hypertarget{class_u_d_p_sender_abeda008425d14ea8092d23d23bbd1117}{}\label{class_u_d_p_sender_abeda008425d14ea8092d23d23bbd1117} 
+\index{U\+D\+P\+Sender@{U\+D\+P\+Sender}!si\+\_\+other@{si\+\_\+other}}
+\index{si\+\_\+other@{si\+\_\+other}!U\+D\+P\+Sender@{U\+D\+P\+Sender}}
+\subsubsection{\texorpdfstring{si\+\_\+other}{si\_other}}
+{\footnotesize\ttfamily struct sockaddr\+\_\+in U\+D\+P\+Sender\+::si\+\_\+other}
+
+\hypertarget{class_u_d_p_sender_a44e4545b002409e774edb7e30653d53e}{}\label{class_u_d_p_sender_a44e4545b002409e774edb7e30653d53e} 
+\index{U\+D\+P\+Sender@{U\+D\+P\+Sender}!slen@{slen}}
+\index{slen@{slen}!U\+D\+P\+Sender@{U\+D\+P\+Sender}}
+\subsubsection{\texorpdfstring{slen}{slen}}
+{\footnotesize\ttfamily int U\+D\+P\+Sender\+::slen = sizeof(\hyperlink{class_u_d_p_sender_abeda008425d14ea8092d23d23bbd1117}{si\+\_\+other})}
+
+\hypertarget{class_u_d_p_sender_afc9fc0d12ba056af8f66ee738c5bbe98}{}\label{class_u_d_p_sender_afc9fc0d12ba056af8f66ee738c5bbe98} 
+\index{U\+D\+P\+Sender@{U\+D\+P\+Sender}!wsa@{wsa}}
+\index{wsa@{wsa}!U\+D\+P\+Sender@{U\+D\+P\+Sender}}
+\subsubsection{\texorpdfstring{wsa}{wsa}}
+{\footnotesize\ttfamily W\+S\+A\+D\+A\+TA U\+D\+P\+Sender\+::wsa}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_u_d_p_sender_8h}{U\+D\+P\+Sender.\+h}\item 
+\hyperlink{_u_d_p_sender_8cpp}{U\+D\+P\+Sender.\+cpp}\end{DoxyCompactItemize}

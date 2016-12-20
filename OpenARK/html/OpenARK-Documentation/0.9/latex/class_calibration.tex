@@ -1,0 +1,112 @@
+\hypertarget{class_calibration}{}\section{Calibration Class Reference}
+\label{class_calibration}\index{Calibration@{Calibration}}
+
+
+Class for various calibration operations.  
+
+
+
+
+{\ttfamily \#include $<$Calibration.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_calibration_a81cb3c8c004042bfd86b6f973b607f67}{X\+Y\+Z\+To\+Unity} (\hyperlink{class_depth_camera}{Depth\+Camera} \&depth\+\_\+cam, int num\+\_\+boards, int board\+\_\+w, int board\+\_\+h)
+\begin{DoxyCompactList}\small\item\em Compute a calibration from (x,y,z) real world coordinates to (x\textquotesingle{},y\textquotesingle{},z\textquotesingle{}) Unity coordinates. \end{DoxyCompactList}\item 
+static void \hyperlink{class_calibration_ae686271805ffbaa32e0d8b796ae8d466}{X\+Y\+Z\+To\+R\+GB} (\hyperlink{class_depth_camera}{Depth\+Camera} $\ast$depth\+\_\+cam, \hyperlink{class_r_g_b_camera}{R\+G\+B\+Camera} $\ast$rgb\+\_\+cam, int num\+\_\+boards, int board\+\_\+w, int board\+\_\+h)
+\begin{DoxyCompactList}\small\item\em Compute a calibration from (x,y,z) real world coordiantes to (i,j) R\+GB camera coordinates. \end{DoxyCompactList}\item 
+static double \hyperlink{class_calibration_ac69c3f4ad6231d799e7b3d644acf1dcf}{reproject\+X\+Y\+Z\+To\+Unity} (std\+::vector$<$ std\+::vector$<$ cv\+::\+Point3f $>$$>$ X\+Y\+Z\+\_\+points, std\+::vector$<$ std\+::vector$<$ cv\+::\+Point3f $>$$>$ Unity\+\_\+points, Eigen\+::\+Matrix\+Xf R, Eigen\+::\+Matrix\+Xf T)
+\begin{DoxyCompactList}\small\item\em Reproject the (x,y,z) points to (x\textquotesingle{},y\textquotesingle{},z\textquotesingle{}) Unity points with the RT matrix to test for error. \end{DoxyCompactList}\item 
+static double \hyperlink{class_calibration_a05a3ca33bf7fb56ddf0c683be667660a}{reproject\+X\+Y\+Zto\+R\+GB} ()
+\begin{DoxyCompactList}\small\item\em Reproject the (x,y,z) points to (i,j) R\+GB image points with the RT matrix to test for error. \end{DoxyCompactList}\item 
+static std\+::vector$<$ std\+::vector$<$ cv\+::\+Point3f $>$ $>$ \hyperlink{class_calibration_af202af5f65e2f7242d29f09760f668d9}{prepare\+Unity\+Data} (std\+::vector$<$ cv\+::\+Point3f $>$ upper\+\_\+left, float distance, int num\+\_\+rows, int num\+\_\+cols)
+\begin{DoxyCompactList}\small\item\em Compute full set of Unity checkboard coordinates. \end{DoxyCompactList}\item 
+static void \hyperlink{class_calibration_acd3adc799a4a9ce12ce1547e989e20a4}{write\+Data\+To\+File} (std\+::vector$<$ std\+::vector$<$ cv\+::\+Point3f $>$$>$ points, int board\+\_\+w, int board\+\_\+h, std\+::string filename)
+\begin{DoxyCompactList}\small\item\em Write calibration data points to file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_calibration_af69876a9c99d1ba8b87054796cf6be3e}{compute\+RT} (cv\+::\+Mat x, cv\+::\+Mat y, cv\+::\+Mat $\ast$R, cv\+::\+Mat $\ast$t)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for various calibration operations. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_calibration_af69876a9c99d1ba8b87054796cf6be3e}{}\label{class_calibration_af69876a9c99d1ba8b87054796cf6be3e} 
+\index{Calibration@{Calibration}!compute\+RT@{compute\+RT}}
+\index{compute\+RT@{compute\+RT}!Calibration@{Calibration}}
+\subsubsection{\texorpdfstring{compute\+R\+T()}{computeRT()}}
+{\footnotesize\ttfamily void Calibration\+::compute\+RT (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{x,  }\item[{cv\+::\+Mat}]{y,  }\item[{cv\+::\+Mat $\ast$}]{R,  }\item[{cv\+::\+Mat $\ast$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\hypertarget{class_calibration_af202af5f65e2f7242d29f09760f668d9}{}\label{class_calibration_af202af5f65e2f7242d29f09760f668d9} 
+\index{Calibration@{Calibration}!prepare\+Unity\+Data@{prepare\+Unity\+Data}}
+\index{prepare\+Unity\+Data@{prepare\+Unity\+Data}!Calibration@{Calibration}}
+\subsubsection{\texorpdfstring{prepare\+Unity\+Data()}{prepareUnityData()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ cv\+::\+Point3f $>$ $>$ Calibration\+::prepare\+Unity\+Data (\begin{DoxyParamCaption}\item[{std\+::vector$<$ cv\+::\+Point3f $>$}]{upper\+\_\+left,  }\item[{float}]{distance,  }\item[{int}]{num\+\_\+rows,  }\item[{int}]{num\+\_\+cols }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compute full set of Unity checkboard coordinates. 
+
+\hypertarget{class_calibration_a05a3ca33bf7fb56ddf0c683be667660a}{}\label{class_calibration_a05a3ca33bf7fb56ddf0c683be667660a} 
+\index{Calibration@{Calibration}!reproject\+X\+Y\+Zto\+R\+GB@{reproject\+X\+Y\+Zto\+R\+GB}}
+\index{reproject\+X\+Y\+Zto\+R\+GB@{reproject\+X\+Y\+Zto\+R\+GB}!Calibration@{Calibration}}
+\subsubsection{\texorpdfstring{reproject\+X\+Y\+Zto\+R\+G\+B()}{reprojectXYZtoRGB()}}
+{\footnotesize\ttfamily double Calibration\+::reproject\+X\+Y\+Zto\+R\+GB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Reproject the (x,y,z) points to (i,j) R\+GB image points with the RT matrix to test for error. 
+
+\hypertarget{class_calibration_ac69c3f4ad6231d799e7b3d644acf1dcf}{}\label{class_calibration_ac69c3f4ad6231d799e7b3d644acf1dcf} 
+\index{Calibration@{Calibration}!reproject\+X\+Y\+Z\+To\+Unity@{reproject\+X\+Y\+Z\+To\+Unity}}
+\index{reproject\+X\+Y\+Z\+To\+Unity@{reproject\+X\+Y\+Z\+To\+Unity}!Calibration@{Calibration}}
+\subsubsection{\texorpdfstring{reproject\+X\+Y\+Z\+To\+Unity()}{reprojectXYZToUnity()}}
+{\footnotesize\ttfamily double Calibration\+::reproject\+X\+Y\+Z\+To\+Unity (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ cv\+::\+Point3f $>$$>$}]{X\+Y\+Z\+\_\+points,  }\item[{std\+::vector$<$ std\+::vector$<$ cv\+::\+Point3f $>$$>$}]{Unity\+\_\+points,  }\item[{Eigen\+::\+Matrix\+Xf}]{R,  }\item[{Eigen\+::\+Matrix\+Xf}]{T }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Reproject the (x,y,z) points to (x\textquotesingle{},y\textquotesingle{},z\textquotesingle{}) Unity points with the RT matrix to test for error. 
+
+\begin{DoxyReturn}{Returns}
+cummulative reprojection error 
+\end{DoxyReturn}
+\hypertarget{class_calibration_acd3adc799a4a9ce12ce1547e989e20a4}{}\label{class_calibration_acd3adc799a4a9ce12ce1547e989e20a4} 
+\index{Calibration@{Calibration}!write\+Data\+To\+File@{write\+Data\+To\+File}}
+\index{write\+Data\+To\+File@{write\+Data\+To\+File}!Calibration@{Calibration}}
+\subsubsection{\texorpdfstring{write\+Data\+To\+File()}{writeDataToFile()}}
+{\footnotesize\ttfamily void Calibration\+::write\+Data\+To\+File (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ cv\+::\+Point3f $>$$>$}]{points,  }\item[{int}]{board\+\_\+w,  }\item[{int}]{board\+\_\+h,  }\item[{std\+::string}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Write calibration data points to file. 
+
+\hypertarget{class_calibration_ae686271805ffbaa32e0d8b796ae8d466}{}\label{class_calibration_ae686271805ffbaa32e0d8b796ae8d466} 
+\index{Calibration@{Calibration}!X\+Y\+Z\+To\+R\+GB@{X\+Y\+Z\+To\+R\+GB}}
+\index{X\+Y\+Z\+To\+R\+GB@{X\+Y\+Z\+To\+R\+GB}!Calibration@{Calibration}}
+\subsubsection{\texorpdfstring{X\+Y\+Z\+To\+R\+G\+B()}{XYZToRGB()}}
+{\footnotesize\ttfamily void Calibration\+::\+X\+Y\+Z\+To\+R\+GB (\begin{DoxyParamCaption}\item[{\hyperlink{class_depth_camera}{Depth\+Camera} $\ast$}]{depth\+\_\+cam,  }\item[{\hyperlink{class_r_g_b_camera}{R\+G\+B\+Camera} $\ast$}]{rgb\+\_\+cam,  }\item[{int}]{num\+\_\+boards,  }\item[{int}]{board\+\_\+w,  }\item[{int}]{board\+\_\+h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compute a calibration from (x,y,z) real world coordiantes to (i,j) R\+GB camera coordinates. 
+
+\hypertarget{class_calibration_a81cb3c8c004042bfd86b6f973b607f67}{}\label{class_calibration_a81cb3c8c004042bfd86b6f973b607f67} 
+\index{Calibration@{Calibration}!X\+Y\+Z\+To\+Unity@{X\+Y\+Z\+To\+Unity}}
+\index{X\+Y\+Z\+To\+Unity@{X\+Y\+Z\+To\+Unity}!Calibration@{Calibration}}
+\subsubsection{\texorpdfstring{X\+Y\+Z\+To\+Unity()}{XYZToUnity()}}
+{\footnotesize\ttfamily void Calibration\+::\+X\+Y\+Z\+To\+Unity (\begin{DoxyParamCaption}\item[{\hyperlink{class_depth_camera}{Depth\+Camera} \&}]{depth\+\_\+cam,  }\item[{int}]{num\+\_\+boards,  }\item[{int}]{board\+\_\+w,  }\item[{int}]{board\+\_\+h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compute a calibration from (x,y,z) real world coordinates to (x\textquotesingle{},y\textquotesingle{},z\textquotesingle{}) Unity coordinates. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_calibration_8h}{Calibration.\+h}\item 
+\hyperlink{_calibration_8cpp}{Calibration.\+cpp}\end{DoxyCompactItemize}

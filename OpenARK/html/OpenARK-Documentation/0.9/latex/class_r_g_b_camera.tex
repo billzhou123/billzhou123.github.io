@@ -1,0 +1,93 @@
+\hypertarget{class_r_g_b_camera}{}\section{R\+G\+B\+Camera Class Reference}
+\label{class_r_g_b_camera}\index{R\+G\+B\+Camera@{R\+G\+B\+Camera}}
+
+
+Abstract class that defines the behavior of a R\+GB camera.  
+
+
+
+
+{\ttfamily \#include $<$R\+G\+B\+Camera.\+h$>$}
+
+Inheritance diagram for R\+G\+B\+Camera\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_r_g_b_camera}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_r_g_b_camera_ac9fa3f8f32605e846827b694ae7cff18}{update} ()=0
+\begin{DoxyCompactList}\small\item\em Updates the current frame on the R\+GB camera. \end{DoxyCompactList}\item 
+cv\+::\+Mat \hyperlink{class_r_g_b_camera_a4db0620e9346039530f248fbb7130212}{get\+Frame} ()
+\begin{DoxyCompactList}\small\item\em Returns the current frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+cv\+::\+Video\+Capture \hyperlink{class_r_g_b_camera_a941480d7209fdae8f0ac410cb6b90a63}{cap}
+\begin{DoxyCompactList}\small\item\em Camera handle. \end{DoxyCompactList}\item 
+cv\+::\+Mat \hyperlink{class_r_g_b_camera_a81487c499dd5eee3c573ec6ed721ceba}{frame}
+\begin{DoxyCompactList}\small\item\em Current frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract class that defines the behavior of a R\+GB camera. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_r_g_b_camera_a4db0620e9346039530f248fbb7130212}{}\label{class_r_g_b_camera_a4db0620e9346039530f248fbb7130212} 
+\index{R\+G\+B\+Camera@{R\+G\+B\+Camera}!get\+Frame@{get\+Frame}}
+\index{get\+Frame@{get\+Frame}!R\+G\+B\+Camera@{R\+G\+B\+Camera}}
+\subsubsection{\texorpdfstring{get\+Frame()}{getFrame()}}
+{\footnotesize\ttfamily cv\+::\+Mat R\+G\+B\+Camera\+::get\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the current frame. 
+
+\begin{DoxyReturn}{Returns}
+the current frame 
+\end{DoxyReturn}
+\hypertarget{class_r_g_b_camera_ac9fa3f8f32605e846827b694ae7cff18}{}\label{class_r_g_b_camera_ac9fa3f8f32605e846827b694ae7cff18} 
+\index{R\+G\+B\+Camera@{R\+G\+B\+Camera}!update@{update}}
+\index{update@{update}!R\+G\+B\+Camera@{R\+G\+B\+Camera}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void R\+G\+B\+Camera\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Updates the current frame on the R\+GB camera. 
+
+Should be overriden by a concerte implementation specific to the R\+GB camera 
+
+Implemented in \hyperlink{class_webcam_a3d5cab0a2b87b90b85793bc05414e503}{Webcam}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_r_g_b_camera_a941480d7209fdae8f0ac410cb6b90a63}{}\label{class_r_g_b_camera_a941480d7209fdae8f0ac410cb6b90a63} 
+\index{R\+G\+B\+Camera@{R\+G\+B\+Camera}!cap@{cap}}
+\index{cap@{cap}!R\+G\+B\+Camera@{R\+G\+B\+Camera}}
+\subsubsection{\texorpdfstring{cap}{cap}}
+{\footnotesize\ttfamily cv\+::\+Video\+Capture R\+G\+B\+Camera\+::cap\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Camera handle. 
+
+\hypertarget{class_r_g_b_camera_a81487c499dd5eee3c573ec6ed721ceba}{}\label{class_r_g_b_camera_a81487c499dd5eee3c573ec6ed721ceba} 
+\index{R\+G\+B\+Camera@{R\+G\+B\+Camera}!frame@{frame}}
+\index{frame@{frame}!R\+G\+B\+Camera@{R\+G\+B\+Camera}}
+\subsubsection{\texorpdfstring{frame}{frame}}
+{\footnotesize\ttfamily cv\+::\+Mat R\+G\+B\+Camera\+::frame\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Current frame. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_r_g_b_camera_8h}{R\+G\+B\+Camera.\+h}\item 
+\hyperlink{_r_g_b_camera_8cpp}{R\+G\+B\+Camera.\+cpp}\end{DoxyCompactItemize}

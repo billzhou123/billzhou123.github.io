@@ -1,0 +1,500 @@
+\hypertarget{class_hand}{}\section{Hand Class Reference}
+\label{class_hand}\index{Hand@{Hand}}
+
+
+Class representing a hand object.  
+
+
+
+
+{\ttfamily \#include $<$Hand.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_hand_a77bc39dbcb8eee3927dd326b22bd3ae7}{Hand} (std\+::vector$<$ cv\+::\+Mat $>$ clusters)
+\begin{DoxyCompactList}\small\item\em Constructs a hand object given an array of clustered objects. \end{DoxyCompactList}\item 
+\hyperlink{class_hand_a7ff29a6f23f98c5e57f44d23a76912be}{$\sim$\+Hand} ()
+\begin{DoxyCompactList}\small\item\em Deconstructs the hand object. \end{DoxyCompactList}\item 
+bool \hyperlink{class_hand_aad89c3e47921cb0c39430f4501238088}{touch\+Object} (std\+::vector$<$ double $>$ \&equation, const double threshold)
+\begin{DoxyCompactList}\small\item\em Determines whether pointer finger is in contact with an object. \end{DoxyCompactList}\item 
+int \hyperlink{class_hand_abd15e5110f6a2f0809e2064c808a829c}{get\+Size} ()
+\begin{DoxyCompactList}\small\item\em Gets the pixel size of the hand. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static cv\+::\+Mat \hyperlink{class_hand_aa3ada30b516302dbabe5813f8eb6ac1a}{get\+Hand\+Cluster} (std\+::vector$<$ cv\+::\+Mat $>$ clusters)
+\begin{DoxyCompactList}\small\item\em From the list of clusters, determine which one is the hand cluster. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+cv\+::\+Point2i \hyperlink{class_hand_a7a7147d586c8fc8f781be0ed0dac1d94}{pointer\+\_\+finger\+\_\+ij}
+\begin{DoxyCompactList}\small\item\em The (i,j) position of the pointer finger in the image. \end{DoxyCompactList}\item 
+cv\+::\+Vec3f \hyperlink{class_hand_abeb7b0f0414f128dff4a189137fe35c9}{pointer\+\_\+finger\+\_\+xyz}
+\begin{DoxyCompactList}\small\item\em The (x,y,z) position of the pointer finger in the world. \end{DoxyCompactList}\item 
+cv\+::\+Point2i \hyperlink{class_hand_a86d74ccce4bbfafa5825762713d38b44}{shape\+\_\+centroid\+\_\+ij}
+\begin{DoxyCompactList}\small\item\em The (i,j) position of the centroid in the image. \end{DoxyCompactList}\item 
+cv\+::\+Vec3f \hyperlink{class_hand_a3991a22a52268c3b469a4221fbfdb695}{shape\+\_\+centroid\+\_\+xyz}
+\begin{DoxyCompactList}\small\item\em The (x,y,z) position of the centroid in the world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_hand_ae3d90ae264631ad6af2efbb5baddfda6}{curve\+Heat\+Map} (int n=\hyperlink{_hand_8h_ae12b8d82e4eb35d8bd8cca49ba677eac}{A\+R\+C\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD})
+\begin{DoxyCompactList}\small\item\em Create a heatmap of the curvatures on the hand. \end{DoxyCompactList}\item 
+void \hyperlink{class_hand_a8d3f0317f1b0e2edd9e89d679e616fbc}{recalculate\+Centroid} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Recompute the shape centroid. \end{DoxyCompactList}\item 
+void \hyperlink{class_hand_a3af95101a355738577be20c734a46bf0}{recalculate\+Edge\+Centroid} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Recompute the edge centroid. \end{DoxyCompactList}\item 
+bool \hyperlink{class_hand_a3c9f87cf116838082875016e459127ae}{is\+Edge} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Determines whether (x,y) coordinate at image is an edge. \end{DoxyCompactList}\item 
+void \hyperlink{class_hand_aaa3e2992447d5cb16b0c9095028b07c0}{calculate\+Centroid} ()
+\begin{DoxyCompactList}\small\item\em Compute the centroid of the hand. \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{class_hand_a0d6fb9c0c195ef544e36e6dfe6621bbb}{get\+Point} (int i=0)
+\begin{DoxyCompactList}\small\item\em Get the pointer finger location. \end{DoxyCompactList}\item 
+void \hyperlink{class_hand_ac55aeccf6d1c8e2aa8105d334cdf1339}{get\+Hand} ()
+\begin{DoxyCompactList}\small\item\em Get the palm centroid location. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_hand_a11484b7843b03c2786972fec56eb2734}{size}
+\begin{DoxyCompactList}\small\item\em Size of the hand in pixels. \end{DoxyCompactList}\item 
+int \hyperlink{class_hand_a287a96efb8ba12064d5af85be07d64d9}{edge\+Size}
+\begin{DoxyCompactList}\small\item\em Size of the edge (borders of the image). \end{DoxyCompactList}\item 
+cv\+::\+Mat \hyperlink{class_hand_acbe984385f832d6b1d595dc280d59206}{hand\+\_\+cluster}
+\begin{DoxyCompactList}\small\item\em The X\+Y\+Z\+Map of the hand. \end{DoxyCompactList}\item 
+cv\+::\+Mat \hyperlink{class_hand_abfe6cc57de5f985ac7024c5f90d7f5da}{image}
+\begin{DoxyCompactList}\small\item\em The R\+GB map of the hand. \end{DoxyCompactList}\item 
+cv\+::\+Mat \hyperlink{class_hand_ac449abf8573f0e3b313dc23c4be8f325}{heatmap}
+\begin{DoxyCompactList}\small\item\em The curvature heat map of the hand. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{structcurve}{curve} $\ast$ $>$ \hyperlink{class_hand_a1a90a57256c5d724a12db86cb55c57c2}{curves}
+\begin{DoxyCompactList}\small\item\em Curves that define the contour of the hand. \end{DoxyCompactList}\item 
+float \hyperlink{class_hand_a89099eeaa8a0286f6baae95d3b0a9f20}{shape\+Centroid} \mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em Centorid of the hand. \end{DoxyCompactList}\item 
+float \hyperlink{class_hand_a44e1328fa33595d1d81e0aaa6109cb6d}{edge\+Centroid} \mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em Centroid of the edge. \end{DoxyCompactList}\item 
+float \hyperlink{class_hand_a505288f2ffe79800bcb8b5ccb4f1995a}{shape\+Area}
+\begin{DoxyCompactList}\small\item\em Size of the area of interest. \end{DoxyCompactList}\item 
+int \hyperlink{class_hand_a406c0335ce812fd226df4678e3322558}{X\+\_\+\+D\+I\+M\+E\+N\+S\+I\+ON}
+\begin{DoxyCompactList}\small\item\em Pixel width of the image. \end{DoxyCompactList}\item 
+int \hyperlink{class_hand_a7d6177d54f9bf9b7e6c0e0d8aff5f935}{Y\+\_\+\+D\+I\+M\+E\+N\+S\+I\+ON}
+\begin{DoxyCompactList}\small\item\em Pixel hieght of the image. \end{DoxyCompactList}\item 
+int \hyperlink{class_hand_aee740c8161bd4bdd1f8f77a6d52dc65e}{X\+\_\+\+C\+E\+N\+T\+ER}
+\begin{DoxyCompactList}\small\item\em Pixel x-\/center of the image. \end{DoxyCompactList}\item 
+int \hyperlink{class_hand_ab213d81fcf0ed7086ba82540824c3fd9}{Y\+\_\+\+C\+E\+N\+T\+ER}
+\begin{DoxyCompactList}\small\item\em Pixel y-\/center of the image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class representing a hand object. 
+
+Example on tracking the right pointer finger position 
+\begin{DoxyCodeInclude}
+\textcolor{comment}{// C++ Libraries}
+\textcolor{preprocessor}{#include <stdio.h>}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{preprocessor}{#include <string>}
+
+\textcolor{comment}{// OpenCV Libraries}
+\textcolor{preprocessor}{#include <opencv/cxcore.h>}
+\textcolor{preprocessor}{#include "opencv2/highgui/highgui.hpp"}
+
+\textcolor{comment}{// OpenARK Libraries}
+\textcolor{preprocessor}{#include "\hyperlink{_p_m_d_camera_8h}{PMDCamera.h}"}
+\textcolor{preprocessor}{#include "\hyperlink{_visualizer_8h}{Visualizer.h}"}
+\textcolor{preprocessor}{#include "\hyperlink{_hand_8h}{Hand.h}"}
+\textcolor{preprocessor}{#include "\hyperlink{_plane_8h}{Plane.h}"}
+\textcolor{preprocessor}{#include "\hyperlink{_util_8h}{Util.h}"}
+
+\textcolor{keywordtype}{int} \hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}() \{
+    \hyperlink{class_depth_camera}{DepthCamera}* pmd = \textcolor{keyword}{new} \hyperlink{class_p_m_d_camera}{PMDCamera}(\textcolor{keyword}{false});
+    \textcolor{keywordtype}{int} frame = 0;
+    
+    \textcolor{keywordflow}{while} (\textcolor{keyword}{true})
+    \{
+        \textcolor{comment}{// Load in the debug data}
+        std::string filename = \textcolor{stringliteral}{"..//OpenARK\_Datasets//HandDataSet1//img"} + std::to\_string(frame) + \textcolor{stringliteral}{".yml"};
+        \textcolor{keywordflow}{if} (!pmd->\hyperlink{class_depth_camera_a21cf887a447d2cdfda6ac907662c55fe}{readImage}(filename))
+            \textcolor{keywordflow}{break};
+        
+        \textcolor{comment}{// Remove noise on the frame}
+        pmd->\hyperlink{class_depth_camera_adc06db6509cc5f47de1e168f56bf41fa}{removeNoise}();
+        cv::imshow(\textcolor{stringliteral}{"XYZ Map"}, \hyperlink{class_visualizer_a24caf117be9878e2f5ad35cabb7f4f88}{Visualizer::visualizeXYZMap}(pmd->
+      \hyperlink{class_depth_camera_a0c295c5a0696550f453b1c8cd0fcb188}{getXYZMap}()));
+        
+        \textcolor{comment}{// Find the right hand}
+        \hyperlink{class_hand}{Hand} right\_hand = \hyperlink{class_hand_a77bc39dbcb8eee3927dd326b22bd3ae7}{Hand}(pmd->\hyperlink{class_depth_camera_a18d88b8df2a08c9c167207fea587d66e}{getClusters}());
+        
+        \textcolor{comment}{// Show the hand}
+        cv::imshow(\textcolor{stringliteral}{"Hand"}, \hyperlink{class_visualizer_aa4436945eb7f9220b55d46914e8c5005}{Visualizer::visualizeHand}(pmd->
+      \hyperlink{class_depth_camera_a0c295c5a0696550f453b1c8cd0fcb188}{getXYZMap}(), right\_hand.\hyperlink{class_hand_a7a7147d586c8fc8f781be0ed0dac1d94}{pointer\_finger\_ij}, right\_hand.
+      \hyperlink{class_hand_a86d74ccce4bbfafa5825762713d38b44}{shape\_centroid\_ij}));
+        
+
+        \textcolor{comment}{/**** Start: Loop Break Condition ****/}
+        \textcolor{keywordtype}{int} c = cvWaitKey(1);
+        \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'q'} || c == \textcolor{charliteral}{'Q'} || c == 27) \{
+            \textcolor{keywordflow}{break};
+        \}
+        \textcolor{comment}{/**** End: Loop Break Condition ****/}
+
+        frame++;
+    \}
+
+    pmd->\hyperlink{class_depth_camera_aaf7c09a863e906f61104f23af10a8597}{destroyInstance}();
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCodeInclude}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_hand_a77bc39dbcb8eee3927dd326b22bd3ae7}{}\label{class_hand_a77bc39dbcb8eee3927dd326b22bd3ae7} 
+\index{Hand@{Hand}!Hand@{Hand}}
+\index{Hand@{Hand}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{Hand()}{Hand()}}
+{\footnotesize\ttfamily Hand\+::\+Hand (\begin{DoxyParamCaption}\item[{std\+::vector$<$ cv\+::\+Mat $>$}]{clusters }\end{DoxyParamCaption})}
+
+
+
+Constructs a hand object given an array of clustered objects. 
+
+One of the objects in the array must be a hand 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em clusters} & array matrixes each storing the point cloud of exactly one object \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_hand_a7ff29a6f23f98c5e57f44d23a76912be}{}\label{class_hand_a7ff29a6f23f98c5e57f44d23a76912be} 
+\index{Hand@{Hand}!````~Hand@{$\sim$\+Hand}}
+\index{````~Hand@{$\sim$\+Hand}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{$\sim$\+Hand()}{~Hand()}}
+{\footnotesize\ttfamily Hand\+::$\sim$\+Hand (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Deconstructs the hand object. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_hand_aaa3e2992447d5cb16b0c9095028b07c0}{}\label{class_hand_aaa3e2992447d5cb16b0c9095028b07c0} 
+\index{Hand@{Hand}!calculate\+Centroid@{calculate\+Centroid}}
+\index{calculate\+Centroid@{calculate\+Centroid}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{calculate\+Centroid()}{calculateCentroid()}}
+{\footnotesize\ttfamily void Hand\+::calculate\+Centroid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Compute the centroid of the hand. 
+
+\hypertarget{class_hand_ae3d90ae264631ad6af2efbb5baddfda6}{}\label{class_hand_ae3d90ae264631ad6af2efbb5baddfda6} 
+\index{Hand@{Hand}!curve\+Heat\+Map@{curve\+Heat\+Map}}
+\index{curve\+Heat\+Map@{curve\+Heat\+Map}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{curve\+Heat\+Map()}{curveHeatMap()}}
+{\footnotesize\ttfamily void Hand\+::curve\+Heat\+Map (\begin{DoxyParamCaption}\item[{int}]{n = {\ttfamily \hyperlink{_hand_8h_ae12b8d82e4eb35d8bd8cca49ba677eac}{A\+R\+C\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Create a heatmap of the curvatures on the hand. 
+
+The \char`\"{}hotter\char`\"{} the point is, the higher angle is at that point 
+\begin{DoxyParams}{Parameters}
+{\em n} & the maximum arc allowed \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_hand_ac55aeccf6d1c8e2aa8105d334cdf1339}{}\label{class_hand_ac55aeccf6d1c8e2aa8105d334cdf1339} 
+\index{Hand@{Hand}!get\+Hand@{get\+Hand}}
+\index{get\+Hand@{get\+Hand}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{get\+Hand()}{getHand()}}
+{\footnotesize\ttfamily void Hand\+::get\+Hand (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Get the palm centroid location. 
+
+\hypertarget{class_hand_aa3ada30b516302dbabe5813f8eb6ac1a}{}\label{class_hand_aa3ada30b516302dbabe5813f8eb6ac1a} 
+\index{Hand@{Hand}!get\+Hand\+Cluster@{get\+Hand\+Cluster}}
+\index{get\+Hand\+Cluster@{get\+Hand\+Cluster}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{get\+Hand\+Cluster()}{getHandCluster()}}
+{\footnotesize\ttfamily cv\+::\+Mat Hand\+::get\+Hand\+Cluster (\begin{DoxyParamCaption}\item[{std\+::vector$<$ cv\+::\+Mat $>$}]{clusters }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+From the list of clusters, determine which one is the hand cluster. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em clusters} & matrix representation of distinct groups in the depth image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+matrix representation of the hand group 
+\end{DoxyReturn}
+\hypertarget{class_hand_a0d6fb9c0c195ef544e36e6dfe6621bbb}{}\label{class_hand_a0d6fb9c0c195ef544e36e6dfe6621bbb} 
+\index{Hand@{Hand}!get\+Point@{get\+Point}}
+\index{get\+Point@{get\+Point}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{get\+Point()}{getPoint()}}
+{\footnotesize\ttfamily int $\ast$ Hand\+::get\+Point (\begin{DoxyParamCaption}\item[{int}]{i = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Get the pointer finger location. 
+
+\hypertarget{class_hand_abd15e5110f6a2f0809e2064c808a829c}{}\label{class_hand_abd15e5110f6a2f0809e2064c808a829c} 
+\index{Hand@{Hand}!get\+Size@{get\+Size}}
+\index{get\+Size@{get\+Size}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{get\+Size()}{getSize()}}
+{\footnotesize\ttfamily int Hand\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the pixel size of the hand. 
+
+\hypertarget{class_hand_a3c9f87cf116838082875016e459127ae}{}\label{class_hand_a3c9f87cf116838082875016e459127ae} 
+\index{Hand@{Hand}!is\+Edge@{is\+Edge}}
+\index{is\+Edge@{is\+Edge}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{is\+Edge()}{isEdge()}}
+{\footnotesize\ttfamily bool Hand\+::is\+Edge (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Determines whether (x,y) coordinate at image is an edge. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & x-\/coordinate of the point \\
+\hline
+{\em y} & y-\/coordinate of the point \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_hand_a8d3f0317f1b0e2edd9e89d679e616fbc}{}\label{class_hand_a8d3f0317f1b0e2edd9e89d679e616fbc} 
+\index{Hand@{Hand}!recalculate\+Centroid@{recalculate\+Centroid}}
+\index{recalculate\+Centroid@{recalculate\+Centroid}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{recalculate\+Centroid()}{recalculateCentroid()}}
+{\footnotesize\ttfamily void Hand\+::recalculate\+Centroid (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Recompute the shape centroid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & new x-\/coordinate \\
+\hline
+{\em y} & new y-\/coordinate \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_hand_a3af95101a355738577be20c734a46bf0}{}\label{class_hand_a3af95101a355738577be20c734a46bf0} 
+\index{Hand@{Hand}!recalculate\+Edge\+Centroid@{recalculate\+Edge\+Centroid}}
+\index{recalculate\+Edge\+Centroid@{recalculate\+Edge\+Centroid}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{recalculate\+Edge\+Centroid()}{recalculateEdgeCentroid()}}
+{\footnotesize\ttfamily void Hand\+::recalculate\+Edge\+Centroid (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Recompute the edge centroid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & new x-\/coordinate \\
+\hline
+{\em y} & new y-\/coordinate \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_hand_aad89c3e47921cb0c39430f4501238088}{}\label{class_hand_aad89c3e47921cb0c39430f4501238088} 
+\index{Hand@{Hand}!touch\+Object@{touch\+Object}}
+\index{touch\+Object@{touch\+Object}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{touch\+Object()}{touchObject()}}
+{\footnotesize\ttfamily bool Hand\+::touch\+Object (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&}]{equation,  }\item[{const double}]{threshold }\end{DoxyParamCaption})}
+
+
+
+Determines whether pointer finger is in contact with an object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em equation} & the regression equation of the object \\
+\hline
+ & {\em threshold} & maximum error distance (mm) allowed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE if the pointer finger is touching object defined by equation. F\+A\+L\+SE otherwise. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_hand_a1a90a57256c5d724a12db86cb55c57c2}{}\label{class_hand_a1a90a57256c5d724a12db86cb55c57c2} 
+\index{Hand@{Hand}!curves@{curves}}
+\index{curves@{curves}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{curves}{curves}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{structcurve}{curve} $\ast$$>$ Hand\+::curves\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Curves that define the contour of the hand. 
+
+\hypertarget{class_hand_a44e1328fa33595d1d81e0aaa6109cb6d}{}\label{class_hand_a44e1328fa33595d1d81e0aaa6109cb6d} 
+\index{Hand@{Hand}!edge\+Centroid@{edge\+Centroid}}
+\index{edge\+Centroid@{edge\+Centroid}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{edge\+Centroid}{edgeCentroid}}
+{\footnotesize\ttfamily float Hand\+::edge\+Centroid\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Centroid of the edge. 
+
+\hypertarget{class_hand_a287a96efb8ba12064d5af85be07d64d9}{}\label{class_hand_a287a96efb8ba12064d5af85be07d64d9} 
+\index{Hand@{Hand}!edge\+Size@{edge\+Size}}
+\index{edge\+Size@{edge\+Size}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{edge\+Size}{edgeSize}}
+{\footnotesize\ttfamily int Hand\+::edge\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Size of the edge (borders of the image). 
+
+\hypertarget{class_hand_acbe984385f832d6b1d595dc280d59206}{}\label{class_hand_acbe984385f832d6b1d595dc280d59206} 
+\index{Hand@{Hand}!hand\+\_\+cluster@{hand\+\_\+cluster}}
+\index{hand\+\_\+cluster@{hand\+\_\+cluster}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{hand\+\_\+cluster}{hand\_cluster}}
+{\footnotesize\ttfamily cv\+::\+Mat Hand\+::hand\+\_\+cluster\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The X\+Y\+Z\+Map of the hand. 
+
+\hypertarget{class_hand_ac449abf8573f0e3b313dc23c4be8f325}{}\label{class_hand_ac449abf8573f0e3b313dc23c4be8f325} 
+\index{Hand@{Hand}!heatmap@{heatmap}}
+\index{heatmap@{heatmap}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{heatmap}{heatmap}}
+{\footnotesize\ttfamily cv\+::\+Mat Hand\+::heatmap\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The curvature heat map of the hand. 
+
+\hypertarget{class_hand_abfe6cc57de5f985ac7024c5f90d7f5da}{}\label{class_hand_abfe6cc57de5f985ac7024c5f90d7f5da} 
+\index{Hand@{Hand}!image@{image}}
+\index{image@{image}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{image}{image}}
+{\footnotesize\ttfamily cv\+::\+Mat Hand\+::image\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The R\+GB map of the hand. 
+
+\hypertarget{class_hand_a7a7147d586c8fc8f781be0ed0dac1d94}{}\label{class_hand_a7a7147d586c8fc8f781be0ed0dac1d94} 
+\index{Hand@{Hand}!pointer\+\_\+finger\+\_\+ij@{pointer\+\_\+finger\+\_\+ij}}
+\index{pointer\+\_\+finger\+\_\+ij@{pointer\+\_\+finger\+\_\+ij}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{pointer\+\_\+finger\+\_\+ij}{pointer\_finger\_ij}}
+{\footnotesize\ttfamily cv\+::\+Point2i Hand\+::pointer\+\_\+finger\+\_\+ij}
+
+
+
+The (i,j) position of the pointer finger in the image. 
+
+\hypertarget{class_hand_abeb7b0f0414f128dff4a189137fe35c9}{}\label{class_hand_abeb7b0f0414f128dff4a189137fe35c9} 
+\index{Hand@{Hand}!pointer\+\_\+finger\+\_\+xyz@{pointer\+\_\+finger\+\_\+xyz}}
+\index{pointer\+\_\+finger\+\_\+xyz@{pointer\+\_\+finger\+\_\+xyz}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{pointer\+\_\+finger\+\_\+xyz}{pointer\_finger\_xyz}}
+{\footnotesize\ttfamily cv\+::\+Vec3f Hand\+::pointer\+\_\+finger\+\_\+xyz}
+
+
+
+The (x,y,z) position of the pointer finger in the world. 
+
+\hypertarget{class_hand_a86d74ccce4bbfafa5825762713d38b44}{}\label{class_hand_a86d74ccce4bbfafa5825762713d38b44} 
+\index{Hand@{Hand}!shape\+\_\+centroid\+\_\+ij@{shape\+\_\+centroid\+\_\+ij}}
+\index{shape\+\_\+centroid\+\_\+ij@{shape\+\_\+centroid\+\_\+ij}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{shape\+\_\+centroid\+\_\+ij}{shape\_centroid\_ij}}
+{\footnotesize\ttfamily cv\+::\+Point2i Hand\+::shape\+\_\+centroid\+\_\+ij}
+
+
+
+The (i,j) position of the centroid in the image. 
+
+\hypertarget{class_hand_a3991a22a52268c3b469a4221fbfdb695}{}\label{class_hand_a3991a22a52268c3b469a4221fbfdb695} 
+\index{Hand@{Hand}!shape\+\_\+centroid\+\_\+xyz@{shape\+\_\+centroid\+\_\+xyz}}
+\index{shape\+\_\+centroid\+\_\+xyz@{shape\+\_\+centroid\+\_\+xyz}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{shape\+\_\+centroid\+\_\+xyz}{shape\_centroid\_xyz}}
+{\footnotesize\ttfamily cv\+::\+Vec3f Hand\+::shape\+\_\+centroid\+\_\+xyz}
+
+
+
+The (x,y,z) position of the centroid in the world. 
+
+\hypertarget{class_hand_a505288f2ffe79800bcb8b5ccb4f1995a}{}\label{class_hand_a505288f2ffe79800bcb8b5ccb4f1995a} 
+\index{Hand@{Hand}!shape\+Area@{shape\+Area}}
+\index{shape\+Area@{shape\+Area}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{shape\+Area}{shapeArea}}
+{\footnotesize\ttfamily float Hand\+::shape\+Area\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Size of the area of interest. 
+
+\hypertarget{class_hand_a89099eeaa8a0286f6baae95d3b0a9f20}{}\label{class_hand_a89099eeaa8a0286f6baae95d3b0a9f20} 
+\index{Hand@{Hand}!shape\+Centroid@{shape\+Centroid}}
+\index{shape\+Centroid@{shape\+Centroid}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{shape\+Centroid}{shapeCentroid}}
+{\footnotesize\ttfamily float Hand\+::shape\+Centroid\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Centorid of the hand. 
+
+\hypertarget{class_hand_a11484b7843b03c2786972fec56eb2734}{}\label{class_hand_a11484b7843b03c2786972fec56eb2734} 
+\index{Hand@{Hand}!size@{size}}
+\index{size@{size}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily int Hand\+::size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Size of the hand in pixels. 
+
+\hypertarget{class_hand_aee740c8161bd4bdd1f8f77a6d52dc65e}{}\label{class_hand_aee740c8161bd4bdd1f8f77a6d52dc65e} 
+\index{Hand@{Hand}!X\+\_\+\+C\+E\+N\+T\+ER@{X\+\_\+\+C\+E\+N\+T\+ER}}
+\index{X\+\_\+\+C\+E\+N\+T\+ER@{X\+\_\+\+C\+E\+N\+T\+ER}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{X\+\_\+\+C\+E\+N\+T\+ER}{X\_CENTER}}
+{\footnotesize\ttfamily int Hand\+::\+X\+\_\+\+C\+E\+N\+T\+ER\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pixel x-\/center of the image. 
+
+\hypertarget{class_hand_a406c0335ce812fd226df4678e3322558}{}\label{class_hand_a406c0335ce812fd226df4678e3322558} 
+\index{Hand@{Hand}!X\+\_\+\+D\+I\+M\+E\+N\+S\+I\+ON@{X\+\_\+\+D\+I\+M\+E\+N\+S\+I\+ON}}
+\index{X\+\_\+\+D\+I\+M\+E\+N\+S\+I\+ON@{X\+\_\+\+D\+I\+M\+E\+N\+S\+I\+ON}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{X\+\_\+\+D\+I\+M\+E\+N\+S\+I\+ON}{X\_DIMENSION}}
+{\footnotesize\ttfamily int Hand\+::\+X\+\_\+\+D\+I\+M\+E\+N\+S\+I\+ON\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pixel width of the image. 
+
+\hypertarget{class_hand_ab213d81fcf0ed7086ba82540824c3fd9}{}\label{class_hand_ab213d81fcf0ed7086ba82540824c3fd9} 
+\index{Hand@{Hand}!Y\+\_\+\+C\+E\+N\+T\+ER@{Y\+\_\+\+C\+E\+N\+T\+ER}}
+\index{Y\+\_\+\+C\+E\+N\+T\+ER@{Y\+\_\+\+C\+E\+N\+T\+ER}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{Y\+\_\+\+C\+E\+N\+T\+ER}{Y\_CENTER}}
+{\footnotesize\ttfamily int Hand\+::\+Y\+\_\+\+C\+E\+N\+T\+ER\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pixel y-\/center of the image. 
+
+\hypertarget{class_hand_a7d6177d54f9bf9b7e6c0e0d8aff5f935}{}\label{class_hand_a7d6177d54f9bf9b7e6c0e0d8aff5f935} 
+\index{Hand@{Hand}!Y\+\_\+\+D\+I\+M\+E\+N\+S\+I\+ON@{Y\+\_\+\+D\+I\+M\+E\+N\+S\+I\+ON}}
+\index{Y\+\_\+\+D\+I\+M\+E\+N\+S\+I\+ON@{Y\+\_\+\+D\+I\+M\+E\+N\+S\+I\+ON}!Hand@{Hand}}
+\subsubsection{\texorpdfstring{Y\+\_\+\+D\+I\+M\+E\+N\+S\+I\+ON}{Y\_DIMENSION}}
+{\footnotesize\ttfamily int Hand\+::\+Y\+\_\+\+D\+I\+M\+E\+N\+S\+I\+ON\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pixel hieght of the image. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_hand_8h}{Hand.\+h}\item 
+\hyperlink{_hand_8cpp}{Hand.\+cpp}\end{DoxyCompactItemize}

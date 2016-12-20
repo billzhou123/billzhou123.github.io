@@ -1,0 +1,551 @@
+\hypertarget{class_plane}{}\section{Plane Class Reference}
+\label{class_plane}\index{Plane@{Plane}}
+
+
+Class defining a plane object.  
+
+
+
+
+{\ttfamily \#include $<$Plane.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_plane_a94bc1ca29c305edb76676528b1a9465c}{Plane} (cv\+::\+Mat \&src)
+\begin{DoxyCompactList}\small\item\em Constructs a plane object from a unsegemented xyz\+Map. \end{DoxyCompactList}\item 
+\hyperlink{class_plane_a69abd86051c880dcb44b249ad10c4436}{$\sim$\+Plane} ()
+\begin{DoxyCompactList}\small\item\em Deconstructs the plane object. \end{DoxyCompactList}\item 
+void \hyperlink{class_plane_ab884c9687d63290912707f749adad115}{initialize\+Cloud} (cv\+::\+Mat \&src)
+\begin{DoxyCompactList}\small\item\em Initializes all the required point clouds. \end{DoxyCompactList}\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr \hyperlink{class_plane_a89c277f419ffb0e9d53f29127109465b}{get\+Cloud} ()
+\begin{DoxyCompactList}\small\item\em Returns the P\+CL representation of the xyz\+Map. \end{DoxyCompactList}\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr \hyperlink{class_plane_abad6f7c26005ad7ab847af5acaad9c31}{get\+Down\+Cloud} ()
+\begin{DoxyCompactList}\small\item\em Returns the P\+CL representatino of a down sampled xyz\+Map. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \hyperlink{class_plane_aafedb091ba358d46d5203c4e0eb6e838}{get\+Plane\+Equation} ()
+\begin{DoxyCompactList}\small\item\em Returns the planar regression equation of the identified plane. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \hyperlink{class_plane_ab82069a9be653b07a589374c03b2f436}{get\+Sphere\+Equation} ()
+\begin{DoxyCompactList}\small\item\em Returns the sphereical regression equation of the identified plane. \end{DoxyCompactList}\item 
+std\+::vector$<$ cv\+::\+Point2i $>$ \hyperlink{class_plane_a843717e035e2e6b4e03a8eece14098b1}{get\+Plane\+Indicies} ()
+\begin{DoxyCompactList}\small\item\em Returns the (i,j) indices for which the plane appears on the xyz\+Map. \end{DoxyCompactList}\item 
+std\+::vector$<$ cv\+::\+Point2i $>$ \hyperlink{class_plane_acd72c8d01f393ef78c4ed1f685d1d36d}{get\+Sphere\+Indices} ()
+\begin{DoxyCompactList}\small\item\em Returns the (i,j) indices for which the plane appears on the xyz\+Map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{class_plane_a1251f1df31bce7666494bfb6d069dd2e}{C\+L\+O\+U\+D\+\_\+\+S\+I\+Z\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD} = 1000
+\begin{DoxyCompactList}\small\item\em Maximum cloud size (pixel) allowed. \end{DoxyCompactList}\item 
+const double \hyperlink{class_plane_ae0e9b28377ab03e577aa6588da269328}{R\+\_\+\+S\+Q\+U\+A\+R\+E\+D\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD} = 0.\+0005
+\begin{DoxyCompactList}\small\item\em Maximum distance (mm) allowed between real point and regression equation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_plane_a50f718840ac2c5cc3226ff66de2c60f6}{compute} ()
+\begin{DoxyCompactList}\small\item\em Performs a series of computations to find the plane. \end{DoxyCompactList}\item 
+void \hyperlink{class_plane_a5c856cf6a603473c68381d21a544d2a3}{calculate\+Normals} (pcl\+::\+Normal\+Estimation\+O\+MP$<$ pcl\+::\+Point\+X\+YZ, pcl\+::\+Normal $>$ normal\+\_\+estimator, pcl\+::search\+::\+Search$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr tree)
+\begin{DoxyCompactList}\small\item\em Computes the normals at every point. \end{DoxyCompactList}\item 
+void \hyperlink{class_plane_afc8f76c6dc7223c7d681d69e427a3004}{voxel\+Downsample} ()
+\begin{DoxyCompactList}\small\item\em Down samples the cloud via a median filter. \end{DoxyCompactList}\item 
+void \hyperlink{class_plane_a08b35c23d8e0f3eea0db820163cda6e0}{region\+Grow} (pcl\+::\+Region\+Growing$<$ pcl\+::\+Point\+X\+YZ, pcl\+::\+Normal $>$ \&reg, pcl\+::search\+::\+Search$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr tree)
+\begin{DoxyCompactList}\small\item\em Aggregates points with like normals. \end{DoxyCompactList}\item 
+void \hyperlink{class_plane_a503b1c82ae3a84d9bd88fbfa37a5e3be}{compute\+Plane\+L\+SE} (pcl\+::\+Point\+Indices \&ind)
+\begin{DoxyCompactList}\small\item\em Compute a planar regression equation. \end{DoxyCompactList}\item 
+void \hyperlink{class_plane_a60923e0c6d087076a234a9d5bd45d0fa}{compute\+Sphere\+L\+SE} (pcl\+::\+Point\+Indices \&ind)
+\begin{DoxyCompactList}\small\item\em Compute a sphereical regression equation. \end{DoxyCompactList}\item 
+int \hyperlink{class_plane_a24415419c0c06e83f2016246a8d2ee40}{compute\+Plane\+Indices} ()
+\begin{DoxyCompactList}\small\item\em Compute all the (i,j) index of the plane points from the planar regression. \end{DoxyCompactList}\item 
+int \hyperlink{class_plane_a279bfd98317431edcdefe43004bb257f}{compute\+Sphere\+Indices} ()
+\begin{DoxyCompactList}\small\item\em Compute all the (i,j) index of the plane points from the sphereical regression. \end{DoxyCompactList}\item 
+int \hyperlink{class_plane_a12c28b7eeb8cdef5451e2e90704e0673}{draw\+Sphere\+Regression\+Points} (cv\+::\+Mat \&output\+\_\+mat, cv\+::\+Mat \&input\+\_\+mat, std\+::vector$<$ double $>$ \&equation, const int row\+Size, const int col\+Size, const double threshold, bool clicked)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr $\ast$ \hyperlink{class_plane_a0b493693b28fb0cc74549fa24ded3721}{cloud}
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Normal $>$\+::Ptr $\ast$ \hyperlink{class_plane_a28e30d6c24eaa6c4e1d57ea8c1a2d924}{normals}
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr $\ast$ \hyperlink{class_plane_ae4198f097fe1b58f10068f7bc0962c8c}{down\+\_\+cloud}
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Normal $>$\+::Ptr $\ast$ \hyperlink{class_plane_aa76fc2b11042a6681c4573159d4fb384}{down\+\_\+normals}
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr $\ast$ \hyperlink{class_plane_a43513b679c313917824fce91b50f8d32}{colored\+\_\+cloud}
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+R\+GB $>$\+::Ptr $\ast$ \hyperlink{class_plane_a65a1a3e2e6eededc01baaa24b7bc7c6c}{upsampled\+\_\+colored\+\_\+cloud}
+\item 
+std\+::vector$<$ pcl\+::\+Point\+Indices $>$ \hyperlink{class_plane_abd24055f6ac0b57fc3f36462f50175d8}{clusters}
+\item 
+std\+::vector$<$ double $>$ \hyperlink{class_plane_afdf256b7ed2934c1dca9a09beb8c483e}{plane\+\_\+equation}
+\item 
+std\+::vector$<$ double $>$ \hyperlink{class_plane_aa8d9403da437be0c087354a8c891afcd}{sphere\+\_\+equation}
+\item 
+std\+::vector$<$ cv\+::\+Point2i $>$ \hyperlink{class_plane_a5efd74ec0c24a0cac7778705d6134452}{plane\+\_\+indices}
+\item 
+std\+::vector$<$ cv\+::\+Point2i $>$ \hyperlink{class_plane_a94247ab1ed3d194702250a3a98643212}{sphere\+\_\+indices}
+\item 
+cv\+::\+Mat \hyperlink{class_plane_a1a9bdfcd38d9113a83ef12132570eff5}{sphere\+\_\+mat}
+\item 
+cv\+::\+Mat \hyperlink{class_plane_a79bafd16d43b07fd7db7ed942e285109}{plane\+\_\+mat}
+\item 
+cv\+::\+Mat \hyperlink{class_plane_a08043629802a4740847a526b16ddc0b1}{display\+\_\+img}
+\item 
+cv\+::\+Mat \hyperlink{class_plane_a90280649d43c66562919b463054387e7}{depth\+\_\+img}
+\item 
+int \hyperlink{class_plane_a3a7e69fb4f98c716cb403be89beded4c}{num\+\_\+sphere\+\_\+points}
+\item 
+int \hyperlink{class_plane_a59841c6147cdc9a25d7f6d9669ff6fd2}{num\+\_\+plane\+\_\+points}
+\item 
+const int \hyperlink{class_plane_abc9e342c010c172faf22b345f68f25bd}{N\+U\+M\+\_\+\+C\+O\+R\+ES} = boost\+::thread\+::hardware\+\_\+concurrency()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class defining a plane object. 
+
+The plane object will be defined by its regression equation Example on tracking hand and background plane object simulateously 
+\begin{DoxyCodeInclude}
+\textcolor{comment}{// C++ Libraries}
+\textcolor{preprocessor}{#include <stdio.h>}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{preprocessor}{#include <string>}
+
+\textcolor{comment}{// OpenCV Libraries}
+\textcolor{preprocessor}{#include <opencv/cxcore.h>}
+\textcolor{preprocessor}{#include "opencv2/highgui/highgui.hpp"}
+
+\textcolor{comment}{// OpenARK Libraries}
+\textcolor{preprocessor}{#include "\hyperlink{_p_m_d_camera_8h}{PMDCamera.h}"}
+\textcolor{preprocessor}{#include "\hyperlink{_visualizer_8h}{Visualizer.h}"}
+\textcolor{preprocessor}{#include "\hyperlink{_hand_8h}{Hand.h}"}
+\textcolor{preprocessor}{#include "\hyperlink{_plane_8h}{Plane.h}"}
+\textcolor{preprocessor}{#include "\hyperlink{_util_8h}{Util.h}"}
+
+\textcolor{keywordtype}{int} \hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}() \{
+    \hyperlink{class_depth_camera}{DepthCamera}* pmd = \textcolor{keyword}{new} \hyperlink{class_p_m_d_camera}{PMDCamera}(\textcolor{keyword}{false});
+    \textcolor{keywordtype}{int} frame = 0;
+    
+    \textcolor{keywordflow}{while} (\textcolor{keyword}{true})
+    \{
+        \textcolor{comment}{// Load in the debug data}
+        std::string filename = \textcolor{stringliteral}{"..//OpenARK\_Datasets//ClusterDataSet1//img"} + std::to\_string(frame) + \textcolor{stringliteral}{".yml
+      "};
+        \textcolor{keywordflow}{if} (!pmd->\hyperlink{class_depth_camera_a21cf887a447d2cdfda6ac907662c55fe}{readImage}(filename))
+            \textcolor{keywordflow}{break};
+        
+        \textcolor{comment}{// Remove noise on the frame}
+        pmd->\hyperlink{class_depth_camera_adc06db6509cc5f47de1e168f56bf41fa}{removeNoise}();
+        cv::imshow(\textcolor{stringliteral}{"XYZ Map"}, \hyperlink{class_visualizer_a24caf117be9878e2f5ad35cabb7f4f88}{Visualizer::visualizeXYZMap}(pmd->
+      \hyperlink{class_depth_camera_a0c295c5a0696550f453b1c8cd0fcb188}{getXYZMap}()));
+        
+        \textcolor{comment}{// Find the plane}
+        \hyperlink{class_plane}{Plane} plane = \hyperlink{class_plane_a94bc1ca29c305edb76676528b1a9465c}{Plane::Plane}(pmd->\hyperlink{class_depth_camera_a0c295c5a0696550f453b1c8cd0fcb188}{getXYZMap}());
+        \hyperlink{class_visualizer_af65e36aaef7c1f60d0f79819f17707d7}{Visualizer::visualizeCloud}(plane.\hyperlink{class_plane_abad6f7c26005ad7ab847af5acaad9c31}{getDownCloud}());
+        cv::imshow(\textcolor{stringliteral}{"Plane Regression"}, \hyperlink{class_visualizer_a448063633391ee4ae2af595fe760aab0}{Visualizer::visualizePlaneRegression}
+      (pmd->\hyperlink{class_depth_camera_a0c295c5a0696550f453b1c8cd0fcb188}{getXYZMap}(), plane.\hyperlink{class_plane_aafedb091ba358d46d5203c4e0eb6e838}{getPlaneEquation}(), plane.
+      \hyperlink{class_plane_ae0e9b28377ab03e577aa6588da269328}{R\_SQUARED\_DISTANCE\_THRESHOLD}));
+        
+        \textcolor{comment}{// Remove the plane}
+        pmd->\hyperlink{class_depth_camera_a8f38ced63dcfb0c4c56cb7d4e940bcd8}{removePoints}(plane.\hyperlink{class_plane_a843717e035e2e6b4e03a8eece14098b1}{getPlaneIndicies}());
+        cv::imshow(\textcolor{stringliteral}{"Hand Map"}, \hyperlink{class_visualizer_a24caf117be9878e2f5ad35cabb7f4f88}{Visualizer::visualizeXYZMap}(pmd->
+      \hyperlink{class_depth_camera_a0c295c5a0696550f453b1c8cd0fcb188}{getXYZMap}()));
+        pmd->\hyperlink{class_depth_camera_a009719ec313de883b617903360bdf519}{computeClusters}(0.02, 500);
+        
+        \textcolor{comment}{// Find the right hand}
+        \hyperlink{class_hand}{Hand} right\_hand = \hyperlink{class_hand}{Hand}(pmd->\hyperlink{class_depth_camera_a18d88b8df2a08c9c167207fea587d66e}{getClusters}());
+        
+        \textcolor{comment}{// Show the hand}
+        cv::imshow(\textcolor{stringliteral}{"Hand"}, \hyperlink{class_visualizer_aa4436945eb7f9220b55d46914e8c5005}{Visualizer::visualizeHand}(pmd->
+      \hyperlink{class_depth_camera_a0c295c5a0696550f453b1c8cd0fcb188}{getXYZMap}(), right\_hand.\hyperlink{class_hand_a7a7147d586c8fc8f781be0ed0dac1d94}{pointer\_finger\_ij}, right\_hand.
+      \hyperlink{class_hand_a86d74ccce4bbfafa5825762713d38b44}{shape\_centroid\_ij}));
+        \textcolor{keywordflow}{if} (right\_hand.\hyperlink{class_hand_aad89c3e47921cb0c39430f4501238088}{touchObject}(plane.\hyperlink{class_plane_aafedb091ba358d46d5203c4e0eb6e838}{getPlaneEquation}(), plane.
+      \hyperlink{class_plane_ae0e9b28377ab03e577aa6588da269328}{R\_SQUARED\_DISTANCE\_THRESHOLD} * 3) == \textcolor{keyword}{true})
+        \{
+            printf(\textcolor{stringliteral}{"Touched Plane\(\backslash\)n"});
+        \}
+        
+
+        \textcolor{comment}{/**** Start: Loop Break Condition ****/}
+        \textcolor{keywordtype}{int} c = cvWaitKey(1);
+        \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'q'} || c == \textcolor{charliteral}{'Q'} || c == 27) \{
+            \textcolor{keywordflow}{break};
+        \}
+        \textcolor{comment}{/**** End: Loop Break Condition ****/}
+
+        frame++;
+    \}
+
+    pmd->\hyperlink{class_depth_camera_aaf7c09a863e906f61104f23af10a8597}{destroyInstance}();
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCodeInclude}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_plane_a94bc1ca29c305edb76676528b1a9465c}{}\label{class_plane_a94bc1ca29c305edb76676528b1a9465c} 
+\index{Plane@{Plane}!Plane@{Plane}}
+\index{Plane@{Plane}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{Plane()}{Plane()}}
+{\footnotesize\ttfamily Plane\+::\+Plane (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{src }\end{DoxyParamCaption})}
+
+
+
+Constructs a plane object from a unsegemented xyz\+Map. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em src} & the raw xyz\+Map. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_plane_a69abd86051c880dcb44b249ad10c4436}{}\label{class_plane_a69abd86051c880dcb44b249ad10c4436} 
+\index{Plane@{Plane}!````~Plane@{$\sim$\+Plane}}
+\index{````~Plane@{$\sim$\+Plane}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{$\sim$\+Plane()}{~Plane()}}
+{\footnotesize\ttfamily Plane\+::$\sim$\+Plane (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Deconstructs the plane object. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_plane_a5c856cf6a603473c68381d21a544d2a3}{}\label{class_plane_a5c856cf6a603473c68381d21a544d2a3} 
+\index{Plane@{Plane}!calculate\+Normals@{calculate\+Normals}}
+\index{calculate\+Normals@{calculate\+Normals}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{calculate\+Normals()}{calculateNormals()}}
+{\footnotesize\ttfamily void Plane\+::calculate\+Normals (\begin{DoxyParamCaption}\item[{pcl\+::\+Normal\+Estimation\+O\+MP$<$ pcl\+::\+Point\+X\+YZ, pcl\+::\+Normal $>$}]{normal\+\_\+estimator,  }\item[{pcl\+::search\+::\+Search$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr}]{tree }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Computes the normals at every point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em normal\+\_\+estimator} & a O\+MP instance of the normal estimator \\
+\hline
+\mbox{\tt in}  & {\em tree} & a K\+D-\/tree used by the normal estimator to preform neareest neighbor searches \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_plane_a50f718840ac2c5cc3226ff66de2c60f6}{}\label{class_plane_a50f718840ac2c5cc3226ff66de2c60f6} 
+\index{Plane@{Plane}!compute@{compute}}
+\index{compute@{compute}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{compute()}{compute()}}
+{\footnotesize\ttfamily int Plane\+::compute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Performs a series of computations to find the plane. 
+
+\hypertarget{class_plane_a24415419c0c06e83f2016246a8d2ee40}{}\label{class_plane_a24415419c0c06e83f2016246a8d2ee40} 
+\index{Plane@{Plane}!compute\+Plane\+Indices@{compute\+Plane\+Indices}}
+\index{compute\+Plane\+Indices@{compute\+Plane\+Indices}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{compute\+Plane\+Indices()}{computePlaneIndices()}}
+{\footnotesize\ttfamily int Plane\+::compute\+Plane\+Indices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Compute all the (i,j) index of the plane points from the planar regression. 
+
+\hypertarget{class_plane_a503b1c82ae3a84d9bd88fbfa37a5e3be}{}\label{class_plane_a503b1c82ae3a84d9bd88fbfa37a5e3be} 
+\index{Plane@{Plane}!compute\+Plane\+L\+SE@{compute\+Plane\+L\+SE}}
+\index{compute\+Plane\+L\+SE@{compute\+Plane\+L\+SE}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{compute\+Plane\+L\+S\+E()}{computePlaneLSE()}}
+{\footnotesize\ttfamily void Plane\+::compute\+Plane\+L\+SE (\begin{DoxyParamCaption}\item[{pcl\+::\+Point\+Indices \&}]{ind }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Compute a planar regression equation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ind} & all the points on the plane \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_plane_a279bfd98317431edcdefe43004bb257f}{}\label{class_plane_a279bfd98317431edcdefe43004bb257f} 
+\index{Plane@{Plane}!compute\+Sphere\+Indices@{compute\+Sphere\+Indices}}
+\index{compute\+Sphere\+Indices@{compute\+Sphere\+Indices}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{compute\+Sphere\+Indices()}{computeSphereIndices()}}
+{\footnotesize\ttfamily int Plane\+::compute\+Sphere\+Indices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Compute all the (i,j) index of the plane points from the sphereical regression. 
+
+\hypertarget{class_plane_a60923e0c6d087076a234a9d5bd45d0fa}{}\label{class_plane_a60923e0c6d087076a234a9d5bd45d0fa} 
+\index{Plane@{Plane}!compute\+Sphere\+L\+SE@{compute\+Sphere\+L\+SE}}
+\index{compute\+Sphere\+L\+SE@{compute\+Sphere\+L\+SE}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{compute\+Sphere\+L\+S\+E()}{computeSphereLSE()}}
+{\footnotesize\ttfamily void Plane\+::compute\+Sphere\+L\+SE (\begin{DoxyParamCaption}\item[{pcl\+::\+Point\+Indices \&}]{ind }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Compute a sphereical regression equation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ind} & all the points on the plane \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_plane_a12c28b7eeb8cdef5451e2e90704e0673}{}\label{class_plane_a12c28b7eeb8cdef5451e2e90704e0673} 
+\index{Plane@{Plane}!draw\+Sphere\+Regression\+Points@{draw\+Sphere\+Regression\+Points}}
+\index{draw\+Sphere\+Regression\+Points@{draw\+Sphere\+Regression\+Points}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{draw\+Sphere\+Regression\+Points()}{drawSphereRegressionPoints()}}
+{\footnotesize\ttfamily int Plane\+::draw\+Sphere\+Regression\+Points (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{output\+\_\+mat,  }\item[{cv\+::\+Mat \&}]{input\+\_\+mat,  }\item[{std\+::vector$<$ double $>$ \&}]{equation,  }\item[{const int}]{row\+Size,  }\item[{const int}]{col\+Size,  }\item[{const double}]{threshold,  }\item[{bool}]{clicked }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_plane_a89c277f419ffb0e9d53f29127109465b}{}\label{class_plane_a89c277f419ffb0e9d53f29127109465b} 
+\index{Plane@{Plane}!get\+Cloud@{get\+Cloud}}
+\index{get\+Cloud@{get\+Cloud}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{get\+Cloud()}{getCloud()}}
+{\footnotesize\ttfamily pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr Plane\+::get\+Cloud (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the P\+CL representation of the xyz\+Map. 
+
+\begin{DoxyReturn}{Returns}
+P\+CL point cloud 
+\end{DoxyReturn}
+\hypertarget{class_plane_abad6f7c26005ad7ab847af5acaad9c31}{}\label{class_plane_abad6f7c26005ad7ab847af5acaad9c31} 
+\index{Plane@{Plane}!get\+Down\+Cloud@{get\+Down\+Cloud}}
+\index{get\+Down\+Cloud@{get\+Down\+Cloud}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{get\+Down\+Cloud()}{getDownCloud()}}
+{\footnotesize\ttfamily pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr Plane\+::get\+Down\+Cloud (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the P\+CL representatino of a down sampled xyz\+Map. 
+
+\begin{DoxyReturn}{Returns}
+down sampled P\+CL point cloud 
+\end{DoxyReturn}
+\hypertarget{class_plane_aafedb091ba358d46d5203c4e0eb6e838}{}\label{class_plane_aafedb091ba358d46d5203c4e0eb6e838} 
+\index{Plane@{Plane}!get\+Plane\+Equation@{get\+Plane\+Equation}}
+\index{get\+Plane\+Equation@{get\+Plane\+Equation}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{get\+Plane\+Equation()}{getPlaneEquation()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ Plane\+::get\+Plane\+Equation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the planar regression equation of the identified plane. 
+
+\begin{DoxyReturn}{Returns}
+coefficients for the planar regression equation 
+\end{DoxyReturn}
+\hypertarget{class_plane_a843717e035e2e6b4e03a8eece14098b1}{}\label{class_plane_a843717e035e2e6b4e03a8eece14098b1} 
+\index{Plane@{Plane}!get\+Plane\+Indicies@{get\+Plane\+Indicies}}
+\index{get\+Plane\+Indicies@{get\+Plane\+Indicies}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{get\+Plane\+Indicies()}{getPlaneIndicies()}}
+{\footnotesize\ttfamily std\+::vector$<$ cv\+::\+Point2i $>$ Plane\+::get\+Plane\+Indicies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the (i,j) indices for which the plane appears on the xyz\+Map. 
+
+\begin{DoxyReturn}{Returns}
+vector of (i,j) coordinates defining the points that make up the plane on the xyz\+Map 
+\end{DoxyReturn}
+\hypertarget{class_plane_ab82069a9be653b07a589374c03b2f436}{}\label{class_plane_ab82069a9be653b07a589374c03b2f436} 
+\index{Plane@{Plane}!get\+Sphere\+Equation@{get\+Sphere\+Equation}}
+\index{get\+Sphere\+Equation@{get\+Sphere\+Equation}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{get\+Sphere\+Equation()}{getSphereEquation()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ Plane\+::get\+Sphere\+Equation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the sphereical regression equation of the identified plane. 
+
+\begin{DoxyReturn}{Returns}
+coefficients for the sphereical regression equation 
+\end{DoxyReturn}
+\hypertarget{class_plane_acd72c8d01f393ef78c4ed1f685d1d36d}{}\label{class_plane_acd72c8d01f393ef78c4ed1f685d1d36d} 
+\index{Plane@{Plane}!get\+Sphere\+Indices@{get\+Sphere\+Indices}}
+\index{get\+Sphere\+Indices@{get\+Sphere\+Indices}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{get\+Sphere\+Indices()}{getSphereIndices()}}
+{\footnotesize\ttfamily std\+::vector$<$ cv\+::\+Point2i $>$ Plane\+::get\+Sphere\+Indices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the (i,j) indices for which the plane appears on the xyz\+Map. 
+
+\begin{DoxyReturn}{Returns}
+vector of (i,j) coordinates defining the points that make up the plane on the xyz\+Map 
+\end{DoxyReturn}
+\hypertarget{class_plane_ab884c9687d63290912707f749adad115}{}\label{class_plane_ab884c9687d63290912707f749adad115} 
+\index{Plane@{Plane}!initialize\+Cloud@{initialize\+Cloud}}
+\index{initialize\+Cloud@{initialize\+Cloud}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{initialize\+Cloud()}{initializeCloud()}}
+{\footnotesize\ttfamily void Plane\+::initialize\+Cloud (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{src }\end{DoxyParamCaption})}
+
+
+
+Initializes all the required point clouds. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em src} & the raw xyz\+Map \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_plane_a08b35c23d8e0f3eea0db820163cda6e0}{}\label{class_plane_a08b35c23d8e0f3eea0db820163cda6e0} 
+\index{Plane@{Plane}!region\+Grow@{region\+Grow}}
+\index{region\+Grow@{region\+Grow}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{region\+Grow()}{regionGrow()}}
+{\footnotesize\ttfamily void Plane\+::region\+Grow (\begin{DoxyParamCaption}\item[{pcl\+::\+Region\+Growing$<$ pcl\+::\+Point\+X\+YZ, pcl\+::\+Normal $>$ \&}]{reg,  }\item[{pcl\+::search\+::\+Search$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr}]{tree }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Aggregates points with like normals. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em reg} & equation of the final plane \\
+\hline
+\mbox{\tt in}  & {\em tree} & K\+D-\/tree used for nearest neighbor search \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_plane_afc8f76c6dc7223c7d681d69e427a3004}{}\label{class_plane_afc8f76c6dc7223c7d681d69e427a3004} 
+\index{Plane@{Plane}!voxel\+Downsample@{voxel\+Downsample}}
+\index{voxel\+Downsample@{voxel\+Downsample}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{voxel\+Downsample()}{voxelDownsample()}}
+{\footnotesize\ttfamily void Plane\+::voxel\+Downsample (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Down samples the cloud via a median filter. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_plane_a0b493693b28fb0cc74549fa24ded3721}{}\label{class_plane_a0b493693b28fb0cc74549fa24ded3721} 
+\index{Plane@{Plane}!cloud@{cloud}}
+\index{cloud@{cloud}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{cloud}{cloud}}
+{\footnotesize\ttfamily pcl\+::\+Point\+Cloud$<$pcl\+::\+Point\+X\+YZ$>$\+::Ptr$\ast$ Plane\+::cloud\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_plane_a1251f1df31bce7666494bfb6d069dd2e}{}\label{class_plane_a1251f1df31bce7666494bfb6d069dd2e} 
+\index{Plane@{Plane}!C\+L\+O\+U\+D\+\_\+\+S\+I\+Z\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD@{C\+L\+O\+U\+D\+\_\+\+S\+I\+Z\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}}
+\index{C\+L\+O\+U\+D\+\_\+\+S\+I\+Z\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD@{C\+L\+O\+U\+D\+\_\+\+S\+I\+Z\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{C\+L\+O\+U\+D\+\_\+\+S\+I\+Z\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}{CLOUD\_SIZE\_THRESHOLD}}
+{\footnotesize\ttfamily const int Plane\+::\+C\+L\+O\+U\+D\+\_\+\+S\+I\+Z\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD = 1000}
+
+
+
+Maximum cloud size (pixel) allowed. 
+
+\hypertarget{class_plane_abd24055f6ac0b57fc3f36462f50175d8}{}\label{class_plane_abd24055f6ac0b57fc3f36462f50175d8} 
+\index{Plane@{Plane}!clusters@{clusters}}
+\index{clusters@{clusters}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{clusters}{clusters}}
+{\footnotesize\ttfamily std\+::vector$<$pcl\+::\+Point\+Indices$>$ Plane\+::clusters\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_plane_a43513b679c313917824fce91b50f8d32}{}\label{class_plane_a43513b679c313917824fce91b50f8d32} 
+\index{Plane@{Plane}!colored\+\_\+cloud@{colored\+\_\+cloud}}
+\index{colored\+\_\+cloud@{colored\+\_\+cloud}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{colored\+\_\+cloud}{colored\_cloud}}
+{\footnotesize\ttfamily pcl\+::\+Point\+Cloud$<$pcl\+::\+Point\+X\+Y\+Z\+R\+GB$>$\+::Ptr$\ast$ Plane\+::colored\+\_\+cloud\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_plane_a90280649d43c66562919b463054387e7}{}\label{class_plane_a90280649d43c66562919b463054387e7} 
+\index{Plane@{Plane}!depth\+\_\+img@{depth\+\_\+img}}
+\index{depth\+\_\+img@{depth\+\_\+img}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{depth\+\_\+img}{depth\_img}}
+{\footnotesize\ttfamily cv\+::\+Mat Plane\+::depth\+\_\+img\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_plane_a08043629802a4740847a526b16ddc0b1}{}\label{class_plane_a08043629802a4740847a526b16ddc0b1} 
+\index{Plane@{Plane}!display\+\_\+img@{display\+\_\+img}}
+\index{display\+\_\+img@{display\+\_\+img}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{display\+\_\+img}{display\_img}}
+{\footnotesize\ttfamily cv\+::\+Mat Plane\+::display\+\_\+img\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_plane_ae4198f097fe1b58f10068f7bc0962c8c}{}\label{class_plane_ae4198f097fe1b58f10068f7bc0962c8c} 
+\index{Plane@{Plane}!down\+\_\+cloud@{down\+\_\+cloud}}
+\index{down\+\_\+cloud@{down\+\_\+cloud}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{down\+\_\+cloud}{down\_cloud}}
+{\footnotesize\ttfamily pcl\+::\+Point\+Cloud$<$pcl\+::\+Point\+X\+YZ$>$\+::Ptr$\ast$ Plane\+::down\+\_\+cloud\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_plane_aa76fc2b11042a6681c4573159d4fb384}{}\label{class_plane_aa76fc2b11042a6681c4573159d4fb384} 
+\index{Plane@{Plane}!down\+\_\+normals@{down\+\_\+normals}}
+\index{down\+\_\+normals@{down\+\_\+normals}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{down\+\_\+normals}{down\_normals}}
+{\footnotesize\ttfamily pcl\+::\+Point\+Cloud$<$pcl\+::\+Normal$>$\+::Ptr$\ast$ Plane\+::down\+\_\+normals\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_plane_a28e30d6c24eaa6c4e1d57ea8c1a2d924}{}\label{class_plane_a28e30d6c24eaa6c4e1d57ea8c1a2d924} 
+\index{Plane@{Plane}!normals@{normals}}
+\index{normals@{normals}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{normals}{normals}}
+{\footnotesize\ttfamily pcl\+::\+Point\+Cloud$<$pcl\+::\+Normal$>$\+::Ptr$\ast$ Plane\+::normals\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_plane_abc9e342c010c172faf22b345f68f25bd}{}\label{class_plane_abc9e342c010c172faf22b345f68f25bd} 
+\index{Plane@{Plane}!N\+U\+M\+\_\+\+C\+O\+R\+ES@{N\+U\+M\+\_\+\+C\+O\+R\+ES}}
+\index{N\+U\+M\+\_\+\+C\+O\+R\+ES@{N\+U\+M\+\_\+\+C\+O\+R\+ES}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{N\+U\+M\+\_\+\+C\+O\+R\+ES}{NUM\_CORES}}
+{\footnotesize\ttfamily const int Plane\+::\+N\+U\+M\+\_\+\+C\+O\+R\+ES = boost\+::thread\+::hardware\+\_\+concurrency()\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_plane_a59841c6147cdc9a25d7f6d9669ff6fd2}{}\label{class_plane_a59841c6147cdc9a25d7f6d9669ff6fd2} 
+\index{Plane@{Plane}!num\+\_\+plane\+\_\+points@{num\+\_\+plane\+\_\+points}}
+\index{num\+\_\+plane\+\_\+points@{num\+\_\+plane\+\_\+points}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{num\+\_\+plane\+\_\+points}{num\_plane\_points}}
+{\footnotesize\ttfamily int Plane\+::num\+\_\+plane\+\_\+points\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_plane_a3a7e69fb4f98c716cb403be89beded4c}{}\label{class_plane_a3a7e69fb4f98c716cb403be89beded4c} 
+\index{Plane@{Plane}!num\+\_\+sphere\+\_\+points@{num\+\_\+sphere\+\_\+points}}
+\index{num\+\_\+sphere\+\_\+points@{num\+\_\+sphere\+\_\+points}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{num\+\_\+sphere\+\_\+points}{num\_sphere\_points}}
+{\footnotesize\ttfamily int Plane\+::num\+\_\+sphere\+\_\+points\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_plane_afdf256b7ed2934c1dca9a09beb8c483e}{}\label{class_plane_afdf256b7ed2934c1dca9a09beb8c483e} 
+\index{Plane@{Plane}!plane\+\_\+equation@{plane\+\_\+equation}}
+\index{plane\+\_\+equation@{plane\+\_\+equation}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{plane\+\_\+equation}{plane\_equation}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ Plane\+::plane\+\_\+equation\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_plane_a5efd74ec0c24a0cac7778705d6134452}{}\label{class_plane_a5efd74ec0c24a0cac7778705d6134452} 
+\index{Plane@{Plane}!plane\+\_\+indices@{plane\+\_\+indices}}
+\index{plane\+\_\+indices@{plane\+\_\+indices}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{plane\+\_\+indices}{plane\_indices}}
+{\footnotesize\ttfamily std\+::vector$<$cv\+::\+Point2i$>$ Plane\+::plane\+\_\+indices\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_plane_a79bafd16d43b07fd7db7ed942e285109}{}\label{class_plane_a79bafd16d43b07fd7db7ed942e285109} 
+\index{Plane@{Plane}!plane\+\_\+mat@{plane\+\_\+mat}}
+\index{plane\+\_\+mat@{plane\+\_\+mat}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{plane\+\_\+mat}{plane\_mat}}
+{\footnotesize\ttfamily cv\+::\+Mat Plane\+::plane\+\_\+mat\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_plane_ae0e9b28377ab03e577aa6588da269328}{}\label{class_plane_ae0e9b28377ab03e577aa6588da269328} 
+\index{Plane@{Plane}!R\+\_\+\+S\+Q\+U\+A\+R\+E\+D\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD@{R\+\_\+\+S\+Q\+U\+A\+R\+E\+D\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}}
+\index{R\+\_\+\+S\+Q\+U\+A\+R\+E\+D\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD@{R\+\_\+\+S\+Q\+U\+A\+R\+E\+D\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{R\+\_\+\+S\+Q\+U\+A\+R\+E\+D\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD}{R\_SQUARED\_DISTANCE\_THRESHOLD}}
+{\footnotesize\ttfamily const double Plane\+::\+R\+\_\+\+S\+Q\+U\+A\+R\+E\+D\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD = 0.\+0005}
+
+
+
+Maximum distance (mm) allowed between real point and regression equation. 
+
+\hypertarget{class_plane_aa8d9403da437be0c087354a8c891afcd}{}\label{class_plane_aa8d9403da437be0c087354a8c891afcd} 
+\index{Plane@{Plane}!sphere\+\_\+equation@{sphere\+\_\+equation}}
+\index{sphere\+\_\+equation@{sphere\+\_\+equation}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{sphere\+\_\+equation}{sphere\_equation}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ Plane\+::sphere\+\_\+equation\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_plane_a94247ab1ed3d194702250a3a98643212}{}\label{class_plane_a94247ab1ed3d194702250a3a98643212} 
+\index{Plane@{Plane}!sphere\+\_\+indices@{sphere\+\_\+indices}}
+\index{sphere\+\_\+indices@{sphere\+\_\+indices}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{sphere\+\_\+indices}{sphere\_indices}}
+{\footnotesize\ttfamily std\+::vector$<$cv\+::\+Point2i$>$ Plane\+::sphere\+\_\+indices\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_plane_a1a9bdfcd38d9113a83ef12132570eff5}{}\label{class_plane_a1a9bdfcd38d9113a83ef12132570eff5} 
+\index{Plane@{Plane}!sphere\+\_\+mat@{sphere\+\_\+mat}}
+\index{sphere\+\_\+mat@{sphere\+\_\+mat}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{sphere\+\_\+mat}{sphere\_mat}}
+{\footnotesize\ttfamily cv\+::\+Mat Plane\+::sphere\+\_\+mat\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_plane_a65a1a3e2e6eededc01baaa24b7bc7c6c}{}\label{class_plane_a65a1a3e2e6eededc01baaa24b7bc7c6c} 
+\index{Plane@{Plane}!upsampled\+\_\+colored\+\_\+cloud@{upsampled\+\_\+colored\+\_\+cloud}}
+\index{upsampled\+\_\+colored\+\_\+cloud@{upsampled\+\_\+colored\+\_\+cloud}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{upsampled\+\_\+colored\+\_\+cloud}{upsampled\_colored\_cloud}}
+{\footnotesize\ttfamily pcl\+::\+Point\+Cloud$<$pcl\+::\+Point\+X\+Y\+Z\+R\+GB$>$\+::Ptr$\ast$ Plane\+::upsampled\+\_\+colored\+\_\+cloud\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_plane_8h}{Plane.\+h}\item 
+\hyperlink{_plane_8cpp}{Plane.\+cpp}\end{DoxyCompactItemize}
