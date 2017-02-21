@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['udpsender',['UDPSender',['../class_u_d_p_sender.html#a77c0f2eb66dbc9a912b4fede20de3f03',1,'UDPSender']]],
-  ['update',['update',['../class_depth_camera.html#abae1b9f37a00b17f00ff983ebb43ffc5',1,'DepthCamera::update()'],['../class_p_m_d_camera.html#aa6cb9398f9635436b4384ee2043def40',1,'PMDCamera::update()'],['../class_r_g_b_camera.html#ac9fa3f8f32605e846827b694ae7cff18',1,'RGBCamera::update()'],['../class_webcam.html#a3d5cab0a2b87b90b85793bc05414e503',1,'Webcam::update()']]]
+  ['send',['send',['../class_u_d_p_sender.html#a33d402a42a2d512bd12189e1f698cca4',1,'UDPSender']]],
+  ['streamingaverager',['StreamingAverager',['../class_streaming_averager.html#a10619c9e194b1214153fcdf9c393136c',1,'StreamingAverager']]]
 ];

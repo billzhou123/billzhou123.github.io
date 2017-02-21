@@ -27,12 +27,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="Artboard 1.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Open Augmented Reality Kit (OpenARK)
-   &#160;<span id="projectnumber">0.9</span>
+   &#160;<span id="projectnumber">0.8</span>
    </div>
-   <div id="projectbrief">Open-source wearable augmented reality (AR) system founded at UC Berkeley in 2016. The C++ based software offers innovative core functionalities to power a wide range of off-the-shelf AR components, including see-through glasses, depth cameras, and IMUs. The open-source platform includes fundamental tools such as AR-based camera calibration and SLAM.</div>
+   <div id="projectbrief">Open-source wearable augmented reality (AR) system founded at UC Berkeley in 2016</div>
   </td>
  </tr>
  </tbody>
@@ -84,6 +83,7 @@ $(document).ready(function(){initNavTree('class_util.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="class_util-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Util Class Reference</div>  </div>
@@ -106,9 +106,13 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a003878685d2eba96fadc4fdae502688e"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_util.html#a003878685d2eba96fadc4fdae502688e">normalize</a> (float a, float b)</td></tr>
 <tr class="memdesc:a003878685d2eba96fadc4fdae502688e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the hypotenuse length.  <a href="#a003878685d2eba96fadc4fdae502688e">More...</a><br /></td></tr>
 <tr class="separator:a003878685d2eba96fadc4fdae502688e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4212455c03e1a5ec0262f1df778bdc47"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_util.html#a4212455c03e1a5ec0262f1df778bdc47">euclideanDistance2D</a> (cv::Point p1, cv::Point pt2)</td></tr>
+<tr class="separator:a4212455c03e1a5ec0262f1df778bdc47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcaa0a0b92e0fd117be8dead6a7787f3"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_util.html#afcaa0a0b92e0fd117be8dead6a7787f3">euclidianDistance3D</a> (cv::Vec3f pt1, cv::Vec3f pt2)</td></tr>
 <tr class="memdesc:afcaa0a0b92e0fd117be8dead6a7787f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get euclidean distance between two 3D points.  <a href="#afcaa0a0b92e0fd117be8dead6a7787f3">More...</a><br /></td></tr>
 <tr class="separator:afcaa0a0b92e0fd117be8dead6a7787f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad189ee83cefd79e724047cb6283eb4ac"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_util.html#ad189ee83cefd79e724047cb6283eb4ac">euclideanDistancePerPixel</a> (cv::Mat xyzMap, cv::Point pt, int radius)</td></tr>
+<tr class="separator:ad189ee83cefd79e724047cb6283eb4ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf2cc717b8e145166f247df2742a0325"><td class="memItemLeft" align="right" valign="top">static cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_util.html#abf2cc717b8e145166f247df2742a0325">removePoints</a> (cv::Mat img, std::vector&lt; cv::Point2i &gt; points)</td></tr>
 <tr class="memdesc:abf2cc717b8e145166f247df2742a0325"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes points on img with indicies defined in points.  <a href="#abf2cc717b8e145166f247df2742a0325">More...</a><br /></td></tr>
 <tr class="separator:abf2cc717b8e145166f247df2742a0325"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,6 +122,19 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:acb6daa4dafb8af9adffa1fea2600a40d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_util.html#acb6daa4dafb8af9adffa1fea2600a40d">isMember</a> (cv::Mat xyzMap, int x, int y)</td></tr>
 <tr class="memdesc:acb6daa4dafb8af9adffa1fea2600a40d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether (x,y) is a non-zero point in the matrix.  <a href="#acb6daa4dafb8af9adffa1fea2600a40d">More...</a><br /></td></tr>
 <tr class="separator:acb6daa4dafb8af9adffa1fea2600a40d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d0aff128bc986da5140cacd41759e0e"><td class="memItemLeft" align="right" valign="top">static cv::Point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_util.html#a0d0aff128bc986da5140cacd41759e0e">findCentroid</a> (cv::Mat xyzMap)</td></tr>
+<tr class="separator:a0d0aff128bc986da5140cacd41759e0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05321942460c7b903b8b8ae54d170bb8"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_util.html#a05321942460c7b903b8b8ae54d170bb8">TriangleAngleCalculation</a> (double x1, double y1, double x2, double y2, double x3, double y3)</td></tr>
+<tr class="separator:a05321942460c7b903b8b8ae54d170bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:aa03b701f4479e96b87e122abaa87804d"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_util.html#aa03b701f4479e96b87e122abaa87804d">DistanceTwoPoints</a> (double x1, double y1, double x2, double y2)</td></tr>
+<tr class="separator:aa03b701f4479e96b87e122abaa87804d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c066313814add2ed693792e7643a3c3"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_util.html#a0c066313814add2ed693792e7643a3c3">otherAngleFind</a> (double biggerAngle, double largestDistance, double smallDistance)</td></tr>
+<tr class="separator:a0c066313814add2ed693792e7643a3c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93b18008f3d21bd77445eb6901c8e4d3"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_util.html#a93b18008f3d21bd77445eb6901c8e4d3">BiggerAngleFind</a> (double largestDistance, double smallDistanceOne, double smallDistanceTwo)</td></tr>
+<tr class="separator:a93b18008f3d21bd77445eb6901c8e4d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class containing generic helper functions. </p>
@@ -175,6 +192,48 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a93b18008f3d21bd77445eb6901c8e4d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93b18008f3d21bd77445eb6901c8e4d3">&sect;&nbsp;</a></span>BiggerAngleFind()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Util::BiggerAngleFind </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>largestDistance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>smallDistanceOne</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>smallDistanceTwo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a4b35aebe2f6ea734a9221356c0ad38ec"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4b35aebe2f6ea734a9221356c0ad38ec">&sect;&nbsp;</a></span>colorGenerator2()</h2>
 
@@ -200,6 +259,132 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Generates a random RGB color. </p>
 <dl class="section return"><dt>Returns</dt><dd>random RGB color in Vec3b format </dd></dl>
+
+</div>
+</div>
+<a id="aa03b701f4479e96b87e122abaa87804d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa03b701f4479e96b87e122abaa87804d">&sect;&nbsp;</a></span>DistanceTwoPoints()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Util::DistanceTwoPoints </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4212455c03e1a5ec0262f1df778bdc47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4212455c03e1a5ec0262f1df778bdc47">&sect;&nbsp;</a></span>euclideanDistance2D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Util::euclideanDistance2D </td>
+          <td>(</td>
+          <td class="paramtype">cv::Point&#160;</td>
+          <td class="paramname"><em>p1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Point&#160;</td>
+          <td class="paramname"><em>pt2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad189ee83cefd79e724047cb6283eb4ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad189ee83cefd79e724047cb6283eb4ac">&sect;&nbsp;</a></span>euclideanDistancePerPixel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Util::euclideanDistancePerPixel </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat&#160;</td>
+          <td class="paramname"><em>xyzMap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Point&#160;</td>
+          <td class="paramname"><em>pt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radius</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -246,6 +431,32 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>euclidean distance </dd></dl>
+
+</div>
+</div>
+<a id="a0d0aff128bc986da5140cacd41759e0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d0aff128bc986da5140cacd41759e0e">&sect;&nbsp;</a></span>findCentroid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Point Util::findCentroid </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat&#160;</td>
+          <td class="paramname"><em>xyzMap</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -407,6 +618,48 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a0c066313814add2ed693792e7643a3c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c066313814add2ed693792e7643a3c3">&sect;&nbsp;</a></span>otherAngleFind()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Util::otherAngleFind </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>biggerAngle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>largestDistance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>smallDistance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="abf2cc717b8e145166f247df2742a0325"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abf2cc717b8e145166f247df2742a0325">&sect;&nbsp;</a></span>removePoints()</h2>
 
@@ -450,6 +703,66 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>processed image </dd></dl>
+
+</div>
+</div>
+<a id="a05321942460c7b903b8b8ae54d170bb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05321942460c7b903b8b8ae54d170bb8">&sect;&nbsp;</a></span>TriangleAngleCalculation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Util::TriangleAngleCalculation </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

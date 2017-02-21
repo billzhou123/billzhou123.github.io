@@ -18,14 +18,31 @@ static int \hyperlink{class_util_a1213364e3ea975aa7f3713f3ad5a96a7}{get\+Distanc
 \begin{DoxyCompactList}\small\item\em Get euclidean distance between two 2D points. \end{DoxyCompactList}\item 
 static float \hyperlink{class_util_a003878685d2eba96fadc4fdae502688e}{normalize} (float a, float b)
 \begin{DoxyCompactList}\small\item\em Return the hypotenuse length. \end{DoxyCompactList}\item 
+static double \hyperlink{class_util_a4212455c03e1a5ec0262f1df778bdc47}{euclidean\+Distance2D} (cv\+::\+Point p1, cv\+::\+Point pt2)
+\item 
 static double \hyperlink{class_util_afcaa0a0b92e0fd117be8dead6a7787f3}{euclidian\+Distance3D} (cv\+::\+Vec3f pt1, cv\+::\+Vec3f pt2)
 \begin{DoxyCompactList}\small\item\em Get euclidean distance between two 3D points. \end{DoxyCompactList}\item 
+static double \hyperlink{class_util_ad189ee83cefd79e724047cb6283eb4ac}{euclidean\+Distance\+Per\+Pixel} (cv\+::\+Mat xyz\+Map, cv\+::\+Point pt, int radius)
+\item 
 static cv\+::\+Mat \hyperlink{class_util_abf2cc717b8e145166f247df2742a0325}{remove\+Points} (cv\+::\+Mat img, std\+::vector$<$ cv\+::\+Point2i $>$ points)
 \begin{DoxyCompactList}\small\item\em Removes points on img with indicies defined in points. \end{DoxyCompactList}\item 
 static cv\+::\+Vec3f \hyperlink{class_util_ab6f41d0184eb52fb8830119b01fde445}{average\+Around\+Point} (cv\+::\+Mat img, cv\+::\+Point2i pt, int radius)
 \begin{DoxyCompactList}\small\item\em Average all non-\/zero values around a point. \end{DoxyCompactList}\item 
 static bool \hyperlink{class_util_acb6daa4dafb8af9adffa1fea2600a40d}{is\+Member} (cv\+::\+Mat xyz\+Map, int x, int y)
-\begin{DoxyCompactList}\small\item\em Determine whether (x,y) is a non-\/zero point in the matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Determine whether (x,y) is a non-\/zero point in the matrix. \end{DoxyCompactList}\item 
+static cv\+::\+Point \hyperlink{class_util_a0d0aff128bc986da5140cacd41759e0e}{find\+Centroid} (cv\+::\+Mat xyz\+Map)
+\item 
+static double \hyperlink{class_util_a05321942460c7b903b8b8ae54d170bb8}{Triangle\+Angle\+Calculation} (double x1, double y1, double x2, double y2, double x3, double y3)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \hyperlink{class_util_aa03b701f4479e96b87e122abaa87804d}{Distance\+Two\+Points} (double x1, double y1, double x2, double y2)
+\item 
+static double \hyperlink{class_util_a0c066313814add2ed693792e7643a3c3}{other\+Angle\+Find} (double bigger\+Angle, double largest\+Distance, double small\+Distance)
+\item 
+static double \hyperlink{class_util_a93b18008f3d21bd77445eb6901c8e4d3}{Bigger\+Angle\+Find} (double largest\+Distance, double small\+Distance\+One, double small\+Distance\+Two)
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -54,6 +71,12 @@ Average all non-\/zero values around a point.
 \begin{DoxyReturn}{Returns}
 average (x,y,z) value of the point of interest 
 \end{DoxyReturn}
+\hypertarget{class_util_a93b18008f3d21bd77445eb6901c8e4d3}{}\label{class_util_a93b18008f3d21bd77445eb6901c8e4d3} 
+\index{Util@{Util}!Bigger\+Angle\+Find@{Bigger\+Angle\+Find}}
+\index{Bigger\+Angle\+Find@{Bigger\+Angle\+Find}!Util@{Util}}
+\subsubsection{\texorpdfstring{Bigger\+Angle\+Find()}{BiggerAngleFind()}}
+{\footnotesize\ttfamily double Util\+::\+Bigger\+Angle\+Find (\begin{DoxyParamCaption}\item[{double}]{largest\+Distance,  }\item[{double}]{small\+Distance\+One,  }\item[{double}]{small\+Distance\+Two }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
 \hypertarget{class_util_a4b35aebe2f6ea734a9221356c0ad38ec}{}\label{class_util_a4b35aebe2f6ea734a9221356c0ad38ec} 
 \index{Util@{Util}!color\+Generator2@{color\+Generator2}}
 \index{color\+Generator2@{color\+Generator2}!Util@{Util}}
@@ -67,6 +90,24 @@ Generates a random R\+GB color.
 \begin{DoxyReturn}{Returns}
 random R\+GB color in Vec3b format 
 \end{DoxyReturn}
+\hypertarget{class_util_aa03b701f4479e96b87e122abaa87804d}{}\label{class_util_aa03b701f4479e96b87e122abaa87804d} 
+\index{Util@{Util}!Distance\+Two\+Points@{Distance\+Two\+Points}}
+\index{Distance\+Two\+Points@{Distance\+Two\+Points}!Util@{Util}}
+\subsubsection{\texorpdfstring{Distance\+Two\+Points()}{DistanceTwoPoints()}}
+{\footnotesize\ttfamily double Util\+::\+Distance\+Two\+Points (\begin{DoxyParamCaption}\item[{double}]{x1,  }\item[{double}]{y1,  }\item[{double}]{x2,  }\item[{double}]{y2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\hypertarget{class_util_a4212455c03e1a5ec0262f1df778bdc47}{}\label{class_util_a4212455c03e1a5ec0262f1df778bdc47} 
+\index{Util@{Util}!euclidean\+Distance2D@{euclidean\+Distance2D}}
+\index{euclidean\+Distance2D@{euclidean\+Distance2D}!Util@{Util}}
+\subsubsection{\texorpdfstring{euclidean\+Distance2\+D()}{euclideanDistance2D()}}
+{\footnotesize\ttfamily double Util\+::euclidean\+Distance2D (\begin{DoxyParamCaption}\item[{cv\+::\+Point}]{p1,  }\item[{cv\+::\+Point}]{pt2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\hypertarget{class_util_ad189ee83cefd79e724047cb6283eb4ac}{}\label{class_util_ad189ee83cefd79e724047cb6283eb4ac} 
+\index{Util@{Util}!euclidean\+Distance\+Per\+Pixel@{euclidean\+Distance\+Per\+Pixel}}
+\index{euclidean\+Distance\+Per\+Pixel@{euclidean\+Distance\+Per\+Pixel}!Util@{Util}}
+\subsubsection{\texorpdfstring{euclidean\+Distance\+Per\+Pixel()}{euclideanDistancePerPixel()}}
+{\footnotesize\ttfamily double Util\+::euclidean\+Distance\+Per\+Pixel (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{xyz\+Map,  }\item[{cv\+::\+Point}]{pt,  }\item[{int}]{radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
 \hypertarget{class_util_afcaa0a0b92e0fd117be8dead6a7787f3}{}\label{class_util_afcaa0a0b92e0fd117be8dead6a7787f3} 
 \index{Util@{Util}!euclidian\+Distance3D@{euclidian\+Distance3D}}
 \index{euclidian\+Distance3D@{euclidian\+Distance3D}!Util@{Util}}
@@ -87,6 +128,12 @@ Get euclidean distance between two 3D points.
 \begin{DoxyReturn}{Returns}
 euclidean distance 
 \end{DoxyReturn}
+\hypertarget{class_util_a0d0aff128bc986da5140cacd41759e0e}{}\label{class_util_a0d0aff128bc986da5140cacd41759e0e} 
+\index{Util@{Util}!find\+Centroid@{find\+Centroid}}
+\index{find\+Centroid@{find\+Centroid}!Util@{Util}}
+\subsubsection{\texorpdfstring{find\+Centroid()}{findCentroid()}}
+{\footnotesize\ttfamily cv\+::\+Point Util\+::find\+Centroid (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{xyz\+Map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
 \hypertarget{class_util_a1213364e3ea975aa7f3713f3ad5a96a7}{}\label{class_util_a1213364e3ea975aa7f3713f3ad5a96a7} 
 \index{Util@{Util}!get\+DistanceT@{get\+DistanceT}}
 \index{get\+DistanceT@{get\+DistanceT}!Util@{Util}}
@@ -150,6 +197,12 @@ Return the hypotenuse length.
 {\em b} & leg length return hypotenuse length \\
 \hline
 \end{DoxyParams}
+\hypertarget{class_util_a0c066313814add2ed693792e7643a3c3}{}\label{class_util_a0c066313814add2ed693792e7643a3c3} 
+\index{Util@{Util}!other\+Angle\+Find@{other\+Angle\+Find}}
+\index{other\+Angle\+Find@{other\+Angle\+Find}!Util@{Util}}
+\subsubsection{\texorpdfstring{other\+Angle\+Find()}{otherAngleFind()}}
+{\footnotesize\ttfamily double Util\+::other\+Angle\+Find (\begin{DoxyParamCaption}\item[{double}]{bigger\+Angle,  }\item[{double}]{largest\+Distance,  }\item[{double}]{small\+Distance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
 \hypertarget{class_util_abf2cc717b8e145166f247df2742a0325}{}\label{class_util_abf2cc717b8e145166f247df2742a0325} 
 \index{Util@{Util}!remove\+Points@{remove\+Points}}
 \index{remove\+Points@{remove\+Points}!Util@{Util}}
@@ -170,6 +223,12 @@ Removes points on img with indicies defined in points.
 \begin{DoxyReturn}{Returns}
 processed image 
 \end{DoxyReturn}
+\hypertarget{class_util_a05321942460c7b903b8b8ae54d170bb8}{}\label{class_util_a05321942460c7b903b8b8ae54d170bb8} 
+\index{Util@{Util}!Triangle\+Angle\+Calculation@{Triangle\+Angle\+Calculation}}
+\index{Triangle\+Angle\+Calculation@{Triangle\+Angle\+Calculation}!Util@{Util}}
+\subsubsection{\texorpdfstring{Triangle\+Angle\+Calculation()}{TriangleAngleCalculation()}}
+{\footnotesize\ttfamily double Util\+::\+Triangle\+Angle\+Calculation (\begin{DoxyParamCaption}\item[{double}]{x1,  }\item[{double}]{y1,  }\item[{double}]{x2,  }\item[{double}]{y2,  }\item[{double}]{x3,  }\item[{double}]{y3 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['rgbcamera',['RGBCamera',['../class_r_g_b_camera.html',1,'']]]
+  ['plane',['Plane',['../class_plane.html',1,'']]],
+  ['pmdcamera',['PMDCamera',['../class_p_m_d_camera.html',1,'']]]
 ];

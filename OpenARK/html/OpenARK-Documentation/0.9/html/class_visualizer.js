@@ -4,6 +4,7 @@ var class_visualizer =
     [ "visualizeDepthMap", "class_visualizer.html#a5af40bebe3119c1d605351f42d2d8b95", null ],
     [ "visualizeHand", "class_visualizer.html#aa4436945eb7f9220b55d46914e8c5005", null ],
     [ "visualizeMatrix", "class_visualizer.html#a1ed923a0bdac0f3328af7aceb4d85e0e", null ],
+    [ "visualizePlanePoints", "class_visualizer.html#acdc7b3fa2c57bddb1de863101c690d51", null ],
     [ "visualizePlaneRegression", "class_visualizer.html#a448063633391ee4ae2af595fe760aab0", null ],
     [ "visualizeXYZMap", "class_visualizer.html#a24caf117be9878e2f5ad35cabb7f4f88", null ],
     [ "visulizePolygonMesh", "class_visualizer.html#a82702715f2ac30e555ccad3339375bf8", null ],

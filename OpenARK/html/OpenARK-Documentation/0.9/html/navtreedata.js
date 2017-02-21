@@ -1,8 +1,8 @@
 var NAVTREE =
 [
   [ "Open Augmented Reality Kit (OpenARK)", "index.html", [
-    [ "Required modules:", "md__d_1__open_a_r_k__open_a_r_k-_s_d_k__r_e_a_d_m_e.html", null ],
-    [ "OpenARK", "md__d_1__open_a_r_k__r_e_a_d_m_e.html", null ],
+    [ "Required modules:", "md__open_a_r_k-_s_d_k__r_e_a_d_m_e.html", null ],
+    [ "OpenARK", "md__r_e_a_d_m_e.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -18,7 +18,6 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]

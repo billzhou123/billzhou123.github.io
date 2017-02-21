@@ -12,6 +12,8 @@ Class defining a plane object.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\hyperlink{class_plane_acac0d9c003e0ab10d07b146c3566a0c7}{Plane} ()
+\item 
 \hyperlink{class_plane_a94bc1ca29c305edb76676528b1a9465c}{Plane} (cv\+::\+Mat \&src)
 \begin{DoxyCompactList}\small\item\em Constructs a plane object from a unsegemented xyz\+Map. \end{DoxyCompactList}\item 
 \hyperlink{class_plane_a69abd86051c880dcb44b249ad10c4436}{$\sim$\+Plane} ()
@@ -138,7 +140,7 @@ The plane object will be defined by its regression equation Example on tracking 
       \hyperlink{class_depth_camera_a0c295c5a0696550f453b1c8cd0fcb188}{getXYZMap}()));
         
         \textcolor{comment}{// Find the plane}
-        \hyperlink{class_plane}{Plane} plane = \hyperlink{class_plane_a94bc1ca29c305edb76676528b1a9465c}{Plane::Plane}(pmd->\hyperlink{class_depth_camera_a0c295c5a0696550f453b1c8cd0fcb188}{getXYZMap}());
+        \hyperlink{class_plane}{Plane} plane = \hyperlink{class_plane_acac0d9c003e0ab10d07b146c3566a0c7}{Plane::Plane}(pmd->\hyperlink{class_depth_camera_a0c295c5a0696550f453b1c8cd0fcb188}{getXYZMap}());
         \hyperlink{class_visualizer_af65e36aaef7c1f60d0f79819f17707d7}{Visualizer::visualizeCloud}(plane.\hyperlink{class_plane_abad6f7c26005ad7ab847af5acaad9c31}{getDownCloud}());
         cv::imshow(\textcolor{stringliteral}{"Plane Regression"}, \hyperlink{class_visualizer_a448063633391ee4ae2af595fe760aab0}{Visualizer::visualizePlaneRegression}
       (pmd->\hyperlink{class_depth_camera_a0c295c5a0696550f453b1c8cd0fcb188}{getXYZMap}(), plane.\hyperlink{class_plane_aafedb091ba358d46d5203c4e0eb6e838}{getPlaneEquation}(), plane.
@@ -155,8 +157,7 @@ The plane object will be defined by its regression equation Example on tracking 
         
         \textcolor{comment}{// Show the hand}
         cv::imshow(\textcolor{stringliteral}{"Hand"}, \hyperlink{class_visualizer_aa4436945eb7f9220b55d46914e8c5005}{Visualizer::visualizeHand}(pmd->
-      \hyperlink{class_depth_camera_a0c295c5a0696550f453b1c8cd0fcb188}{getXYZMap}(), right\_hand.\hyperlink{class_hand_a7a7147d586c8fc8f781be0ed0dac1d94}{pointer\_finger\_ij}, right\_hand.
-      \hyperlink{class_hand_a86d74ccce4bbfafa5825762713d38b44}{shape\_centroid\_ij}));
+      \hyperlink{class_depth_camera_a0c295c5a0696550f453b1c8cd0fcb188}{getXYZMap}(), right\_hand.pointer\_finger\_ij, right\_hand.shape\_centroid\_ij));
         \textcolor{keywordflow}{if} (right\_hand.\hyperlink{class_hand_aad89c3e47921cb0c39430f4501238088}{touchObject}(plane.\hyperlink{class_plane_aafedb091ba358d46d5203c4e0eb6e838}{getPlaneEquation}(), plane.
       \hyperlink{class_plane_ae0e9b28377ab03e577aa6588da269328}{R\_SQUARED\_DISTANCE\_THRESHOLD} * 3) == \textcolor{keyword}{true})
         \{
@@ -181,10 +182,16 @@ The plane object will be defined by its regression equation Example on tracking 
  
 
 \subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_plane_acac0d9c003e0ab10d07b146c3566a0c7}{}\label{class_plane_acac0d9c003e0ab10d07b146c3566a0c7} 
+\index{Plane@{Plane}!Plane@{Plane}}
+\index{Plane@{Plane}!Plane@{Plane}}
+\subsubsection{\texorpdfstring{Plane()}{Plane()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Plane\+::\+Plane (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 \hypertarget{class_plane_a94bc1ca29c305edb76676528b1a9465c}{}\label{class_plane_a94bc1ca29c305edb76676528b1a9465c} 
 \index{Plane@{Plane}!Plane@{Plane}}
 \index{Plane@{Plane}!Plane@{Plane}}
-\subsubsection{\texorpdfstring{Plane()}{Plane()}}
+\subsubsection{\texorpdfstring{Plane()}{Plane()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Plane\+::\+Plane (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{src }\end{DoxyParamCaption})}
 
 

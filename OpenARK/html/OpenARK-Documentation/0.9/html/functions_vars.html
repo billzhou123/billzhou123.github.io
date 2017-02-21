@@ -27,12 +27,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="Artboard 1.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Open Augmented Reality Kit (OpenARK)
-   &#160;<span id="projectnumber">0.9</span>
+   &#160;<span id="projectnumber">0.8</span>
    </div>
-   <div id="projectbrief">Open-source wearable augmented reality (AR) system founded at UC Berkeley in 2016. The C++ based software offers innovative core functionalities to power a wide range of off-the-shelf AR components, including see-through glasses, depth cameras, and IMUs. The open-source platform includes fundamental tools such as AR-based camera calibration and SLAM.</div>
+   <div id="projectbrief">Open-source wearable augmented reality (AR) system founded at UC Berkeley in 2016</div>
   </td>
  </tr>
  </tbody>
@@ -91,8 +90,8 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 <li>amps
 : <a class="el" href="class_p_m_d_camera.html#a315c2931504d25d5b5d882c4b2d9ad26">PMDCamera</a>
 </li>
-<li>averageAngle
-: <a class="el" href="structcurve.html#a67806447783717dcb334f0e6c8dd0093">curve</a>
+<li>ANGLE_THRESHHOLD
+: <a class="el" href="class_hand.html#aae06e06e724346861df0a7fdddcfc3c8">Hand</a>
 </li>
 </ul>
 
@@ -111,14 +110,20 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 <li>cap
 : <a class="el" href="class_r_g_b_camera.html#a941480d7209fdae8f0ac410cb6b90a63">RGBCamera</a>
 </li>
-<li>centroid
-: <a class="el" href="structcurve.html#a434421bfdc9c8961a28590ef99f83e00">curve</a>
+<li>centroid_ij
+: <a class="el" href="class_hand.html#a1b7c44a205ea0ec4a89a24abc8ce84af">Hand</a>
+</li>
+<li>centroid_xyz
+: <a class="el" href="class_hand.html#af1d336666d556ea9d900bdd7bae6b88c">Hand</a>
 </li>
 <li>cloud
 : <a class="el" href="class_plane.html#a0b493693b28fb0cc74549fa24ded3721">Plane</a>
 </li>
 <li>CLOUD_SIZE_THRESHOLD
 : <a class="el" href="class_plane.html#a1251f1df31bce7666494bfb6d069dd2e">Plane</a>
+</li>
+<li>CLUSTER_THRESHOLD
+: <a class="el" href="class_hand.html#a8fee584c52a9c38a8c9500b86859a610">Hand</a>
 </li>
 <li>clusters
 : <a class="el" href="class_depth_camera.html#a333347ab312906b2196596b078fc98b4">DepthCamera</a>
@@ -130,15 +135,24 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 <li>CONFIDENCE_THRESHHOLD
 : <a class="el" href="class_depth_camera.html#a4a2bb91ca2e9be53a53c4a6dcf0e1677">DepthCamera</a>
 </li>
-<li>curves
-: <a class="el" href="class_hand.html#a1a90a57256c5d724a12db86cb55c57c2">Hand</a>
+<li>currentValue
+: <a class="el" href="class_streaming_averager.html#a3a0923d6e95a69817321367b98aa9bf5">StreamingAverager</a>
 </li>
 </ul>
 
 
 <h3><a id="index_d"></a>- d -</h3><ul>
+<li>dataPoints
+: <a class="el" href="class_streaming_averager.html#aade55d0df31cc9652faf1fe4f7f2887c">StreamingAverager</a>
+</li>
 <li>dd
 : <a class="el" href="class_p_m_d_camera.html#add31d3bba3f20568e45e3dd864a5bda9">PMDCamera</a>
+</li>
+<li>defects_ij
+: <a class="el" href="class_hand.html#a7d0281af3003f2f935115e5956056415">Hand</a>
+</li>
+<li>defects_xyz
+: <a class="el" href="class_hand.html#aad21d7ee1c845701e47c37d6c5ac96d5">Hand</a>
 </li>
 <li>depth_img
 : <a class="el" href="class_plane.html#a90280649d43c66562919b463054387e7">Plane</a>
@@ -159,12 +173,6 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 
 
 <h3><a id="index_e"></a>- e -</h3><ul>
-<li>edgeCentroid
-: <a class="el" href="class_hand.html#a44e1328fa33595d1d81e0aaa6109cb6d">Hand</a>
-</li>
-<li>edgeSize
-: <a class="el" href="class_hand.html#a287a96efb8ba12064d5af85be07d64d9">Hand</a>
-</li>
 <li>err
 : <a class="el" href="class_p_m_d_camera.html#a096946b5bca77dd8fe416c31f850ae75">PMDCamera</a>
 </li>
@@ -172,6 +180,12 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 
 
 <h3><a id="index_f"></a>- f -</h3><ul>
+<li>fingers_ij
+: <a class="el" href="class_hand.html#a4539e1c12c9c3ef9218d4e96c3aebd4b">Hand</a>
+</li>
+<li>fingers_xyz
+: <a class="el" href="class_hand.html#afb4b29e1aaca7d0779af899a9eeaa21d">Hand</a>
+</li>
 <li>flagMap
 : <a class="el" href="class_depth_camera.html#a5b6e685ea92518f7deeb317ff6d0358f">DepthCamera</a>
 </li>
@@ -182,19 +196,18 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 </ul>
 
 
-<h3><a id="index_g"></a>- g -</h3><ul>
-<li>g
-: <a class="el" href="structcurve.html#afb7fe75fc30f7a832dbb845db62a5244">curve</a>
-</li>
-</ul>
-
-
 <h3><a id="index_h"></a>- h -</h3><ul>
-<li>hand_cluster
-: <a class="el" href="class_hand.html#acbe984385f832d6b1d595dc280d59206">Hand</a>
+<li>hand
+: <a class="el" href="class_object3_d.html#abb8332580980c9ed85c43faf1f25cb0f">Object3D</a>
 </li>
-<li>heatmap
-: <a class="el" href="class_hand.html#ac449abf8573f0e3b313dc23c4be8f325">Hand</a>
+<li>hasHand
+: <a class="el" href="class_object3_d.html#a8cfee001a38488c0eeaa0a1333c1ba48">Object3D</a>
+</li>
+<li>hasPlane
+: <a class="el" href="class_object3_d.html#a6a53bea872dadddc06e64ee6b7d7b238">Object3D</a>
+</li>
+<li>hasShape
+: <a class="el" href="class_object3_d.html#a00110e4274ca6e0f107e78e2e097d6d0">Object3D</a>
 </li>
 <li>hnd
 : <a class="el" href="class_p_m_d_camera.html#a4422b04aee07aed56b58847d39b2230f">PMDCamera</a>
@@ -203,9 +216,6 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 
 
 <h3><a id="index_i"></a>- i -</h3><ul>
-<li>image
-: <a class="el" href="class_hand.html#abfe6cc57de5f985ac7024c5f90d7f5da">Hand</a>
-</li>
 <li>INVALID_FLAG_VALUE
 : <a class="el" href="class_depth_camera.html#af7eb5186ae7366de110bb5b08803e11d">DepthCamera</a>
 </li>
@@ -219,10 +229,14 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 </ul>
 
 
-<h3><a id="index_m"></a>- m -</h3><ul>
-<li>maxAngle
-: <a class="el" href="structcurve.html#ae5ccde75e194081b8c4b0c00f7af4879">curve</a>
+<h3><a id="index_l"></a>- l -</h3><ul>
+<li>leftEdgeConnected
+: <a class="el" href="class_object3_d.html#ac12ac80ceca7b3d6aa3d935956e6e04b">Object3D</a>
 </li>
+</ul>
+
+
+<h3><a id="index_m"></a>- m -</h3><ul>
 <li>measurement
 : <a class="el" href="class_p_m_d_camera.html#ab7536178e056881c11756892c5f0a4b0">PMDCamera</a>
 </li>
@@ -252,6 +266,9 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 
 
 <h3><a id="index_p"></a>- p -</h3><ul>
+<li>plane
+: <a class="el" href="class_object3_d.html#a0fef984a1f54d349271c474a08ebfd6d">Object3D</a>
+</li>
 <li>plane_equation
 : <a class="el" href="class_plane.html#afdf256b7ed2934c1dca9a09beb8c483e">Plane</a>
 </li>
@@ -260,12 +277,6 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 </li>
 <li>plane_mat
 : <a class="el" href="class_plane.html#a79bafd16d43b07fd7db7ed942e285109">Plane</a>
-</li>
-<li>pointer_finger_ij
-: <a class="el" href="class_hand.html#a7a7147d586c8fc8f781be0ed0dac1d94">Hand</a>
-</li>
-<li>pointer_finger_xyz
-: <a class="el" href="class_hand.html#abeb7b0f0414f128dff4a189137fe35c9">Hand</a>
 </li>
 <li>PROC_PARAM
 : <a class="el" href="class_p_m_d_camera.html#aef47cd1fda507e9921143f6d0302f5e0">PMDCamera</a>
@@ -280,6 +291,12 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 <li>R_SQUARED_DISTANCE_THRESHOLD
 : <a class="el" href="class_plane.html#ae0e9b28377ab03e577aa6588da269328">Plane</a>
 </li>
+<li>rejectionThreshold
+: <a class="el" href="class_streaming_averager.html#a861d5b10b9cc18d8a94b070af1fd49e0">StreamingAverager</a>
+</li>
+<li>rightEdgeConnected
+: <a class="el" href="class_object3_d.html#aed51e0166d44e45976f1354317fc8dd5">Object3D</a>
+</li>
 </ul>
 
 
@@ -287,24 +304,14 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 <li>s
 : <a class="el" href="class_u_d_p_sender.html#aeb3773ffb3bc9549dbe73c0e7fee0f23">UDPSender</a>
 </li>
-<li>shape_centroid_ij
-: <a class="el" href="class_hand.html#a86d74ccce4bbfafa5825762713d38b44">Hand</a>
+<li>sampleFrequency
+: <a class="el" href="class_streaming_averager.html#a4fa6f781e59a8b979da834e098fb262e">StreamingAverager</a>
 </li>
-<li>shape_centroid_xyz
-: <a class="el" href="class_hand.html#a3991a22a52268c3b469a4221fbfdb695">Hand</a>
-</li>
-<li>shapeArea
-: <a class="el" href="class_hand.html#a505288f2ffe79800bcb8b5ccb4f1995a">Hand</a>
-</li>
-<li>shapeCentroid
-: <a class="el" href="class_hand.html#a89099eeaa8a0286f6baae95d3b0a9f20">Hand</a>
+<li>shape
+: <a class="el" href="class_object3_d.html#a27de2794f028136d15a4073e830980d1">Object3D</a>
 </li>
 <li>si_other
 : <a class="el" href="class_u_d_p_sender.html#abeda008425d14ea8092d23d23bbd1117">UDPSender</a>
-</li>
-<li>size
-: <a class="el" href="structcurve.html#a6a90092a2b62540ae3993cdb469f8451">curve</a>
-, <a class="el" href="class_hand.html#a11484b7843b03c2786972fec56eb2734">Hand</a>
 </li>
 <li>slen
 : <a class="el" href="class_u_d_p_sender.html#a44e4545b002409e774edb7e30653d53e">UDPSender</a>
@@ -349,12 +356,8 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 
 
 <h3><a id="index_x"></a>- x -</h3><ul>
-<li>X_CENTER
-: <a class="el" href="class_hand.html#aee740c8161bd4bdd1f8f77a6d52dc65e">Hand</a>
-</li>
 <li>X_DIMENSION
 : <a class="el" href="class_depth_camera.html#a6e72272880679c710fb4aaeedf1d8309">DepthCamera</a>
-, <a class="el" href="class_hand.html#a406c0335ce812fd226df4678e3322558">Hand</a>
 </li>
 <li>xyzMap
 : <a class="el" href="class_depth_camera.html#a10123e69a9879a27a2c5ae434a916a5e">DepthCamera</a>
@@ -363,12 +366,8 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 
 
 <h3><a id="index_y"></a>- y -</h3><ul>
-<li>Y_CENTER
-: <a class="el" href="class_hand.html#ab213d81fcf0ed7086ba82540824c3fd9">Hand</a>
-</li>
 <li>Y_DIMENSION
 : <a class="el" href="class_depth_camera.html#a9c69a2e4d68fc09737317a638ad71f4a">DepthCamera</a>
-, <a class="el" href="class_hand.html#a7d6177d54f9bf9b7e6c0e0d8aff5f935">Hand</a>
 </li>
 </ul>
 </div><!-- contents -->

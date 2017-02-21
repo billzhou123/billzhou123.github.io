@@ -27,12 +27,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="Artboard 1.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Open Augmented Reality Kit (OpenARK)
-   &#160;<span id="projectnumber">0.9</span>
+   &#160;<span id="projectnumber">0.8</span>
    </div>
-   <div id="projectbrief">Open-source wearable augmented reality (AR) system founded at UC Berkeley in 2016. The C++ based software offers innovative core functionalities to power a wide range of off-the-shelf AR components, including see-through glasses, depth cameras, and IMUs. The open-source platform includes fundamental tools such as AR-based camera calibration and SLAM.</div>
+   <div id="projectbrief">Open-source wearable augmented reality (AR) system founded at UC Berkeley in 2016</div>
   </td>
  </tr>
  </tbody>
@@ -85,8 +84,11 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a id="index_a"></a>- a -</h3><ul>
-<li>add()
-: <a class="el" href="structcurve.html#aa4847c1d83d062c243ef641f67144cd0">curve</a>
+<li>addDataPoint()
+: <a class="el" href="class_streaming_averager.html#a238462f19f093dbb109cb91128d0d2f7">StreamingAverager</a>
+</li>
+<li>addEmptyPoint()
+: <a class="el" href="class_streaming_averager.html#a54346cb327b6d405181a7347efa086ed">StreamingAverager</a>
 </li>
 <li>ampMap
 : <a class="el" href="class_depth_camera.html#a067d5cd9eedcdaa95cc440e7381fdb9c">DepthCamera</a>
@@ -94,8 +96,11 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>amps
 : <a class="el" href="class_p_m_d_camera.html#a315c2931504d25d5b5d882c4b2d9ad26">PMDCamera</a>
 </li>
-<li>averageAngle
-: <a class="el" href="structcurve.html#a67806447783717dcb334f0e6c8dd0093">curve</a>
+<li>analyzeHand()
+: <a class="el" href="class_hand.html#a0a58ac8e96eab17c99f820f0a4075275">Hand</a>
+</li>
+<li>ANGLE_THRESHHOLD
+: <a class="el" href="class_hand.html#aae06e06e724346861df0a7fdddcfc3c8">Hand</a>
 </li>
 <li>averageAroundPoint()
 : <a class="el" href="class_util.html#ab6f41d0184eb52fb8830119b01fde445">Util</a>
@@ -107,6 +112,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>badInput
 : <a class="el" href="class_depth_camera.html#a28f1ed73b3be887b3da06334416ac91a">DepthCamera</a>
 </li>
+<li>BiggerAngleFind()
+: <a class="el" href="class_util.html#a93b18008f3d21bd77445eb6901c8e4d3">Util</a>
+</li>
 <li>buf
 : <a class="el" href="class_u_d_p_sender.html#a21073b873007a83ac5bec30bcce8fd43">UDPSender</a>
 </li>
@@ -114,20 +122,26 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 
 <h3><a id="index_c"></a>- c -</h3><ul>
-<li>calculate()
-: <a class="el" href="structcurve.html#ac2eb55cb594a07df07ae1c88b3036414">curve</a>
-</li>
-<li>calculateCentroid()
-: <a class="el" href="class_hand.html#aaa3e2992447d5cb16b0c9095028b07c0">Hand</a>
-</li>
 <li>calculateNormals()
 : <a class="el" href="class_plane.html#a5c856cf6a603473c68381d21a544d2a3">Plane</a>
 </li>
 <li>cap
 : <a class="el" href="class_r_g_b_camera.html#a941480d7209fdae8f0ac410cb6b90a63">RGBCamera</a>
 </li>
-<li>centroid
-: <a class="el" href="structcurve.html#a434421bfdc9c8961a28590ef99f83e00">curve</a>
+<li>centroid_ij
+: <a class="el" href="class_hand.html#a1b7c44a205ea0ec4a89a24abc8ce84af">Hand</a>
+</li>
+<li>centroid_xyz
+: <a class="el" href="class_hand.html#af1d336666d556ea9d900bdd7bae6b88c">Hand</a>
+</li>
+<li>centroidCircleSweep()
+: <a class="el" href="class_object3_d.html#abc610dabb1f32b90702ff2418bd949b3">Object3D</a>
+</li>
+<li>checkEdgeConnected()
+: <a class="el" href="class_object3_d.html#a9da221ef5e29107d54f0ee050ee267d3">Object3D</a>
+</li>
+<li>checkForHand()
+: <a class="el" href="class_object3_d.html#aab68a054bf5f5e0498c7b5cd0fc54bfa">Object3D</a>
 </li>
 <li>close()
 : <a class="el" href="class_u_d_p_sender.html#a9633801c0b923a53d42061f2233d06ef">UDPSender</a>
@@ -140,6 +154,12 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </li>
 <li>CLOUD_SIZE_THRESHOLD
 : <a class="el" href="class_plane.html#a1251f1df31bce7666494bfb6d069dd2e">Plane</a>
+</li>
+<li>CLUSTER_THRESHOLD
+: <a class="el" href="class_hand.html#a8fee584c52a9c38a8c9500b86859a610">Hand</a>
+</li>
+<li>clusterConvexHull()
+: <a class="el" href="class_hand.html#ad7b1c8745ec41d551945e75e75961f85">Hand</a>
 </li>
 <li>clusters
 : <a class="el" href="class_depth_camera.html#a333347ab312906b2196596b078fc98b4">DepthCamera</a>
@@ -175,21 +195,24 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>CONFIDENCE_THRESHHOLD
 : <a class="el" href="class_depth_camera.html#a4a2bb91ca2e9be53a53c4a6dcf0e1677">DepthCamera</a>
 </li>
-<li>curve()
-: <a class="el" href="structcurve.html#aa067033135a192272005a3ae557a4f25">curve</a>
-</li>
-<li>curveHeatMap()
-: <a class="el" href="class_hand.html#ae3d90ae264631ad6af2efbb5baddfda6">Hand</a>
-</li>
-<li>curves
-: <a class="el" href="class_hand.html#a1a90a57256c5d724a12db86cb55c57c2">Hand</a>
+<li>currentValue
+: <a class="el" href="class_streaming_averager.html#a3a0923d6e95a69817321367b98aa9bf5">StreamingAverager</a>
 </li>
 </ul>
 
 
 <h3><a id="index_d"></a>- d -</h3><ul>
+<li>dataPoints
+: <a class="el" href="class_streaming_averager.html#aade55d0df31cc9652faf1fe4f7f2887c">StreamingAverager</a>
+</li>
 <li>dd
 : <a class="el" href="class_p_m_d_camera.html#add31d3bba3f20568e45e3dd864a5bda9">PMDCamera</a>
+</li>
+<li>defects_ij
+: <a class="el" href="class_hand.html#a7d0281af3003f2f935115e5956056415">Hand</a>
+</li>
+<li>defects_xyz
+: <a class="el" href="class_hand.html#aad21d7ee1c845701e47c37d6c5ac96d5">Hand</a>
 </li>
 <li>depth_img
 : <a class="el" href="class_plane.html#a90280649d43c66562919b463054387e7">Plane</a>
@@ -200,6 +223,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </li>
 <li>display_img
 : <a class="el" href="class_plane.html#a08043629802a4740847a526b16ddc0b1">Plane</a>
+</li>
+<li>DistanceTwoPoints()
+: <a class="el" href="class_util.html#aa03b701f4479e96b87e122abaa87804d">Util</a>
 </li>
 <li>dists
 : <a class="el" href="class_p_m_d_camera.html#a6aa74776638ecb0b1869a1e12734870a">PMDCamera</a>
@@ -217,14 +243,14 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 
 <h3><a id="index_e"></a>- e -</h3><ul>
-<li>edgeCentroid
-: <a class="el" href="class_hand.html#a44e1328fa33595d1d81e0aaa6109cb6d">Hand</a>
-</li>
-<li>edgeSize
-: <a class="el" href="class_hand.html#a287a96efb8ba12064d5af85be07d64d9">Hand</a>
-</li>
 <li>err
 : <a class="el" href="class_p_m_d_camera.html#a096946b5bca77dd8fe416c31f850ae75">PMDCamera</a>
+</li>
+<li>euclideanDistance2D()
+: <a class="el" href="class_util.html#a4212455c03e1a5ec0262f1df778bdc47">Util</a>
+</li>
+<li>euclideanDistancePerPixel()
+: <a class="el" href="class_util.html#ad189ee83cefd79e724047cb6283eb4ac">Util</a>
 </li>
 <li>euclidianDistance3D()
 : <a class="el" href="class_util.html#afcaa0a0b92e0fd117be8dead6a7787f3">Util</a>
@@ -239,11 +265,20 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>fillInZCoords()
 : <a class="el" href="class_p_m_d_camera.html#a9d67405b9e1e4d4631b218adaa0326ed">PMDCamera</a>
 </li>
-<li>findCirclePoint()
-: <a class="el" href="structcurve.html#a9c28c74ac0f9ce59290079125ff65a5d">curve</a>
+<li>findCenter()
+: <a class="el" href="class_hand.html#ab089502dd52e8251c5a9efadac2784dd">Hand</a>
 </li>
-<li>findNearestPoint()
-: <a class="el" href="structcurve.html#a8cd0f602bdbc43b2ee5f4f7dc20e3c3a">curve</a>
+<li>findCentroid()
+: <a class="el" href="class_util.html#a0d0aff128bc986da5140cacd41759e0e">Util</a>
+</li>
+<li>findComplexContour()
+: <a class="el" href="class_hand.html#a836fa2da6d128e2db7eca7e4965d0a2d">Hand</a>
+</li>
+<li>fingers_ij
+: <a class="el" href="class_hand.html#a4539e1c12c9c3ef9218d4e96c3aebd4b">Hand</a>
+</li>
+<li>fingers_xyz
+: <a class="el" href="class_hand.html#afb4b29e1aaca7d0779af899a9eeaa21d">Hand</a>
 </li>
 <li>flagMap
 : <a class="el" href="class_depth_camera.html#a5b6e685ea92518f7deeb317ff6d0358f">DepthCamera</a>
@@ -259,9 +294,6 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 
 <h3><a id="index_g"></a>- g -</h3><ul>
-<li>g
-: <a class="el" href="structcurve.html#afb7fe75fc30f7a832dbb845db62a5244">curve</a>
-</li>
 <li>getAmpMap()
 : <a class="el" href="class_depth_camera.html#a8211704726722a1be3d9b2aeeeffcf09">DepthCamera</a>
 </li>
@@ -271,8 +303,8 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>getClusters()
 : <a class="el" href="class_depth_camera.html#a18d88b8df2a08c9c167207fea587d66e">DepthCamera</a>
 </li>
-<li>getDistance()
-: <a class="el" href="structcurve.html#af270a465ea41efcb89b930490aaf8d20">curve</a>
+<li>getCurrentAverage()
+: <a class="el" href="class_streaming_averager.html#a2388115084de5ec238c5a5b47bf20dc8">StreamingAverager</a>
 </li>
 <li>getDistanceT()
 : <a class="el" href="class_util.html#a1213364e3ea975aa7f3713f3ad5a96a7">Util</a>
@@ -287,13 +319,13 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_r_g_b_camera.html#a4db0620e9346039530f248fbb7130212">RGBCamera</a>
 </li>
 <li>getHand()
-: <a class="el" href="class_hand.html#ac55aeccf6d1c8e2aa8105d334cdf1339">Hand</a>
-</li>
-<li>getHandCluster()
-: <a class="el" href="class_hand.html#aa3ada30b516302dbabe5813f8eb6ac1a">Hand</a>
+: <a class="el" href="class_object3_d.html#a5748cef4a356823798c98446fe071f28">Object3D</a>
 </li>
 <li>getHeight()
 : <a class="el" href="class_depth_camera.html#a430070d82a2bfc2583fd8290ca7bb8d6">DepthCamera</a>
+</li>
+<li>getPlane()
+: <a class="el" href="class_object3_d.html#a25fb10b8403446f7b8a0cb76a1ec97a2">Object3D</a>
 </li>
 <li>getPlaneEquation()
 : <a class="el" href="class_plane.html#aafedb091ba358d46d5203c4e0eb6e838">Plane</a>
@@ -301,11 +333,8 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>getPlaneIndicies()
 : <a class="el" href="class_plane.html#a843717e035e2e6b4e03a8eece14098b1">Plane</a>
 </li>
-<li>getPoint()
-: <a class="el" href="class_hand.html#a0d6fb9c0c195ef544e36e6dfe6621bbb">Hand</a>
-</li>
-<li>getSize()
-: <a class="el" href="class_hand.html#abd15e5110f6a2f0809e2064c808a829c">Hand</a>
+<li>getShape()
+: <a class="el" href="class_object3_d.html#a234a43ffebe47852173649465476e2ec">Object3D</a>
 </li>
 <li>getSphereEquation()
 : <a class="el" href="class_plane.html#ab82069a9be653b07a589374c03b2f436">Plane</a>
@@ -333,13 +362,19 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 <h3><a id="index_h"></a>- h -</h3><ul>
 <li>Hand()
-: <a class="el" href="class_hand.html#a77bc39dbcb8eee3927dd326b22bd3ae7">Hand</a>
+: <a class="el" href="class_hand.html#aa733faf150351c640fc7d1bf460b07e9">Hand</a>
 </li>
-<li>hand_cluster
-: <a class="el" href="class_hand.html#acbe984385f832d6b1d595dc280d59206">Hand</a>
+<li>hand
+: <a class="el" href="class_object3_d.html#abb8332580980c9ed85c43faf1f25cb0f">Object3D</a>
 </li>
-<li>heatmap
-: <a class="el" href="class_hand.html#ac449abf8573f0e3b313dc23c4be8f325">Hand</a>
+<li>hasHand
+: <a class="el" href="class_object3_d.html#a8cfee001a38488c0eeaa0a1333c1ba48">Object3D</a>
+</li>
+<li>hasPlane
+: <a class="el" href="class_object3_d.html#a6a53bea872dadddc06e64ee6b7d7b238">Object3D</a>
+</li>
+<li>hasShape
+: <a class="el" href="class_object3_d.html#a00110e4274ca6e0f107e78e2e097d6d0">Object3D</a>
 </li>
 <li>hnd
 : <a class="el" href="class_p_m_d_camera.html#a4422b04aee07aed56b58847d39b2230f">PMDCamera</a>
@@ -348,9 +383,6 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 
 <h3><a id="index_i"></a>- i -</h3><ul>
-<li>image
-: <a class="el" href="class_hand.html#abfe6cc57de5f985ac7024c5f90d7f5da">Hand</a>
-</li>
 <li>initializeCloud()
 : <a class="el" href="class_plane.html#ab884c9687d63290912707f749adad115">Plane</a>
 </li>
@@ -359,9 +391,6 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </li>
 <li>INVALID_FLAG_VALUE
 : <a class="el" href="class_depth_camera.html#af7eb5186ae7366de110bb5b08803e11d">DepthCamera</a>
-</li>
-<li>isEdge()
-: <a class="el" href="class_hand.html#a3c9f87cf116838082875016e459127ae">Hand</a>
 </li>
 <li>isMember()
 : <a class="el" href="class_util.html#acb6daa4dafb8af9adffa1fea2600a40d">Util</a>
@@ -376,10 +405,14 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </ul>
 
 
-<h3><a id="index_m"></a>- m -</h3><ul>
-<li>maxAngle
-: <a class="el" href="structcurve.html#ae5ccde75e194081b8c4b0c00f7af4879">curve</a>
+<h3><a id="index_l"></a>- l -</h3><ul>
+<li>leftEdgeConnected
+: <a class="el" href="class_object3_d.html#ac12ac80ceca7b3d6aa3d935956e6e04b">Object3D</a>
 </li>
+</ul>
+
+
+<h3><a id="index_m"></a>- m -</h3><ul>
 <li>measurement
 : <a class="el" href="class_p_m_d_camera.html#ab7536178e056881c11756892c5f0a4b0">PMDCamera</a>
 </li>
@@ -411,9 +444,22 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </ul>
 
 
+<h3><a id="index_o"></a>- o -</h3><ul>
+<li>Object3D()
+: <a class="el" href="class_object3_d.html#ae3a1b17fb43ab59f5cf7b0ee21b9120b">Object3D</a>
+</li>
+<li>otherAngleFind()
+: <a class="el" href="class_util.html#a0c066313814add2ed693792e7643a3c3">Util</a>
+</li>
+</ul>
+
+
 <h3><a id="index_p"></a>- p -</h3><ul>
+<li>plane
+: <a class="el" href="class_object3_d.html#a0fef984a1f54d349271c474a08ebfd6d">Object3D</a>
+</li>
 <li>Plane()
-: <a class="el" href="class_plane.html#a94bc1ca29c305edb76676528b1a9465c">Plane</a>
+: <a class="el" href="class_plane.html#acac0d9c003e0ab10d07b146c3566a0c7">Plane</a>
 </li>
 <li>plane_equation
 : <a class="el" href="class_plane.html#afdf256b7ed2934c1dca9a09beb8c483e">Plane</a>
@@ -426,12 +472,6 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </li>
 <li>PMDCamera()
 : <a class="el" href="class_p_m_d_camera.html#a9965c089ec7eea8537e249d432c1dbba">PMDCamera</a>
-</li>
-<li>pointer_finger_ij
-: <a class="el" href="class_hand.html#a7a7147d586c8fc8f781be0ed0dac1d94">Hand</a>
-</li>
-<li>pointer_finger_xyz
-: <a class="el" href="class_hand.html#abeb7b0f0414f128dff4a189137fe35c9">Hand</a>
 </li>
 <li>prepareUnityData()
 : <a class="el" href="class_calibration.html#af202af5f65e2f7242d29f09760f668d9">Calibration</a>
@@ -452,14 +492,11 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>readImage()
 : <a class="el" href="class_depth_camera.html#a21cf887a447d2cdfda6ac907662c55fe">DepthCamera</a>
 </li>
-<li>recalculateCentroid()
-: <a class="el" href="class_hand.html#a8d3f0317f1b0e2edd9e89d679e616fbc">Hand</a>
-</li>
-<li>recalculateEdgeCentroid()
-: <a class="el" href="class_hand.html#a3af95101a355738577be20c734a46bf0">Hand</a>
-</li>
 <li>regionGrow()
 : <a class="el" href="class_plane.html#a08b35c23d8e0f3eea0db820163cda6e0">Plane</a>
+</li>
+<li>rejectionThreshold
+: <a class="el" href="class_streaming_averager.html#a861d5b10b9cc18d8a94b070af1fd49e0">StreamingAverager</a>
 </li>
 <li>removeNoise()
 : <a class="el" href="class_depth_camera.html#adc06db6509cc5f47de1e168f56bf41fa">DepthCamera</a>
@@ -474,6 +511,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>reprojectXYZToUnity()
 : <a class="el" href="class_calibration.html#ac69c3f4ad6231d799e7b3d644acf1dcf">Calibration</a>
 </li>
+<li>rightEdgeConnected
+: <a class="el" href="class_object3_d.html#aed51e0166d44e45976f1354317fc8dd5">Object3D</a>
+</li>
 </ul>
 
 
@@ -481,27 +521,17 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>s
 : <a class="el" href="class_u_d_p_sender.html#aeb3773ffb3bc9549dbe73c0e7fee0f23">UDPSender</a>
 </li>
+<li>sampleFrequency
+: <a class="el" href="class_streaming_averager.html#a4fa6f781e59a8b979da834e098fb262e">StreamingAverager</a>
+</li>
 <li>send()
 : <a class="el" href="class_u_d_p_sender.html#a33d402a42a2d512bd12189e1f698cca4">UDPSender</a>
 </li>
-<li>shape_centroid_ij
-: <a class="el" href="class_hand.html#a86d74ccce4bbfafa5825762713d38b44">Hand</a>
-</li>
-<li>shape_centroid_xyz
-: <a class="el" href="class_hand.html#a3991a22a52268c3b469a4221fbfdb695">Hand</a>
-</li>
-<li>shapeArea
-: <a class="el" href="class_hand.html#a505288f2ffe79800bcb8b5ccb4f1995a">Hand</a>
-</li>
-<li>shapeCentroid
-: <a class="el" href="class_hand.html#a89099eeaa8a0286f6baae95d3b0a9f20">Hand</a>
+<li>shape
+: <a class="el" href="class_object3_d.html#a27de2794f028136d15a4073e830980d1">Object3D</a>
 </li>
 <li>si_other
 : <a class="el" href="class_u_d_p_sender.html#abeda008425d14ea8092d23d23bbd1117">UDPSender</a>
-</li>
-<li>size
-: <a class="el" href="structcurve.html#a6a90092a2b62540ae3993cdb469f8451">curve</a>
-, <a class="el" href="class_hand.html#a11484b7843b03c2786972fec56eb2734">Hand</a>
 </li>
 <li>slen
 : <a class="el" href="class_u_d_p_sender.html#a44e4545b002409e774edb7e30653d53e">UDPSender</a>
@@ -521,12 +551,18 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>sphere_mat
 : <a class="el" href="class_plane.html#a1a9bdfcd38d9113a83ef12132570eff5">Plane</a>
 </li>
+<li>StreamingAverager()
+: <a class="el" href="class_streaming_averager.html#a10619c9e194b1214153fcdf9c393136c">StreamingAverager</a>
+</li>
 </ul>
 
 
 <h3><a id="index_t"></a>- t -</h3><ul>
 <li>touchObject()
 : <a class="el" href="class_hand.html#aad89c3e47921cb0c39430f4501238088">Hand</a>
+</li>
+<li>TriangleAngleCalculation()
+: <a class="el" href="class_util.html#a05321942460c7b903b8b8ae54d170bb8">Util</a>
 </li>
 </ul>
 
@@ -563,6 +599,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>visualizeMatrix()
 : <a class="el" href="class_visualizer.html#a1ed923a0bdac0f3328af7aceb4d85e0e">Visualizer</a>
 </li>
+<li>visualizePlanePoints()
+: <a class="el" href="class_visualizer.html#acdc7b3fa2c57bddb1de863101c690d51">Visualizer</a>
+</li>
 <li>visualizePlaneRegression()
 : <a class="el" href="class_visualizer.html#a448063633391ee4ae2af595fe760aab0">Visualizer</a>
 </li>
@@ -595,12 +634,8 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 
 <h3><a id="index_x"></a>- x -</h3><ul>
-<li>X_CENTER
-: <a class="el" href="class_hand.html#aee740c8161bd4bdd1f8f77a6d52dc65e">Hand</a>
-</li>
 <li>X_DIMENSION
 : <a class="el" href="class_depth_camera.html#a6e72272880679c710fb4aaeedf1d8309">DepthCamera</a>
-, <a class="el" href="class_hand.html#a406c0335ce812fd226df4678e3322558">Hand</a>
 </li>
 <li>xyzMap
 : <a class="el" href="class_depth_camera.html#a10123e69a9879a27a2c5ae434a916a5e">DepthCamera</a>
@@ -615,28 +650,27 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 
 <h3><a id="index_y"></a>- y -</h3><ul>
-<li>Y_CENTER
-: <a class="el" href="class_hand.html#ab213d81fcf0ed7086ba82540824c3fd9">Hand</a>
-</li>
 <li>Y_DIMENSION
 : <a class="el" href="class_depth_camera.html#a9c69a2e4d68fc09737317a638ad71f4a">DepthCamera</a>
-, <a class="el" href="class_hand.html#a7d6177d54f9bf9b7e6c0e0d8aff5f935">Hand</a>
 </li>
 </ul>
 
 
 <h3><a id="index_0x7e"></a>- ~ -</h3><ul>
-<li>~curve()
-: <a class="el" href="structcurve.html#a0bacd81cfa6ed01251210d2e5d6b29a4">curve</a>
-</li>
 <li>~Hand()
 : <a class="el" href="class_hand.html#a7ff29a6f23f98c5e57f44d23a76912be">Hand</a>
+</li>
+<li>~Object3D()
+: <a class="el" href="class_object3_d.html#a73b016a1aa7eb3be3c49671f3054565d">Object3D</a>
 </li>
 <li>~Plane()
 : <a class="el" href="class_plane.html#a69abd86051c880dcb44b249ad10c4436">Plane</a>
 </li>
 <li>~PMDCamera()
 : <a class="el" href="class_p_m_d_camera.html#a645cc6c2b05896c776bfdde5bc1aa1f0">PMDCamera</a>
+</li>
+<li>~StreamingAverager()
+: <a class="el" href="class_streaming_averager.html#a1b792331aa3d870fbddb7e50b18db35e">StreamingAverager</a>
 </li>
 <li>~Webcam()
 : <a class="el" href="class_webcam.html#a573d188c6505287dadb895b1ee7526b9">Webcam</a>

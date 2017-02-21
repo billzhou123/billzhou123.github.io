@@ -1,17 +1,17 @@
 var searchData=
 [
-  ['required_20modules_3a',['Required modules:',['../md__d_1__open_a_r_k__open_a_r_k-_s_d_k__r_e_a_d_m_e.html',1,'']]],
-  ['r_5fsquared_5fdistance_5fthreshold',['R_SQUARED_DISTANCE_THRESHOLD',['../class_plane.html#ae0e9b28377ab03e577aa6588da269328',1,'Plane']]],
-  ['readimage',['readImage',['../class_depth_camera.html#a21cf887a447d2cdfda6ac907662c55fe',1,'DepthCamera']]],
-  ['readme_2emd',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['recalculatecentroid',['recalculateCentroid',['../class_hand.html#a8d3f0317f1b0e2edd9e89d679e616fbc',1,'Hand']]],
-  ['recalculateedgecentroid',['recalculateEdgeCentroid',['../class_hand.html#a3af95101a355738577be20c734a46bf0',1,'Hand']]],
-  ['regiongrow',['regionGrow',['../class_plane.html#a08b35c23d8e0f3eea0db820163cda6e0',1,'Plane']]],
-  ['removenoise',['removeNoise',['../class_depth_camera.html#adc06db6509cc5f47de1e168f56bf41fa',1,'DepthCamera']]],
-  ['removepoints',['removePoints',['../class_depth_camera.html#a8f38ced63dcfb0c4c56cb7d4e940bcd8',1,'DepthCamera::removePoints()'],['../class_util.html#abf2cc717b8e145166f247df2742a0325',1,'Util::removePoints()']]],
-  ['reprojectxyztorgb',['reprojectXYZtoRGB',['../class_calibration.html#a05a3ca33bf7fb56ddf0c683be667660a',1,'Calibration']]],
-  ['reprojectxyztounity',['reprojectXYZToUnity',['../class_calibration.html#ac69c3f4ad6231d799e7b3d644acf1dcf',1,'Calibration']]],
-  ['rgbcamera',['RGBCamera',['../class_r_g_b_camera.html',1,'']]],
-  ['rgbcamera_2ecpp',['RGBCamera.cpp',['../_r_g_b_camera_8cpp.html',1,'']]],
-  ['rgbcamera_2eh',['RGBCamera.h',['../_r_g_b_camera_8h.html',1,'']]]
+  ['pi',['PI',['../_util_8h.html#a598a3330b3c21701223ee0ca14316eca',1,'Util.h']]],
+  ['plane',['Plane',['../class_plane.html',1,'Plane'],['../class_object3_d.html#a0fef984a1f54d349271c474a08ebfd6d',1,'Object3D::plane()'],['../class_plane.html#acac0d9c003e0ab10d07b146c3566a0c7',1,'Plane::Plane()'],['../class_plane.html#a94bc1ca29c305edb76676528b1a9465c',1,'Plane::Plane(cv::Mat &amp;src)']]],
+  ['plane_2ecpp',['Plane.cpp',['../_plane_8cpp.html',1,'']]],
+  ['plane_2eh',['Plane.h',['../_plane_8h.html',1,'']]],
+  ['plane_5fequation',['plane_equation',['../class_plane.html#afdf256b7ed2934c1dca9a09beb8c483e',1,'Plane']]],
+  ['plane_5findices',['plane_indices',['../class_plane.html#a5efd74ec0c24a0cac7778705d6134452',1,'Plane']]],
+  ['plane_5fmat',['plane_mat',['../class_plane.html#a79bafd16d43b07fd7db7ed942e285109',1,'Plane']]],
+  ['pmdcamera',['PMDCamera',['../class_p_m_d_camera.html',1,'PMDCamera'],['../class_p_m_d_camera.html#a9965c089ec7eea8537e249d432c1dbba',1,'PMDCamera::PMDCamera()']]],
+  ['pmdcamera_2ecpp',['PMDCamera.cpp',['../_p_m_d_camera_8cpp.html',1,'']]],
+  ['pmdcamera_2eh',['PMDCamera.h',['../_p_m_d_camera_8h.html',1,'']]],
+  ['port',['PORT',['../_u_d_p_sender_8h.html#a614217d263be1fb1a5f76e2ff7be19a2',1,'UDPSender.h']]],
+  ['prepareunitydata',['prepareUnityData',['../class_calibration.html#af202af5f65e2f7242d29f09760f668d9',1,'Calibration']]],
+  ['proc_5fparam',['PROC_PARAM',['../class_p_m_d_camera.html#aef47cd1fda507e9921143f6d0302f5e0',1,'PMDCamera']]],
+  ['proc_5fplugin',['PROC_PLUGIN',['../class_p_m_d_camera.html#a1f03b40bf2336e61879fc909490f2829',1,'PMDCamera']]]
 ];

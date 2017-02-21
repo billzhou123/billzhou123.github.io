@@ -9,8 +9,14 @@ var files =
       [ "DepthCamera", "class_depth_camera.html", "class_depth_camera" ]
     ] ],
     [ "Hand.cpp", "_hand_8cpp.html", null ],
-    [ "Hand.h", "_hand_8h.html", "_hand_8h" ],
+    [ "Hand.h", "_hand_8h.html", [
+      [ "Hand", "class_hand.html", "class_hand" ]
+    ] ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
+    [ "Object3D.cpp", "_object3_d_8cpp.html", null ],
+    [ "Object3D.h", "_object3_d_8h.html", [
+      [ "Object3D", "class_object3_d.html", "class_object3_d" ]
+    ] ],
     [ "Plane.cpp", "_plane_8cpp.html", null ],
     [ "Plane.h", "_plane_8h.html", [
       [ "Plane", "class_plane.html", "class_plane" ]
@@ -24,6 +30,10 @@ var files =
       [ "RGBCamera", "class_r_g_b_camera.html", "class_r_g_b_camera" ]
     ] ],
     [ "SensorIO.cpp", "_sensor_i_o_8cpp.html", "_sensor_i_o_8cpp" ],
+    [ "StreamingAverager.cpp", "_streaming_averager_8cpp.html", null ],
+    [ "StreamingAverager.h", "_streaming_averager_8h.html", [
+      [ "StreamingAverager", "class_streaming_averager.html", "class_streaming_averager" ]
+    ] ],
     [ "UDPSender.cpp", "_u_d_p_sender_8cpp.html", "_u_d_p_sender_8cpp" ],
     [ "UDPSender.h", "_u_d_p_sender_8h.html", "_u_d_p_sender_8h" ],
     [ "Util.cpp", "_util_8cpp.html", null ],

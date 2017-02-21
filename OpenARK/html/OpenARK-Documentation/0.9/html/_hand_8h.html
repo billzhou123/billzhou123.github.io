@@ -27,12 +27,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="Artboard 1.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Open Augmented Reality Kit (OpenARK)
-   &#160;<span id="projectnumber">0.9</span>
+   &#160;<span id="projectnumber">0.8</span>
    </div>
-   <div id="projectbrief">Open-source wearable augmented reality (AR) system founded at UC Berkeley in 2016. The C++ based software offers innovative core functionalities to power a wide range of off-the-shelf AR components, including see-through glasses, depth cameras, and IMUs. The open-source platform includes fundamental tools such as AR-based camera calibration and SLAM.</div>
+   <div id="projectbrief">Open-source wearable augmented reality (AR) system founded at UC Berkeley in 2016</div>
   </td>
  </tr>
  </tbody>
@@ -83,170 +82,34 @@ $(document).ready(function(){initNavTree('_hand_8h.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
 <div class="title">Hand.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &lt;math.h&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
-<code>#include &lt;ctime&gt;</code><br />
-<code>#include &lt;map&gt;</code><br />
-<code>#include &lt;array&gt;</code><br />
-<code>#include &lt;complex&gt;</code><br />
-<code>#include &lt;opencv/cxcore.h&gt;</code><br />
-<code>#include &lt;opencv/highgui.h&gt;</code><br />
-<code>#include &quot;opencv2/highgui/highgui.hpp&quot;</code><br />
-<code>#include &lt;opencv2/video/tracking.hpp&gt;</code><br />
-<code>#include &quot;opencv2/imgproc/imgproc.hpp&quot;</code><br />
-<code>#include &lt;opencv2/objdetect/objdetect.hpp&gt;</code><br />
-<code>#include &lt;opencv2/features2d/features2d.hpp&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;opencv2/core/core.hpp&gt;</code><br />
+<code>#include &lt;opencv2/core.hpp&gt;</code><br />
+<code>#include &lt;opencv2/highgui/highgui.hpp&gt;</code><br />
+<code>#include &lt;opencv2/highgui.hpp&gt;</code><br />
+<code>#include &lt;opencv2/imgproc.hpp&gt;</code><br />
+<code>#include &lt;opencv2/imgcodecs.hpp&gt;</code><br />
 </div>
 <p><a href="_hand_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcurve.html">curve</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data structured used to store the contours of the hand.  <a href="structcurve.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hand.html">Hand</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a hand object.  <a href="class_hand.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a09aba2c57882d4797e4d8c4acd149c70"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_hand_8h.html#a09aba2c57882d4797e4d8c4acd149c70">EDGE_THRESHOLD</a> = 10</td></tr>
-<tr class="separator:a09aba2c57882d4797e4d8c4acd149c70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae12b8d82e4eb35d8bd8cca49ba677eac"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_hand_8h.html#ae12b8d82e4eb35d8bd8cca49ba677eac">ARC_THRESHOLD</a> = 1</td></tr>
-<tr class="separator:ae12b8d82e4eb35d8bd8cca49ba677eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb420e0dd9c0e74d045b5199bf1a3f13"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_hand_8h.html#abb420e0dd9c0e74d045b5199bf1a3f13">DISJOINT_THRESHOLD</a> = 1</td></tr>
-<tr class="separator:abb420e0dd9c0e74d045b5199bf1a3f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b5b55a68ef609ec5b22618d436b9f35"><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_hand_8h.html#a3b5b55a68ef609ec5b22618d436b9f35">ANGLE_THRESHOLD</a> = 0.1</td></tr>
-<tr class="separator:a3b5b55a68ef609ec5b22618d436b9f35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7893cd55c6951c3b079134d8c56c200b"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_hand_8h.html#a7893cd55c6951c3b079134d8c56c200b">CIRCLE_SEARCH_DISTANCE</a> = 10</td></tr>
-<tr class="separator:a7893cd55c6951c3b079134d8c56c200b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a3b5b55a68ef609ec5b22618d436b9f35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b5b55a68ef609ec5b22618d436b9f35">&sect;&nbsp;</a></span>ANGLE_THRESHOLD</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const double ANGLE_THRESHOLD = 0.1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae12b8d82e4eb35d8bd8cca49ba677eac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae12b8d82e4eb35d8bd8cca49ba677eac">&sect;&nbsp;</a></span>ARC_THRESHOLD</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int ARC_THRESHOLD = 1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7893cd55c6951c3b079134d8c56c200b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7893cd55c6951c3b079134d8c56c200b">&sect;&nbsp;</a></span>CIRCLE_SEARCH_DISTANCE</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int CIRCLE_SEARCH_DISTANCE = 10</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="abb420e0dd9c0e74d045b5199bf1a3f13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb420e0dd9c0e74d045b5199bf1a3f13">&sect;&nbsp;</a></span>DISJOINT_THRESHOLD</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int DISJOINT_THRESHOLD = 1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a09aba2c57882d4797e4d8c4acd149c70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09aba2c57882d4797e4d8c4acd149c70">&sect;&nbsp;</a></span>EDGE_THRESHOLD</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int EDGE_THRESHOLD = 10</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_409b84e195b7fbf2a509988222971ae6.html">OpenARK</a></li><li class="navelem"><a class="el" href="_hand_8h.html">Hand.h</a></li>
+    <li class="navelem"><a class="el" href="_hand_8h.html">Hand.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.12 </li>

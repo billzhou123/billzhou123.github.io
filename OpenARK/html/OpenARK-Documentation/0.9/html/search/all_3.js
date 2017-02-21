@@ -1,18 +1,21 @@
 var searchData=
 [
-  ['calculate',['calculate',['../structcurve.html#ac2eb55cb594a07df07ae1c88b3036414',1,'curve']]],
-  ['calculatecentroid',['calculateCentroid',['../class_hand.html#aaa3e2992447d5cb16b0c9095028b07c0',1,'Hand']]],
   ['calculatenormals',['calculateNormals',['../class_plane.html#a5c856cf6a603473c68381d21a544d2a3',1,'Plane']]],
   ['calibration',['Calibration',['../class_calibration.html',1,'']]],
   ['calibration_2ecpp',['Calibration.cpp',['../_calibration_8cpp.html',1,'']]],
   ['calibration_2eh',['Calibration.h',['../_calibration_8h.html',1,'']]],
   ['cap',['cap',['../class_r_g_b_camera.html#a941480d7209fdae8f0ac410cb6b90a63',1,'RGBCamera']]],
-  ['centroid',['centroid',['../structcurve.html#a434421bfdc9c8961a28590ef99f83e00',1,'curve']]],
-  ['circle_5fsearch_5fdistance',['CIRCLE_SEARCH_DISTANCE',['../_hand_8h.html#a7893cd55c6951c3b079134d8c56c200b',1,'Hand.h']]],
+  ['centroid_5fij',['centroid_ij',['../class_hand.html#a1b7c44a205ea0ec4a89a24abc8ce84af',1,'Hand']]],
+  ['centroid_5fxyz',['centroid_xyz',['../class_hand.html#af1d336666d556ea9d900bdd7bae6b88c',1,'Hand']]],
+  ['centroidcirclesweep',['centroidCircleSweep',['../class_object3_d.html#abc610dabb1f32b90702ff2418bd949b3',1,'Object3D']]],
+  ['checkedgeconnected',['checkEdgeConnected',['../class_object3_d.html#a9da221ef5e29107d54f0ee050ee267d3',1,'Object3D']]],
+  ['checkforhand',['checkForHand',['../class_object3_d.html#aab68a054bf5f5e0498c7b5cd0fc54bfa',1,'Object3D']]],
   ['close',['close',['../class_u_d_p_sender.html#a9633801c0b923a53d42061f2233d06ef',1,'UDPSender']]],
   ['closeenough',['closeEnough',['../class_depth_camera.html#ab24ac78c2cf29b0410c3d5e0dfc9a243',1,'DepthCamera']]],
   ['cloud',['cloud',['../class_plane.html#a0b493693b28fb0cc74549fa24ded3721',1,'Plane']]],
   ['cloud_5fsize_5fthreshold',['CLOUD_SIZE_THRESHOLD',['../class_plane.html#a1251f1df31bce7666494bfb6d069dd2e',1,'Plane']]],
+  ['cluster_5fthreshold',['CLUSTER_THRESHOLD',['../class_hand.html#a8fee584c52a9c38a8c9500b86859a610',1,'Hand']]],
+  ['clusterconvexhull',['clusterConvexHull',['../class_hand.html#ad7b1c8745ec41d551945e75e75961f85',1,'Hand']]],
   ['clusters',['clusters',['../class_depth_camera.html#a333347ab312906b2196596b078fc98b4',1,'DepthCamera::clusters()'],['../class_plane.html#abd24055f6ac0b57fc3f36462f50175d8',1,'Plane::clusters()']]],
   ['colored_5fcloud',['colored_cloud',['../class_plane.html#a43513b679c313917824fce91b50f8d32',1,'Plane']]],
   ['colorgenerator2',['colorGenerator2',['../class_util.html#a4b35aebe2f6ea734a9221356c0ad38ec',1,'Util']]],
@@ -24,7 +27,5 @@ var searchData=
   ['computesphereindices',['computeSphereIndices',['../class_plane.html#a279bfd98317431edcdefe43004bb257f',1,'Plane']]],
   ['computespherelse',['computeSphereLSE',['../class_plane.html#a60923e0c6d087076a234a9d5bd45d0fa',1,'Plane']]],
   ['confidence_5fthreshhold',['CONFIDENCE_THRESHHOLD',['../class_depth_camera.html#a4a2bb91ca2e9be53a53c4a6dcf0e1677',1,'DepthCamera']]],
-  ['curve',['curve',['../structcurve.html',1,'curve'],['../structcurve.html#aa067033135a192272005a3ae557a4f25',1,'curve::curve()']]],
-  ['curveheatmap',['curveHeatMap',['../class_hand.html#ae3d90ae264631ad6af2efbb5baddfda6',1,'Hand']]],
-  ['curves',['curves',['../class_hand.html#a1a90a57256c5d724a12db86cb55c57c2',1,'Hand']]]
+  ['currentvalue',['currentValue',['../class_streaming_averager.html#a3a0923d6e95a69817321367b98aa9bf5',1,'StreamingAverager']]]
 ];

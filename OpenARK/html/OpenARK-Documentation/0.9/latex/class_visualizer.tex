@@ -21,7 +21,9 @@ static void \hyperlink{class_visualizer_af65e36aaef7c1f60d0f79819f17707d7}{visua
 static void \hyperlink{class_visualizer_a82702715f2ac30e555ccad3339375bf8}{visulize\+Polygon\+Mesh} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud)
 \begin{DoxyCompactList}\small\item\em Visualization for polygon mesh. \end{DoxyCompactList}\item 
 static cv\+::\+Mat \hyperlink{class_visualizer_a448063633391ee4ae2af595fe760aab0}{visualize\+Plane\+Regression} (cv\+::\+Mat \&input\+\_\+mat, std\+::vector$<$ double $>$ \&equation, const double threshold, bool clicked=false)
-\begin{DoxyCompactList}\small\item\em Visualization for plane regression. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Visualization for plane regression. \end{DoxyCompactList}\item 
+static void \hyperlink{class_visualizer_acdc7b3fa2c57bddb1de863101c690d51}{visualize\+Plane\+Points} (cv\+::\+Mat \&input\+\_\+mat, std\+::vector$<$ cv\+::\+Point2i $>$ indicies)
+\end{DoxyCompactItemize}
 \subsection*{Static Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -113,6 +115,12 @@ Visualization for a generic matrix.
 \begin{DoxyReturn}{Returns}
 a C\+V\+\_\+8\+U\+C3 representation of the input matrix 
 \end{DoxyReturn}
+\hypertarget{class_visualizer_acdc7b3fa2c57bddb1de863101c690d51}{}\label{class_visualizer_acdc7b3fa2c57bddb1de863101c690d51} 
+\index{Visualizer@{Visualizer}!visualize\+Plane\+Points@{visualize\+Plane\+Points}}
+\index{visualize\+Plane\+Points@{visualize\+Plane\+Points}!Visualizer@{Visualizer}}
+\subsubsection{\texorpdfstring{visualize\+Plane\+Points()}{visualizePlanePoints()}}
+{\footnotesize\ttfamily void Visualizer\+::visualize\+Plane\+Points (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{input\+\_\+mat,  }\item[{std\+::vector$<$ cv\+::\+Point2i $>$}]{indicies }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
 \hypertarget{class_visualizer_a448063633391ee4ae2af595fe760aab0}{}\label{class_visualizer_a448063633391ee4ae2af595fe760aab0} 
 \index{Visualizer@{Visualizer}!visualize\+Plane\+Regression@{visualize\+Plane\+Regression}}
 \index{visualize\+Plane\+Regression@{visualize\+Plane\+Regression}!Visualizer@{Visualizer}}

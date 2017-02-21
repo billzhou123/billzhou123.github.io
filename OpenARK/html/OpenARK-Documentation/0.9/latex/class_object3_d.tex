@@ -1,0 +1,280 @@
+\hypertarget{class_object3_d}{}\section{Object3D Class Reference}
+\label{class_object3_d}\index{Object3D@{Object3D}}
+
+
+{\ttfamily \#include $<$Object3\+D.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_object3_d_ae3a1b17fb43ab59f5cf7b0ee21b9120b}{Object3D} ()
+\begin{DoxyCompactList}\small\item\em Constructs a empty instance of a \hyperlink{class_object3_d}{Object3D}. \end{DoxyCompactList}\item 
+\hyperlink{class_object3_d_a7ed04ee42be0d19ad0a446375fd7ade4}{Object3D} (cv\+::\+Mat cluster)
+\begin{DoxyCompactList}\small\item\em Constructs a instance of \hyperlink{class_object3_d}{Object3D} based on a point cloud. \end{DoxyCompactList}\item 
+\hyperlink{class_object3_d_a73b016a1aa7eb3be3c49671f3054565d}{$\sim$\+Object3D} ()
+\begin{DoxyCompactList}\small\item\em Deconstructs a \hyperlink{class_object3_d}{Object3D} instance. \end{DoxyCompactList}\item 
+\hyperlink{class_hand}{Hand} \hyperlink{class_object3_d_a5748cef4a356823798c98446fe071f28}{get\+Hand} ()
+\begin{DoxyCompactList}\small\item\em Gets instance of hand object if a hand is found. \end{DoxyCompactList}\item 
+\hyperlink{class_plane}{Plane} \hyperlink{class_object3_d_a25fb10b8403446f7b8a0cb76a1ec97a2}{get\+Plane} ()
+\begin{DoxyCompactList}\small\item\em Gets instance of plane object is plane is found. \end{DoxyCompactList}\item 
+cv\+::\+Mat \hyperlink{class_object3_d_a234a43ffebe47852173649465476e2ec}{get\+Shape} ()
+\begin{DoxyCompactList}\small\item\em Gets instance of shape object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_object3_d_aed51e0166d44e45976f1354317fc8dd5}{right\+Edge\+Connected}
+\begin{DoxyCompactList}\small\item\em Whether the object is attached to the right edge of the frame. \end{DoxyCompactList}\item 
+bool \hyperlink{class_object3_d_ac12ac80ceca7b3d6aa3d935956e6e04b}{left\+Edge\+Connected}
+\begin{DoxyCompactList}\small\item\em Whether the object is attached to the left edge of the frame. \end{DoxyCompactList}\item 
+bool \hyperlink{class_object3_d_a8cfee001a38488c0eeaa0a1333c1ba48}{has\+Hand}
+\begin{DoxyCompactList}\small\item\em Whether the object contains a hand. \end{DoxyCompactList}\item 
+bool \hyperlink{class_object3_d_a6a53bea872dadddc06e64ee6b7d7b238}{has\+Plane}
+\begin{DoxyCompactList}\small\item\em Whether the object contains a plane. \end{DoxyCompactList}\item 
+bool \hyperlink{class_object3_d_a00110e4274ca6e0f107e78e2e097d6d0}{has\+Shape}
+\begin{DoxyCompactList}\small\item\em Whether the object contains a shape. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_object3_d_a9da221ef5e29107d54f0ee050ee267d3}{check\+Edge\+Connected} (cv\+::\+Mat cluster)
+\begin{DoxyCompactList}\small\item\em Determine whether the object is connected to an edge. \end{DoxyCompactList}\item 
+bool \hyperlink{class_object3_d_aab68a054bf5f5e0498c7b5cd0fc54bfa}{check\+For\+Hand} (cv\+::\+Mat cluster, double min\+\_\+coverage, double max\+\_\+coverage, double pointer\+\_\+finger\+\_\+distance=0.\+08)
+\begin{DoxyCompactList}\small\item\em Check whether the object is a hand. \end{DoxyCompactList}\item 
+double \hyperlink{class_object3_d_abc610dabb1f32b90702ff2418bd949b3}{centroid\+Circle\+Sweep} (cv\+::\+Mat cluster, double distance)
+\begin{DoxyCompactList}\small\item\em Returns all points within a radius of a centroid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_hand}{Hand} \hyperlink{class_object3_d_abb8332580980c9ed85c43faf1f25cb0f}{hand}
+\begin{DoxyCompactList}\small\item\em Reference to the hand instance. \end{DoxyCompactList}\item 
+\hyperlink{class_plane}{Plane} $\ast$ \hyperlink{class_object3_d_a0fef984a1f54d349271c474a08ebfd6d}{plane}
+\begin{DoxyCompactList}\small\item\em Reference to the plane instance. \end{DoxyCompactList}\item 
+cv\+::\+Mat \hyperlink{class_object3_d_a27de2794f028136d15a4073e830980d1}{shape}
+\begin{DoxyCompactList}\small\item\em Reference to the shape instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_object3_d_ae3a1b17fb43ab59f5cf7b0ee21b9120b}{}\label{class_object3_d_ae3a1b17fb43ab59f5cf7b0ee21b9120b} 
+\index{Object3D@{Object3D}!Object3D@{Object3D}}
+\index{Object3D@{Object3D}!Object3D@{Object3D}}
+\subsubsection{\texorpdfstring{Object3\+D()}{Object3D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Object3\+D\+::\+Object3D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a empty instance of a \hyperlink{class_object3_d}{Object3D}. 
+
+\hypertarget{class_object3_d_a7ed04ee42be0d19ad0a446375fd7ade4}{}\label{class_object3_d_a7ed04ee42be0d19ad0a446375fd7ade4} 
+\index{Object3D@{Object3D}!Object3D@{Object3D}}
+\index{Object3D@{Object3D}!Object3D@{Object3D}}
+\subsubsection{\texorpdfstring{Object3\+D()}{Object3D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Object3\+D\+::\+Object3D (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{cluster }\end{DoxyParamCaption})}
+
+
+
+Constructs a instance of \hyperlink{class_object3_d}{Object3D} based on a point cloud. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cluster} & point cloud representatino of the object \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_object3_d_a73b016a1aa7eb3be3c49671f3054565d}{}\label{class_object3_d_a73b016a1aa7eb3be3c49671f3054565d} 
+\index{Object3D@{Object3D}!````~Object3D@{$\sim$\+Object3D}}
+\index{````~Object3D@{$\sim$\+Object3D}!Object3D@{Object3D}}
+\subsubsection{\texorpdfstring{$\sim$\+Object3\+D()}{~Object3D()}}
+{\footnotesize\ttfamily Object3\+D\+::$\sim$\+Object3D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Deconstructs a \hyperlink{class_object3_d}{Object3D} instance. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_object3_d_abc610dabb1f32b90702ff2418bd949b3}{}\label{class_object3_d_abc610dabb1f32b90702ff2418bd949b3} 
+\index{Object3D@{Object3D}!centroid\+Circle\+Sweep@{centroid\+Circle\+Sweep}}
+\index{centroid\+Circle\+Sweep@{centroid\+Circle\+Sweep}!Object3D@{Object3D}}
+\subsubsection{\texorpdfstring{centroid\+Circle\+Sweep()}{centroidCircleSweep()}}
+{\footnotesize\ttfamily double Object3\+D\+::centroid\+Circle\+Sweep (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{cluster,  }\item[{double}]{distance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Returns all points within a radius of a centroid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cluster} & the input point cloud \\
+\hline
+{\em distance} & the radius (meters) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the percentage of points in the cluster that is \char`\"{}distance\char`\"{} away from the centroid 
+\end{DoxyReturn}
+\hypertarget{class_object3_d_a9da221ef5e29107d54f0ee050ee267d3}{}\label{class_object3_d_a9da221ef5e29107d54f0ee050ee267d3} 
+\index{Object3D@{Object3D}!check\+Edge\+Connected@{check\+Edge\+Connected}}
+\index{check\+Edge\+Connected@{check\+Edge\+Connected}!Object3D@{Object3D}}
+\subsubsection{\texorpdfstring{check\+Edge\+Connected()}{checkEdgeConnected()}}
+{\footnotesize\ttfamily void Object3\+D\+::check\+Edge\+Connected (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{cluster }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Determine whether the object is connected to an edge. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cluster} & point cloud of the object \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_object3_d_aab68a054bf5f5e0498c7b5cd0fc54bfa}{}\label{class_object3_d_aab68a054bf5f5e0498c7b5cd0fc54bfa} 
+\index{Object3D@{Object3D}!check\+For\+Hand@{check\+For\+Hand}}
+\index{check\+For\+Hand@{check\+For\+Hand}!Object3D@{Object3D}}
+\subsubsection{\texorpdfstring{check\+For\+Hand()}{checkForHand()}}
+{\footnotesize\ttfamily bool Object3\+D\+::check\+For\+Hand (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{cluster,  }\item[{double}]{min\+\_\+coverage,  }\item[{double}]{max\+\_\+coverage,  }\item[{double}]{pointer\+\_\+finger\+\_\+distance = {\ttfamily 0.08} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Check whether the object is a hand. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cluster} & the input point cloud \\
+\hline
+{\em min\+\_\+coverage} & the smallest allowable coverage for the index finger \\
+\hline
+{\em max\+\_\+coverage} & the maximum allowable coverage for the index finger \\
+\hline
+{\em pointer\+\_\+finger\+\_\+distance} & the length of the pointer finger (meters) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the cluster is a hand 
+\end{DoxyReturn}
+\hypertarget{class_object3_d_a5748cef4a356823798c98446fe071f28}{}\label{class_object3_d_a5748cef4a356823798c98446fe071f28} 
+\index{Object3D@{Object3D}!get\+Hand@{get\+Hand}}
+\index{get\+Hand@{get\+Hand}!Object3D@{Object3D}}
+\subsubsection{\texorpdfstring{get\+Hand()}{getHand()}}
+{\footnotesize\ttfamily \hyperlink{class_hand}{Hand} Object3\+D\+::get\+Hand (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets instance of hand object if a hand is found. 
+
+\begin{DoxyReturn}{Returns}
+instance of hand object 
+\end{DoxyReturn}
+\hypertarget{class_object3_d_a25fb10b8403446f7b8a0cb76a1ec97a2}{}\label{class_object3_d_a25fb10b8403446f7b8a0cb76a1ec97a2} 
+\index{Object3D@{Object3D}!get\+Plane@{get\+Plane}}
+\index{get\+Plane@{get\+Plane}!Object3D@{Object3D}}
+\subsubsection{\texorpdfstring{get\+Plane()}{getPlane()}}
+{\footnotesize\ttfamily \hyperlink{class_plane}{Plane} Object3\+D\+::get\+Plane (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets instance of plane object is plane is found. 
+
+\begin{DoxyReturn}{Returns}
+instance of plane object 
+\end{DoxyReturn}
+\hypertarget{class_object3_d_a234a43ffebe47852173649465476e2ec}{}\label{class_object3_d_a234a43ffebe47852173649465476e2ec} 
+\index{Object3D@{Object3D}!get\+Shape@{get\+Shape}}
+\index{get\+Shape@{get\+Shape}!Object3D@{Object3D}}
+\subsubsection{\texorpdfstring{get\+Shape()}{getShape()}}
+{\footnotesize\ttfamily cv\+::\+Mat Object3\+D\+::get\+Shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets instance of shape object. 
+
+\begin{DoxyReturn}{Returns}
+instance of shape object 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_object3_d_abb8332580980c9ed85c43faf1f25cb0f}{}\label{class_object3_d_abb8332580980c9ed85c43faf1f25cb0f} 
+\index{Object3D@{Object3D}!hand@{hand}}
+\index{hand@{hand}!Object3D@{Object3D}}
+\subsubsection{\texorpdfstring{hand}{hand}}
+{\footnotesize\ttfamily \hyperlink{class_hand}{Hand} Object3\+D\+::hand\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference to the hand instance. 
+
+\hypertarget{class_object3_d_a8cfee001a38488c0eeaa0a1333c1ba48}{}\label{class_object3_d_a8cfee001a38488c0eeaa0a1333c1ba48} 
+\index{Object3D@{Object3D}!has\+Hand@{has\+Hand}}
+\index{has\+Hand@{has\+Hand}!Object3D@{Object3D}}
+\subsubsection{\texorpdfstring{has\+Hand}{hasHand}}
+{\footnotesize\ttfamily bool Object3\+D\+::has\+Hand}
+
+
+
+Whether the object contains a hand. 
+
+\hypertarget{class_object3_d_a6a53bea872dadddc06e64ee6b7d7b238}{}\label{class_object3_d_a6a53bea872dadddc06e64ee6b7d7b238} 
+\index{Object3D@{Object3D}!has\+Plane@{has\+Plane}}
+\index{has\+Plane@{has\+Plane}!Object3D@{Object3D}}
+\subsubsection{\texorpdfstring{has\+Plane}{hasPlane}}
+{\footnotesize\ttfamily bool Object3\+D\+::has\+Plane}
+
+
+
+Whether the object contains a plane. 
+
+\hypertarget{class_object3_d_a00110e4274ca6e0f107e78e2e097d6d0}{}\label{class_object3_d_a00110e4274ca6e0f107e78e2e097d6d0} 
+\index{Object3D@{Object3D}!has\+Shape@{has\+Shape}}
+\index{has\+Shape@{has\+Shape}!Object3D@{Object3D}}
+\subsubsection{\texorpdfstring{has\+Shape}{hasShape}}
+{\footnotesize\ttfamily bool Object3\+D\+::has\+Shape}
+
+
+
+Whether the object contains a shape. 
+
+A shape is defined by anything that is not a plane or a hand \hypertarget{class_object3_d_ac12ac80ceca7b3d6aa3d935956e6e04b}{}\label{class_object3_d_ac12ac80ceca7b3d6aa3d935956e6e04b} 
+\index{Object3D@{Object3D}!left\+Edge\+Connected@{left\+Edge\+Connected}}
+\index{left\+Edge\+Connected@{left\+Edge\+Connected}!Object3D@{Object3D}}
+\subsubsection{\texorpdfstring{left\+Edge\+Connected}{leftEdgeConnected}}
+{\footnotesize\ttfamily bool Object3\+D\+::left\+Edge\+Connected}
+
+
+
+Whether the object is attached to the left edge of the frame. 
+
+Edge connected implies that object is likely connected to the user\textquotesingle{}s body (hand, arm, etc) \hypertarget{class_object3_d_a0fef984a1f54d349271c474a08ebfd6d}{}\label{class_object3_d_a0fef984a1f54d349271c474a08ebfd6d} 
+\index{Object3D@{Object3D}!plane@{plane}}
+\index{plane@{plane}!Object3D@{Object3D}}
+\subsubsection{\texorpdfstring{plane}{plane}}
+{\footnotesize\ttfamily \hyperlink{class_plane}{Plane}$\ast$ Object3\+D\+::plane\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference to the plane instance. 
+
+\hypertarget{class_object3_d_aed51e0166d44e45976f1354317fc8dd5}{}\label{class_object3_d_aed51e0166d44e45976f1354317fc8dd5} 
+\index{Object3D@{Object3D}!right\+Edge\+Connected@{right\+Edge\+Connected}}
+\index{right\+Edge\+Connected@{right\+Edge\+Connected}!Object3D@{Object3D}}
+\subsubsection{\texorpdfstring{right\+Edge\+Connected}{rightEdgeConnected}}
+{\footnotesize\ttfamily bool Object3\+D\+::right\+Edge\+Connected}
+
+
+
+Whether the object is attached to the right edge of the frame. 
+
+Edge connected implies that object is likely connected to the user\textquotesingle{}s body (hand, arm, etc) \hypertarget{class_object3_d_a27de2794f028136d15a4073e830980d1}{}\label{class_object3_d_a27de2794f028136d15a4073e830980d1} 
+\index{Object3D@{Object3D}!shape@{shape}}
+\index{shape@{shape}!Object3D@{Object3D}}
+\subsubsection{\texorpdfstring{shape}{shape}}
+{\footnotesize\ttfamily cv\+::\+Mat Object3\+D\+::shape\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference to the shape instance. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_object3_d_8h}{Object3\+D.\+h}\item 
+\hyperlink{_object3_d_8cpp}{Object3\+D.\+cpp}\end{DoxyCompactItemize}

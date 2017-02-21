@@ -28,7 +28,7 @@ static void \hyperlink{class_calibration_acd3adc799a4a9ce12ce1547e989e20a4}{writ
 \begin{DoxyCompactItemize}
 \item 
 static void \hyperlink{class_calibration_af69876a9c99d1ba8b87054796cf6be3e}{compute\+RT} (cv\+::\+Mat x, cv\+::\+Mat y, cv\+::\+Mat $\ast$R, cv\+::\+Mat $\ast$t)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Compute the translation and rotation matrix from coordinate system x-\/$>$y given a set of corresponding points. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -41,6 +41,21 @@ Class for various calibration operations.
 \subsubsection{\texorpdfstring{compute\+R\+T()}{computeRT()}}
 {\footnotesize\ttfamily void Calibration\+::compute\+RT (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{x,  }\item[{cv\+::\+Mat}]{y,  }\item[{cv\+::\+Mat $\ast$}]{R,  }\item[{cv\+::\+Mat $\ast$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
+
+
+Compute the translation and rotation matrix from coordinate system x-\/$>$y given a set of corresponding points. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & set of coordinates from the first coordinate system \\
+\hline
+\mbox{\tt in}  & {\em y} & set of corresponding coordinates from the second coordinate system \\
+\hline
+\mbox{\tt out}  & {\em R} & resultant rotation matrix \\
+\hline
+\mbox{\tt out}  & {\em t} & resultant translation matrix \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_calibration_af202af5f65e2f7242d29f09760f668d9}{}\label{class_calibration_af202af5f65e2f7242d29f09760f668d9} 
 \index{Calibration@{Calibration}!prepare\+Unity\+Data@{prepare\+Unity\+Data}}
 \index{prepare\+Unity\+Data@{prepare\+Unity\+Data}!Calibration@{Calibration}}
@@ -51,6 +66,17 @@ Class for various calibration operations.
 
 Compute full set of Unity checkboard coordinates. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em upper\+\_\+left} & the upper left corner coordinates of the chessboard \\
+\hline
+{\em distance} & size of the checkerboard (meters) \\
+\hline
+{\em num\+\_\+rows} & number of rows (inner intersections) \\
+\hline
+{\em num\+\_\+cols} & number of columns (inner intersections) \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_calibration_a05a3ca33bf7fb56ddf0c683be667660a}{}\label{class_calibration_a05a3ca33bf7fb56ddf0c683be667660a} 
 \index{Calibration@{Calibration}!reproject\+X\+Y\+Zto\+R\+GB@{reproject\+X\+Y\+Zto\+R\+GB}}
 \index{reproject\+X\+Y\+Zto\+R\+GB@{reproject\+X\+Y\+Zto\+R\+GB}!Calibration@{Calibration}}
@@ -71,6 +97,17 @@ Reproject the (x,y,z) points to (i,j) R\+GB image points with the RT matrix to t
 
 Reproject the (x,y,z) points to (x\textquotesingle{},y\textquotesingle{},z\textquotesingle{}) Unity points with the RT matrix to test for error. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em X\+Y\+Z\+\_\+points} & coordinates from the P\+MD sensor \\
+\hline
+{\em Unity\+\_\+points} & coordinates from the game engine \\
+\hline
+{\em R} & the rotation matrix to use \\
+\hline
+{\em T} & the translation matrix to use \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 cummulative reprojection error 
 \end{DoxyReturn}
@@ -84,6 +121,17 @@ cummulative reprojection error
 
 Write calibration data points to file. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em points} & data points to be written to file \\
+\hline
+{\em board\+\_\+w} & board width (used for formatting the file) \\
+\hline
+{\em board\+\_\+h} & board height (used for formatting the file) \\
+\hline
+{\em filename} & path of the file \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_calibration_ae686271805ffbaa32e0d8b796ae8d466}{}\label{class_calibration_ae686271805ffbaa32e0d8b796ae8d466} 
 \index{Calibration@{Calibration}!X\+Y\+Z\+To\+R\+GB@{X\+Y\+Z\+To\+R\+GB}}
 \index{X\+Y\+Z\+To\+R\+GB@{X\+Y\+Z\+To\+R\+GB}!Calibration@{Calibration}}
@@ -94,6 +142,31 @@ Write calibration data points to file.
 
 Compute a calibration from (x,y,z) real world coordiantes to (i,j) R\+GB camera coordinates. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em depth\+\_\+cam} & instance of a live \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_depth_camera}{Depth\+Camera} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em rgb\+\_\+cam} & instance of a live \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_r_g_b_camera}{R\+G\+B\+Camera} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+boards} & number of checkboard positions \\
+\hline
+{\em board\+\_\+w} & width of the board (number of inner intersections) \\
+\hline
+{\em board\+\_\+h} & height of the board (number of inner intersections) \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_calibration_a81cb3c8c004042bfd86b6f973b607f67}{}\label{class_calibration_a81cb3c8c004042bfd86b6f973b607f67} 
 \index{Calibration@{Calibration}!X\+Y\+Z\+To\+Unity@{X\+Y\+Z\+To\+Unity}}
 \index{X\+Y\+Z\+To\+Unity@{X\+Y\+Z\+To\+Unity}!Calibration@{Calibration}}
@@ -104,6 +177,23 @@ Compute a calibration from (x,y,z) real world coordiantes to (i,j) R\+GB camera 
 
 Compute a calibration from (x,y,z) real world coordinates to (x\textquotesingle{},y\textquotesingle{},z\textquotesingle{}) Unity coordinates. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em depth\+\_\+cam} & instance of a live \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_depth_camera}{Depth\+Camera} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+boards} & number of checkboard positions \\
+\hline
+{\em board\+\_\+w} & width of the board (number of inner intersections) \\
+\hline
+{\em board\+\_\+h} & height of the board (number of inner intersections) \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

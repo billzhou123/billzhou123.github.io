@@ -1,19 +1,17 @@
 var searchData=
 [
-  ['s',['s',['../class_u_d_p_sender.html#aeb3773ffb3bc9549dbe73c0e7fee0f23',1,'UDPSender']]],
-  ['send',['send',['../class_u_d_p_sender.html#a33d402a42a2d512bd12189e1f698cca4',1,'UDPSender']]],
-  ['sensorio_2ecpp',['SensorIO.cpp',['../_sensor_i_o_8cpp.html',1,'']]],
-  ['server',['SERVER',['../_u_d_p_sender_8h.html#a24cd3c37a165a8c4626d9e78df4574ff',1,'UDPSender.h']]],
-  ['shape_5fcentroid_5fij',['shape_centroid_ij',['../class_hand.html#a86d74ccce4bbfafa5825762713d38b44',1,'Hand']]],
-  ['shape_5fcentroid_5fxyz',['shape_centroid_xyz',['../class_hand.html#a3991a22a52268c3b469a4221fbfdb695',1,'Hand']]],
-  ['shapearea',['shapeArea',['../class_hand.html#a505288f2ffe79800bcb8b5ccb4f1995a',1,'Hand']]],
-  ['shapecentroid',['shapeCentroid',['../class_hand.html#a89099eeaa8a0286f6baae95d3b0a9f20',1,'Hand']]],
-  ['si_5fother',['si_other',['../class_u_d_p_sender.html#abeda008425d14ea8092d23d23bbd1117',1,'UDPSender']]],
-  ['size',['size',['../structcurve.html#a6a90092a2b62540ae3993cdb469f8451',1,'curve::size()'],['../class_hand.html#a11484b7843b03c2786972fec56eb2734',1,'Hand::size()']]],
-  ['slen',['slen',['../class_u_d_p_sender.html#a44e4545b002409e774edb7e30653d53e',1,'UDPSender']]],
-  ['source_5fparam',['SOURCE_PARAM',['../class_p_m_d_camera.html#a439b2e8f27acbc26d4de70d9f8a82386',1,'PMDCamera']]],
-  ['source_5fplugin',['SOURCE_PLUGIN',['../class_p_m_d_camera.html#ae5c857a614ea51781c690fd862f0e7a2',1,'PMDCamera']]],
-  ['sphere_5fequation',['sphere_equation',['../class_plane.html#aa8d9403da437be0c087354a8c891afcd',1,'Plane']]],
-  ['sphere_5findices',['sphere_indices',['../class_plane.html#a94247ab1ed3d194702250a3a98643212',1,'Plane']]],
-  ['sphere_5fmat',['sphere_mat',['../class_plane.html#a1a9bdfcd38d9113a83ef12132570eff5',1,'Plane']]]
+  ['required_20modules_3a',['Required modules:',['../md__open_a_r_k-_s_d_k__r_e_a_d_m_e.html',1,'']]],
+  ['r_5fsquared_5fdistance_5fthreshold',['R_SQUARED_DISTANCE_THRESHOLD',['../class_plane.html#ae0e9b28377ab03e577aa6588da269328',1,'Plane']]],
+  ['readimage',['readImage',['../class_depth_camera.html#a21cf887a447d2cdfda6ac907662c55fe',1,'DepthCamera']]],
+  ['readme_2emd',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['regiongrow',['regionGrow',['../class_plane.html#a08b35c23d8e0f3eea0db820163cda6e0',1,'Plane']]],
+  ['rejectionthreshold',['rejectionThreshold',['../class_streaming_averager.html#a861d5b10b9cc18d8a94b070af1fd49e0',1,'StreamingAverager']]],
+  ['removenoise',['removeNoise',['../class_depth_camera.html#adc06db6509cc5f47de1e168f56bf41fa',1,'DepthCamera']]],
+  ['removepoints',['removePoints',['../class_depth_camera.html#a8f38ced63dcfb0c4c56cb7d4e940bcd8',1,'DepthCamera::removePoints()'],['../class_util.html#abf2cc717b8e145166f247df2742a0325',1,'Util::removePoints()']]],
+  ['reprojectxyztorgb',['reprojectXYZtoRGB',['../class_calibration.html#a05a3ca33bf7fb56ddf0c683be667660a',1,'Calibration']]],
+  ['reprojectxyztounity',['reprojectXYZToUnity',['../class_calibration.html#ac69c3f4ad6231d799e7b3d644acf1dcf',1,'Calibration']]],
+  ['rgbcamera',['RGBCamera',['../class_r_g_b_camera.html',1,'']]],
+  ['rgbcamera_2ecpp',['RGBCamera.cpp',['../_r_g_b_camera_8cpp.html',1,'']]],
+  ['rgbcamera_2eh',['RGBCamera.h',['../_r_g_b_camera_8h.html',1,'']]],
+  ['rightedgeconnected',['rightEdgeConnected',['../class_object3_d.html#aed51e0166d44e45976f1354317fc8dd5',1,'Object3D']]]
 ];

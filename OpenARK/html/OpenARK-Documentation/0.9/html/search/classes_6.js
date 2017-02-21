@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['visualizer',['Visualizer',['../class_visualizer.html',1,'']]]
+  ['streamingaverager',['StreamingAverager',['../class_streaming_averager.html',1,'']]]
 ];
